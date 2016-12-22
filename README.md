@@ -6,7 +6,7 @@ Apple releases a lot of frameworks and APIs for developing for their platforms, 
 
 *AntlerKit* is the missing bridge between these systems. It houses all those Apple frameworks relevant to 2D games under a single, consistent, expressive API. Developers can start making their game do really neat stuff really quickly.
 
-#### *AntlerKit* integrates frameworks for:
+#### *AntlerKit* provides streamlined tools for:
 - 2D Rendering
 - Physics
 - Input
