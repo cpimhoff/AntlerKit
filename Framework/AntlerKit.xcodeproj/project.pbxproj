@@ -13,6 +13,10 @@
 		CB1121EF1E184BD30001FB85 /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1121ED1E184BD30001FB85 /* GameObject.swift */; };
 		CB1121F11E184D8D0001FB85 /* RootTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1121F01E184D8D0001FB85 /* RootTransform.swift */; };
 		CB1121F21E184D8D0001FB85 /* RootTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1121F01E184D8D0001FB85 /* RootTransform.swift */; };
+		CB1121F41E184E7A0001FB85 /* Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1121F31E184E7A0001FB85 /* Aliases.swift */; };
+		CB1121F51E184E7A0001FB85 /* Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1121F31E184E7A0001FB85 /* Aliases.swift */; };
+		CB1121F71E1850890001FB85 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1121F61E1850890001FB85 /* Component.swift */; };
+		CB1121F81E1850890001FB85 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1121F61E1850890001FB85 /* Component.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,8 @@
 		CB11217F1E1846E30001FB85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB1121ED1E184BD30001FB85 /* GameObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameObject.swift; path = AntlerKit/GameObject.swift; sourceTree = "<group>"; };
 		CB1121F01E184D8D0001FB85 /* RootTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootTransform.swift; path = AntlerKit/RootTransform.swift; sourceTree = "<group>"; };
+		CB1121F31E184E7A0001FB85 /* Aliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Aliases.swift; path = AntlerKit/Aliases.swift; sourceTree = "<group>"; };
+		CB1121F61E1850890001FB85 /* Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Component.swift; path = AntlerKit/Component.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +72,9 @@
 		CB1121691E1846940001FB85 /* AntlerKit */ = {
 			isa = PBXGroup;
 			children = (
+				CB1121F31E184E7A0001FB85 /* Aliases.swift */,
 				CB1121861E1847AB0001FB85 /* GameObject */,
+				CB1121F91E18508D0001FB85 /* Component */,
 			);
 			name = AntlerKit;
 			sourceTree = "<group>";
@@ -96,6 +104,14 @@
 				CB1121F01E184D8D0001FB85 /* RootTransform.swift */,
 			);
 			name = GameObject;
+			sourceTree = "<group>";
+		};
+		CB1121F91E18508D0001FB85 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				CB1121F61E1850890001FB85 /* Component.swift */,
+			);
+			name = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,7 +234,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB1121F11E184D8D0001FB85 /* RootTransform.swift in Sources */,
+				CB1121F71E1850890001FB85 /* Component.swift in Sources */,
 				CB1121EE1E184BD30001FB85 /* GameObject.swift in Sources */,
+				CB1121F41E184E7A0001FB85 /* Aliases.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,7 +245,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB1121F21E184D8D0001FB85 /* RootTransform.swift in Sources */,
+				CB1121F81E1850890001FB85 /* Component.swift in Sources */,
 				CB1121EF1E184BD30001FB85 /* GameObject.swift in Sources */,
+				CB1121F51E184E7A0001FB85 /* Aliases.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
