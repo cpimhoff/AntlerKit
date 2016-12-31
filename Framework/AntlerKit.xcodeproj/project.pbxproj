@@ -9,8 +9,10 @@
 /* Begin PBXBuildFile section */
 		CB1121731E1846D10001FB85 /* AntlerKit-iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = CB1121711E1846D10001FB85 /* AntlerKit-iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CB1121801E1846E30001FB85 /* AntlerKit-macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = CB11217E1E1846E30001FB85 /* AntlerKit-macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CB1121851E1847A60001FB85 /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1121841E1847A60001FB85 /* GameObject.swift */; };
-		CB1121871E1847DF0001FB85 /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1121841E1847A60001FB85 /* GameObject.swift */; };
+		CB1121EE1E184BD30001FB85 /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1121ED1E184BD30001FB85 /* GameObject.swift */; };
+		CB1121EF1E184BD30001FB85 /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1121ED1E184BD30001FB85 /* GameObject.swift */; };
+		CB1121F11E184D8D0001FB85 /* RootTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1121F01E184D8D0001FB85 /* RootTransform.swift */; };
+		CB1121F21E184D8D0001FB85 /* RootTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1121F01E184D8D0001FB85 /* RootTransform.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,7 +22,8 @@
 		CB11217C1E1846E20001FB85 /* AntlerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AntlerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB11217E1E1846E30001FB85 /* AntlerKit-macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AntlerKit-macOS.h"; sourceTree = "<group>"; };
 		CB11217F1E1846E30001FB85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CB1121841E1847A60001FB85 /* GameObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameObject.swift; sourceTree = "<group>"; };
+		CB1121ED1E184BD30001FB85 /* GameObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameObject.swift; path = AntlerKit/GameObject.swift; sourceTree = "<group>"; };
+		CB1121F01E184D8D0001FB85 /* RootTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootTransform.swift; path = AntlerKit/RootTransform.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +92,8 @@
 		CB1121861E1847AB0001FB85 /* GameObject */ = {
 			isa = PBXGroup;
 			children = (
-				CB1121841E1847A60001FB85 /* GameObject.swift */,
+				CB1121ED1E184BD30001FB85 /* GameObject.swift */,
+				CB1121F01E184D8D0001FB85 /* RootTransform.swift */,
 			);
 			name = GameObject;
 			sourceTree = "<group>";
@@ -168,6 +172,7 @@
 					};
 					CB11217B1E1846E20001FB85 = {
 						CreatedOnToolsVersion = 8.2;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -212,7 +217,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB1121851E1847A60001FB85 /* GameObject.swift in Sources */,
+				CB1121F11E184D8D0001FB85 /* RootTransform.swift in Sources */,
+				CB1121EE1E184BD30001FB85 /* GameObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,7 +226,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB1121871E1847DF0001FB85 /* GameObject.swift in Sources */,
+				CB1121F21E184D8D0001FB85 /* RootTransform.swift in Sources */,
+				CB1121EF1E184BD30001FB85 /* GameObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +383,7 @@
 		CB1121821E1846E30001FB85 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -390,6 +398,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cpimhoff.AntlerKit;
 				PRODUCT_NAME = AntlerKit;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -397,6 +406,7 @@
 		CB1121831E1846E30001FB85 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -434,6 +444,7 @@
 				CB1121761E1846D10001FB85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CB1121811E1846E30001FB85 /* Build configuration list for PBXNativeTarget "AntlerKit-macOS" */ = {
 			isa = XCConfigurationList;
@@ -442,6 +453,7 @@
 				CB1121831E1846E30001FB85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

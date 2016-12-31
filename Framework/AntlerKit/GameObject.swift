@@ -12,8 +12,6 @@ import GameplayKit
 
 public class GameObject {
 	
-	public init() {
-		
-	}
+	
 	
 }
