@@ -15,5 +15,3 @@ FOUNDATION_EXPORT double AntlerKit_iOSVersionNumber;
 FOUNDATION_EXPORT const unsigned char AntlerKit_iOSVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <AntlerKit_iOS/PublicHeader.h>
-
-

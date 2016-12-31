@@ -9,15 +9,18 @@
 /* Begin PBXBuildFile section */
 		CB1121731E1846D10001FB85 /* AntlerKit-iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = CB1121711E1846D10001FB85 /* AntlerKit-iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CB1121801E1846E30001FB85 /* AntlerKit-macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = CB11217E1E1846E30001FB85 /* AntlerKit-macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CB1121851E1847A60001FB85 /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1121841E1847A60001FB85 /* GameObject.swift */; };
+		CB1121871E1847DF0001FB85 /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1121841E1847A60001FB85 /* GameObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CB11216F1E1846D10001FB85 /* AntlerKit-iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "AntlerKit-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB11216F1E1846D10001FB85 /* AntlerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AntlerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB1121711E1846D10001FB85 /* AntlerKit-iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AntlerKit-iOS.h"; sourceTree = "<group>"; };
 		CB1121721E1846D10001FB85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CB11217C1E1846E20001FB85 /* AntlerKit-macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "AntlerKit-macOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB11217C1E1846E20001FB85 /* AntlerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AntlerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB11217E1E1846E30001FB85 /* AntlerKit-macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AntlerKit-macOS.h"; sourceTree = "<group>"; };
 		CB11217F1E1846E30001FB85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB1121841E1847A60001FB85 /* GameObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +54,8 @@
 		CB1121451E1845B10001FB85 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CB11216F1E1846D10001FB85 /* AntlerKit-iOS.framework */,
-				CB11217C1E1846E20001FB85 /* AntlerKit-macOS.framework */,
+				CB11216F1E1846D10001FB85 /* AntlerKit.framework */,
+				CB11217C1E1846E20001FB85 /* AntlerKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,6 +63,7 @@
 		CB1121691E1846940001FB85 /* AntlerKit */ = {
 			isa = PBXGroup;
 			children = (
+				CB1121861E1847AB0001FB85 /* GameObject */,
 			);
 			name = AntlerKit;
 			sourceTree = "<group>";
@@ -80,6 +84,14 @@
 				CB11217F1E1846E30001FB85 /* Info.plist */,
 			);
 			path = "AntlerKit-macOS";
+			sourceTree = "<group>";
+		};
+		CB1121861E1847AB0001FB85 /* GameObject */ = {
+			isa = PBXGroup;
+			children = (
+				CB1121841E1847A60001FB85 /* GameObject.swift */,
+			);
+			name = GameObject;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,7 +131,7 @@
 			);
 			name = "AntlerKit-iOS";
 			productName = "AntlerKit-iOS";
-			productReference = CB11216F1E1846D10001FB85 /* AntlerKit-iOS.framework */;
+			productReference = CB11216F1E1846D10001FB85 /* AntlerKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		CB11217B1E1846E20001FB85 /* AntlerKit-macOS */ = {
@@ -137,7 +149,7 @@
 			);
 			name = "AntlerKit-macOS";
 			productName = "AntlerKit-macOS";
-			productReference = CB11217C1E1846E20001FB85 /* AntlerKit-macOS.framework */;
+			productReference = CB11217C1E1846E20001FB85 /* AntlerKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -151,6 +163,7 @@
 				TargetAttributes = {
 					CB11216E1E1846D10001FB85 = {
 						CreatedOnToolsVersion = 8.2;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Manual;
 					};
 					CB11217B1E1846E20001FB85 = {
@@ -199,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB1121851E1847A60001FB85 /* GameObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB1121871E1847DF0001FB85 /* GameObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +326,7 @@
 		CB1121751E1846D10001FB85 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
@@ -322,10 +338,11 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "cpimhoff.AntlerKit-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = cpimhoff.AntlerKit;
+				PRODUCT_NAME = AntlerKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -334,6 +351,7 @@
 		CB1121761E1846D10001FB85 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
@@ -345,8 +363,8 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "cpimhoff.AntlerKit-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = cpimhoff.AntlerKit;
+				PRODUCT_NAME = AntlerKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -369,8 +387,8 @@
 				INFOPLIST_FILE = "AntlerKit-macOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "cpimhoff.AntlerKit-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = cpimhoff.AntlerKit;
+				PRODUCT_NAME = AntlerKit;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
@@ -390,8 +408,8 @@
 				INFOPLIST_FILE = "AntlerKit-macOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "cpimhoff.AntlerKit-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = cpimhoff.AntlerKit;
+				PRODUCT_NAME = AntlerKit;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
