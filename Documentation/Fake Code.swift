@@ -15,7 +15,7 @@ class GameScene : Scene {
 		let spawner = Spawner(spawns: EnemySpaceship, interval: 3)
 		spawner.position = self.screen.topLeftPoint
 
-		self.scoreText = TextObject(: "Score: \(score)")
+		self.scoreText = TextObject("Score: \(score)")
 
 		self.add(player)
 		self.add(spawner)
