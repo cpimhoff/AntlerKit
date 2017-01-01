@@ -12,7 +12,15 @@ import GameplayKit
 
 // Geometry
 public typealias Point = CGPoint
+public typealias Size = CGSize
 
 // SpriteKit
 public typealias Primitive = SKNode
 public typealias PhysicsBody = SKPhysicsBody
+
+// Cross Platform
+#if os(iOS)
+	internal typealias View = UIView
+#elseif os(OSX)
+	internal typealias View = NSView
+#endif
