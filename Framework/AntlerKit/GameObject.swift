@@ -12,7 +12,7 @@ import GameplayKit
 
 open class GameObject {
 	
-	fileprivate let root : RootTransform
+	internal let root : RootTransform
 	
 	public init() {
 		self.root = RootTransform()
@@ -89,7 +89,7 @@ open class GameObject {
 	
 	// MARK: - Update
 	
-	open func update(deltaTime: TimeInterval) {
+	internal func _update(deltaTime: TimeInterval) {
 		for child in self.children {
 			child.update(deltaTime: deltaTime)
 		}
@@ -97,7 +97,14 @@ open class GameObject {
 		for component in self.components.values {
 			component.update(deltaTime: deltaTime)
 		}
+		
+		// call override point of update
+		self.update(deltaTime: deltaTime)
 	}
+
+	// MARK: - Override Points
+	
+	open func update(deltaTime: TimeInterval) {}
 	
 }
 
