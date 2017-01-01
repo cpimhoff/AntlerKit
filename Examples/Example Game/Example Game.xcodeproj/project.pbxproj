@@ -8,21 +8,70 @@
 
 /* Begin PBXBuildFile section */
 		CB1121CF1E184A630001FB85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1121CE1E184A630001FB85 /* AppDelegate.swift */; };
-		CB1121D11E184A630001FB85 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = CB1121D01E184A630001FB85 /* GameScene.sks */; };
 		CB1121D71E184A630001FB85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1121D61E184A630001FB85 /* ViewController.swift */; };
 		CB1121D91E184A630001FB85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB1121D81E184A630001FB85 /* Assets.xcassets */; };
 		CB1121DC1E184A630001FB85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB1121DA1E184A630001FB85 /* Main.storyboard */; };
+		CB495CCA1E19844C00284473 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CC91E19844C00284473 /* GameScene.swift */; };
+		CB495CCC1E1984A400284473 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CCB1E1984A400284473 /* Player.swift */; };
+		CB495CCD1E1986C600284473 /* AntlerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB495CC61E19839600284473 /* AntlerKit.framework */; };
+		CB495CCE1E1986C600284473 /* AntlerKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CB495CC61E19839600284473 /* AntlerKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CB495CC31E19839600284473 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB1121E31E184A9B0001FB85 /* AntlerKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CB11216F1E1846D10001FB85;
+			remoteInfo = "AntlerKit-iOS";
+		};
+		CB495CC51E19839600284473 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB1121E31E184A9B0001FB85 /* AntlerKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CB11217C1E1846E20001FB85;
+			remoteInfo = "AntlerKit-macOS";
+		};
+		CB495CC71E19840D00284473 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB1121E31E184A9B0001FB85 /* AntlerKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = CB11217B1E1846E20001FB85;
+			remoteInfo = "AntlerKit-macOS";
+		};
+		CB495CCF1E1986C600284473 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB1121E31E184A9B0001FB85 /* AntlerKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = CB11217B1E1846E20001FB85;
+			remoteInfo = "AntlerKit-macOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CB495CD11E1986C600284473 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CB495CCE1E1986C600284473 /* AntlerKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CB1121CB1E184A630001FB85 /* Example Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Example Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB1121CE1E184A630001FB85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CB1121D01E184A630001FB85 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		CB1121D61E184A630001FB85 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CB1121D81E184A630001FB85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB1121DB1E184A630001FB85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CB1121DD1E184A630001FB85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB1121E31E184A9B0001FB85 /* AntlerKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AntlerKit.xcodeproj; path = ../../Framework/AntlerKit.xcodeproj; sourceTree = "<group>"; };
+		CB495CC91E19844C00284473 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		CB495CCB1E1984A400284473 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB495CCD1E1986C600284473 /* AntlerKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,13 +107,23 @@
 			isa = PBXGroup;
 			children = (
 				CB1121CE1E184A630001FB85 /* AppDelegate.swift */,
-				CB1121D01E184A630001FB85 /* GameScene.sks */,
 				CB1121D61E184A630001FB85 /* ViewController.swift */,
+				CB495CC91E19844C00284473 /* GameScene.swift */,
+				CB495CCB1E1984A400284473 /* Player.swift */,
 				CB1121D81E184A630001FB85 /* Assets.xcassets */,
 				CB1121DA1E184A630001FB85 /* Main.storyboard */,
 				CB1121DD1E184A630001FB85 /* Info.plist */,
 			);
 			path = "Example Game";
+			sourceTree = "<group>";
+		};
+		CB495CBF1E19839500284473 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB495CC41E19839600284473 /* AntlerKit.framework */,
+				CB495CC61E19839600284473 /* AntlerKit.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -76,10 +136,13 @@
 				CB1121C71E184A630001FB85 /* Sources */,
 				CB1121C81E184A630001FB85 /* Frameworks */,
 				CB1121C91E184A630001FB85 /* Resources */,
+				CB495CD11E1986C600284473 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CB495CC81E19840D00284473 /* PBXTargetDependency */,
+				CB495CD01E1986C600284473 /* PBXTargetDependency */,
 			);
 			name = "Example Game";
 			productName = "Example Game";
@@ -113,6 +176,12 @@
 			mainGroup = CB1121C21E184A630001FB85;
 			productRefGroup = CB1121CC1E184A630001FB85 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CB495CBF1E19839500284473 /* Products */;
+					ProjectRef = CB1121E31E184A9B0001FB85 /* AntlerKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				CB1121CA1E184A630001FB85 /* Example Game */,
@@ -120,12 +189,28 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		CB495CC41E19839600284473 /* AntlerKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AntlerKit.framework;
+			remoteRef = CB495CC31E19839600284473 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CB495CC61E19839600284473 /* AntlerKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AntlerKit.framework;
+			remoteRef = CB495CC51E19839600284473 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		CB1121C91E184A630001FB85 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB1121D11E184A630001FB85 /* GameScene.sks in Resources */,
 				CB1121D91E184A630001FB85 /* Assets.xcassets in Resources */,
 				CB1121DC1E184A630001FB85 /* Main.storyboard in Resources */,
 			);
@@ -138,12 +223,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB495CCC1E1984A400284473 /* Player.swift in Sources */,
+				CB495CCA1E19844C00284473 /* GameScene.swift in Sources */,
 				CB1121D71E184A630001FB85 /* ViewController.swift in Sources */,
 				CB1121CF1E184A630001FB85 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CB495CC81E19840D00284473 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "AntlerKit-macOS";
+			targetProxy = CB495CC71E19840D00284473 /* PBXContainerItemProxy */;
+		};
+		CB495CD01E1986C600284473 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "AntlerKit-macOS";
+			targetProxy = CB495CCF1E1986C600284473 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CB1121DA1E184A630001FB85 /* Main.storyboard */ = {
@@ -250,6 +350,7 @@
 		CB1121E11E184A630001FB85 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Example Game/Info.plist";
@@ -263,6 +364,7 @@
 		CB1121E21E184A630001FB85 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Example Game/Info.plist";
@@ -292,6 +394,7 @@
 				CB1121E21E184A630001FB85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

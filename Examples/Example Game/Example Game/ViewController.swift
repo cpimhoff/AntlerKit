@@ -7,31 +7,19 @@
 //
 
 import Cocoa
-import SpriteKit
-import GameplayKit
+import AntlerKit
 
 class ViewController: NSViewController {
 
-    @IBOutlet var skView: SKView!
+    @IBOutlet var akView: AntlerKitView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if let view = self.skView {
-            // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
-                // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
-                
-                // Present the scene
-                view.presentScene(scene)
-            }
-            
-            view.ignoresSiblingOrder = true
-            
-            view.showsFPS = true
-            view.showsNodeCount = true
-        }
+		
+		if let view = self.akView {
+			let s = GameScene(size: view.bounds.size)
+			view.present(s)
+		}
     }
 }
 

@@ -9,9 +9,11 @@
 import Foundation
 import SpriteKit
 
-internal protocol AntlerKitViewProtocol {
+public protocol AntlerKitViewProtocol : AnyObject {
 	
 	var renderingView : SKView { get }
+	
+	var currentScene : Scene? { get set }
 	
 }
 
@@ -23,6 +25,8 @@ extension AntlerKitViewProtocol {
 		} else {
 			renderingView.presentScene(nextScene.root)
 		}
+		
+		self.currentScene = nextScene
 	}
 	
 }

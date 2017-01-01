@@ -12,6 +12,7 @@ import SpriteKit
 open class AntlerKitView : UIView, AntlerKitViewProtocol {
 	
 	open var renderingView : SKView
+	open var currentScene: Scene?
 	
 	override public init(frame: CGRect) {
 		let bounds = CGRect(origin: Point.zero, size: frame.size)
@@ -19,9 +20,7 @@ open class AntlerKitView : UIView, AntlerKitViewProtocol {
 		
 		super.init(frame: frame)
 		
-		self.autoresizesSubviews = true
-		renderingView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-		self.addSubview(renderingView)
+		self.addRenderingSubview()
 	}
 	
 	convenience public init() {
@@ -29,7 +28,19 @@ open class AntlerKitView : UIView, AntlerKitViewProtocol {
 	}
 	
 	required public init?(coder aDecoder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
+		let bounds = CGRect.zero
+		self.renderingView = SKView(frame: bounds)
+		
+		super.init(coder: aDecoder)
+		
+		self.addRenderingSubview()
+	}
+	
+	private func addRenderingSubview() {
+		self.renderingView.frame = self.bounds
+		self.autoresizesSubviews = true
+		renderingView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+		self.addSubview(renderingView)
 	}
 	
 }
