@@ -25,6 +25,8 @@
 		CB495CB91E197FE500284473 /* AntlerKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CB81E197FE500284473 /* AntlerKitView.swift */; };
 		CB495CBA1E197FE500284473 /* AntlerKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CB81E197FE500284473 /* AntlerKitView.swift */; };
 		CB495CBE1E19816900284473 /* AntlerKitView-macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CBC1E19816900284473 /* AntlerKitView-macOS.swift */; };
+		CB495CD91E19916900284473 /* AddingNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CD81E19916900284473 /* AddingNumbers.swift */; };
+		CB495CDA1E19916900284473 /* AddingNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CD81E19916900284473 /* AddingNumbers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,7 @@
 		CB495CB51E19759400284473 /* WrappedScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WrappedScene.swift; path = AntlerKit/WrappedScene.swift; sourceTree = "<group>"; };
 		CB495CB81E197FE500284473 /* AntlerKitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AntlerKitView.swift; path = AntlerKit/AntlerKitView.swift; sourceTree = "<group>"; };
 		CB495CBC1E19816900284473 /* AntlerKitView-macOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AntlerKitView-macOS.swift"; sourceTree = "<group>"; };
+		CB495CD81E19916900284473 /* AddingNumbers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddingNumbers.swift; path = AntlerKit/AddingNumbers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				CB1121F31E184E7A0001FB85 /* Aliases.swift */,
+				CB495CD71E198AC200284473 /* Utilities */,
 				CB1121861E1847AB0001FB85 /* GameObject */,
 				CB1121F91E18508D0001FB85 /* Component */,
 				CB495CAD1E196E4600284473 /* Scene */,
@@ -146,6 +150,14 @@
 				CB495CB81E197FE500284473 /* AntlerKitView.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		CB495CD71E198AC200284473 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CB495CD81E19916900284473 /* AddingNumbers.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +285,7 @@
 				CB495CAB1E196E4300284473 /* Scene.swift in Sources */,
 				CB495CB91E197FE500284473 /* AntlerKitView.swift in Sources */,
 				CB1121EE1E184BD30001FB85 /* GameObject.swift in Sources */,
+				CB495CD91E19916900284473 /* AddingNumbers.swift in Sources */,
 				CB1121F41E184E7A0001FB85 /* Aliases.swift in Sources */,
 				CB495CB61E19759400284473 /* WrappedScene.swift in Sources */,
 			);
@@ -288,6 +301,7 @@
 				CB495CAC1E196E4300284473 /* Scene.swift in Sources */,
 				CB1121EF1E184BD30001FB85 /* GameObject.swift in Sources */,
 				CB495CBA1E197FE500284473 /* AntlerKitView.swift in Sources */,
+				CB495CDA1E19916900284473 /* AddingNumbers.swift in Sources */,
 				CB1121F51E184E7A0001FB85 /* Aliases.swift in Sources */,
 				CB495CB71E19759400284473 /* WrappedScene.swift in Sources */,
 			);
