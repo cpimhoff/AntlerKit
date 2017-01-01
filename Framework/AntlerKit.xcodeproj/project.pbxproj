@@ -19,10 +19,12 @@
 		CB1121F81E1850890001FB85 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1121F61E1850890001FB85 /* Component.swift */; };
 		CB495CAB1E196E4300284473 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CAA1E196E4300284473 /* Scene.swift */; };
 		CB495CAC1E196E4300284473 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CAA1E196E4300284473 /* Scene.swift */; };
-		CB495CAF1E196E8E00284473 /* AntlerGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CAE1E196E8E00284473 /* AntlerGameView.swift */; };
-		CB495CB01E196E8E00284473 /* AntlerGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CAE1E196E8E00284473 /* AntlerGameView.swift */; };
+		CB495CAF1E196E8E00284473 /* AntlerKitView-iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CAE1E196E8E00284473 /* AntlerKitView-iOS.swift */; };
 		CB495CB61E19759400284473 /* WrappedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CB51E19759400284473 /* WrappedScene.swift */; };
 		CB495CB71E19759400284473 /* WrappedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CB51E19759400284473 /* WrappedScene.swift */; };
+		CB495CB91E197FE500284473 /* AntlerKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CB81E197FE500284473 /* AntlerKitView.swift */; };
+		CB495CBA1E197FE500284473 /* AntlerKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CB81E197FE500284473 /* AntlerKitView.swift */; };
+		CB495CBE1E19816900284473 /* AntlerKitView-macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CBC1E19816900284473 /* AntlerKitView-macOS.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,8 +39,10 @@
 		CB1121F31E184E7A0001FB85 /* Aliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Aliases.swift; path = AntlerKit/Aliases.swift; sourceTree = "<group>"; };
 		CB1121F61E1850890001FB85 /* Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Component.swift; path = AntlerKit/Component.swift; sourceTree = "<group>"; };
 		CB495CAA1E196E4300284473 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Scene.swift; path = AntlerKit/Scene.swift; sourceTree = "<group>"; };
-		CB495CAE1E196E8E00284473 /* AntlerGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AntlerGameView.swift; path = AntlerKit/AntlerGameView.swift; sourceTree = "<group>"; };
+		CB495CAE1E196E8E00284473 /* AntlerKitView-iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AntlerKitView-iOS.swift"; sourceTree = "<group>"; };
 		CB495CB51E19759400284473 /* WrappedScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WrappedScene.swift; path = AntlerKit/WrappedScene.swift; sourceTree = "<group>"; };
+		CB495CB81E197FE500284473 /* AntlerKitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AntlerKitView.swift; path = AntlerKit/AntlerKitView.swift; sourceTree = "<group>"; };
+		CB495CBC1E19816900284473 /* AntlerKitView-macOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AntlerKitView-macOS.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +89,7 @@
 				CB1121861E1847AB0001FB85 /* GameObject */,
 				CB1121F91E18508D0001FB85 /* Component */,
 				CB495CAD1E196E4600284473 /* Scene */,
-				CB495CB11E196E9300284473 /* View */,
+				CB495CBB1E197FEB00284473 /* View */,
 			);
 			name = AntlerKit;
 			sourceTree = "<group>";
@@ -93,6 +97,7 @@
 		CB1121701E1846D10001FB85 /* AntlerKit-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				CB495CAE1E196E8E00284473 /* AntlerKitView-iOS.swift */,
 				CB1121711E1846D10001FB85 /* AntlerKit-iOS.h */,
 				CB1121721E1846D10001FB85 /* Info.plist */,
 			);
@@ -102,6 +107,7 @@
 		CB11217D1E1846E30001FB85 /* AntlerKit-macOS */ = {
 			isa = PBXGroup;
 			children = (
+				CB495CBC1E19816900284473 /* AntlerKitView-macOS.swift */,
 				CB11217E1E1846E30001FB85 /* AntlerKit-macOS.h */,
 				CB11217F1E1846E30001FB85 /* Info.plist */,
 			);
@@ -134,10 +140,10 @@
 			name = Scene;
 			sourceTree = "<group>";
 		};
-		CB495CB11E196E9300284473 /* View */ = {
+		CB495CBB1E197FEB00284473 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CB495CAE1E196E8E00284473 /* AntlerGameView.swift */,
+				CB495CB81E197FE500284473 /* AntlerKitView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -263,8 +269,9 @@
 			files = (
 				CB1121F11E184D8D0001FB85 /* RootTransform.swift in Sources */,
 				CB1121F71E1850890001FB85 /* Component.swift in Sources */,
-				CB495CAF1E196E8E00284473 /* AntlerGameView.swift in Sources */,
+				CB495CAF1E196E8E00284473 /* AntlerKitView-iOS.swift in Sources */,
 				CB495CAB1E196E4300284473 /* Scene.swift in Sources */,
+				CB495CB91E197FE500284473 /* AntlerKitView.swift in Sources */,
 				CB1121EE1E184BD30001FB85 /* GameObject.swift in Sources */,
 				CB1121F41E184E7A0001FB85 /* Aliases.swift in Sources */,
 				CB495CB61E19759400284473 /* WrappedScene.swift in Sources */,
@@ -275,11 +282,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB495CBE1E19816900284473 /* AntlerKitView-macOS.swift in Sources */,
 				CB1121F21E184D8D0001FB85 /* RootTransform.swift in Sources */,
 				CB1121F81E1850890001FB85 /* Component.swift in Sources */,
-				CB495CB01E196E8E00284473 /* AntlerGameView.swift in Sources */,
 				CB495CAC1E196E4300284473 /* Scene.swift in Sources */,
 				CB1121EF1E184BD30001FB85 /* GameObject.swift in Sources */,
+				CB495CBA1E197FE500284473 /* AntlerKitView.swift in Sources */,
 				CB1121F51E184E7A0001FB85 /* Aliases.swift in Sources */,
 				CB495CB71E19759400284473 /* WrappedScene.swift in Sources */,
 			);

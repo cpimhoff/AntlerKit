@@ -44,8 +44,8 @@ open class Scene {
 			return
 		}
 		
-		self.topLevelGameObjects.append(child)	// append to root set to scene
-		self.root.addChild(child.root)		// append the base primitive to render
+		self.topLevelGameObjects.append(child)	// append GameObject to root set for update
+		self.root.addChild(child.root)			// append the base primitive to render
 	}
 	
 	// MARK: - Updating Scene Content
