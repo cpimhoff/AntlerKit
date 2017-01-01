@@ -15,6 +15,7 @@
 		CB495CCC1E1984A400284473 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CCB1E1984A400284473 /* Player.swift */; };
 		CB495CCD1E1986C600284473 /* AntlerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB495CC61E19839600284473 /* AntlerKit.framework */; };
 		CB495CCE1E1986C600284473 /* AntlerKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CB495CC61E19839600284473 /* AntlerKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CB495CD31E19892E00284473 /* DriftRightComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CD21E19892E00284473 /* DriftRightComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		CB1121E31E184A9B0001FB85 /* AntlerKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AntlerKit.xcodeproj; path = ../../Framework/AntlerKit.xcodeproj; sourceTree = "<group>"; };
 		CB495CC91E19844C00284473 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		CB495CCB1E1984A400284473 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		CB495CD21E19892E00284473 /* DriftRightComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriftRightComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				CB1121D61E184A630001FB85 /* ViewController.swift */,
 				CB495CC91E19844C00284473 /* GameScene.swift */,
 				CB495CCB1E1984A400284473 /* Player.swift */,
+				CB495CD21E19892E00284473 /* DriftRightComponent.swift */,
 				CB1121D81E184A630001FB85 /* Assets.xcassets */,
 				CB1121DA1E184A630001FB85 /* Main.storyboard */,
 				CB1121DD1E184A630001FB85 /* Info.plist */,
@@ -225,6 +228,7 @@
 			files = (
 				CB495CCC1E1984A400284473 /* Player.swift in Sources */,
 				CB495CCA1E19844C00284473 /* GameScene.swift in Sources */,
+				CB495CD31E19892E00284473 /* DriftRightComponent.swift in Sources */,
 				CB1121D71E184A630001FB85 /* ViewController.swift in Sources */,
 				CB1121CF1E184A630001FB85 /* AppDelegate.swift in Sources */,
 			);

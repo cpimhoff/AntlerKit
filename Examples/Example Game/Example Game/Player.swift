@@ -18,11 +18,9 @@ class Player: GameObject {
 		let c = SKShapeNode(circleOfRadius: 10)
 		c.fillColor = .red
 		self.primitive = c
-	}
-	
-	override func update(deltaTime: TimeInterval) {
-		let speed : Double = 5
-		self.position.x += CGFloat(speed * deltaTime)
+		
+		let dr = DriftRightComponent()
+		self.add(dr)
 	}
 	
 }

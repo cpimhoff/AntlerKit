@@ -40,6 +40,10 @@ open class SimpleComponent : Component {
 		// override point...
 	}
 	
+	public init() {
+		// override point...
+	}
+	
 }
 
 // GKComponent Type
