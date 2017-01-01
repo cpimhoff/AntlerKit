@@ -18,7 +18,11 @@ internal protocol AntlerKitViewProtocol {
 extension AntlerKitViewProtocol {
 	
 	public func present(_ nextScene: Scene, with transition: SKTransition? = nil) {
-		
+		if transition != nil {
+			renderingView.presentScene(nextScene.root, transition: transition!)
+		} else {
+			renderingView.presentScene(nextScene.root)
+		}
 	}
 	
 }
