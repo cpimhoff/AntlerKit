@@ -37,6 +37,14 @@ open class Scene {
 		self.setup()
 	}
 	
+	// MARK: - Configuration
+	
+	open var camera : Camera? {
+		didSet {
+			self.root.camera = self.camera?.cameraNode
+		}
+	}
+	
 	// MARK: - Adding Content
 	
 	open func add(_ child: GameObject) {
