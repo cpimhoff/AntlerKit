@@ -10,7 +10,7 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
-internal class WrappedScene: SKScene {
+internal class WrappedScene : SKScene {
 	
 	weak var delegateScene : Scene!
 	
@@ -21,6 +21,18 @@ internal class WrappedScene: SKScene {
 			delegateScene._update(deltaTime: delta)
 		}
 		lastUpdate = currentTime
+	}
+	
+}
+
+extension WrappedScene : SKPhysicsContactDelegate {
+	
+	func didBegin(_ contact: SKPhysicsContact) {
+		delegateScene.handleContact(contact, begin: true)
+	}
+	
+	func didEnd(_ contact: SKPhysicsContact) {
+		delegateScene.handleContact(contact, begin: false)
 	}
 	
 }

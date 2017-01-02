@@ -22,7 +22,8 @@ open class Scene {
 	
 	public init(size: Size) {
 		self.root = WrappedScene(size: size)
-		self.root.delegateScene = self
+		
+		initializeRoot()
 		
 		self.setup()
 	}
@@ -30,14 +31,20 @@ open class Scene {
 	public init?(fileNamed fileName: String) {
 		guard let scene = WrappedScene(fileNamed: fileName) else { return nil }
 		self.root = scene
-		self.root.delegateScene = self
+		
+		initializeRoot()
 		
 		// postprocess scene into GameObjects, Components...
 		
 		self.setup()
 	}
 	
-	// MARK: - Configuration
+	private func initializeRoot() {
+		self.root.delegateScene = self
+		self.root.physicsWorld.contactDelegate = self.root
+	}
+	
+	// MARK: - Properties
 	
 	open var camera : Camera? {
 		didSet {
@@ -70,5 +77,15 @@ open class Scene {
 	
 	open func setup() {}
 	open func update(deltaTime: TimeInterval) {}
+	
+}
+
+// MARK: - Handling Physics
+internal extension Scene {
+	
+	internal func handleContact(_ contact: SKPhysicsContact, begin: Bool) {
+		let a = (contact.bodyA.node as? RootTransform)?.gameObject
+		let b = (contact.bodyB.node as? RootTransform)?.gameObject
+	}
 	
 }

@@ -19,6 +19,8 @@
 		CB1121F81E1850890001FB85 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1121F61E1850890001FB85 /* Component.swift */; };
 		CB2A27571E1ACDC5009FC4C4 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2A27561E1ACDC5009FC4C4 /* Camera.swift */; };
 		CB2A27581E1ACDC5009FC4C4 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2A27561E1ACDC5009FC4C4 /* Camera.swift */; };
+		CB2A275C1E1AD5C4009FC4C4 /* PhysicsContactType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2A275B1E1AD5C4009FC4C4 /* PhysicsContactType.swift */; };
+		CB2A275D1E1AD5C4009FC4C4 /* PhysicsContactType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2A275B1E1AD5C4009FC4C4 /* PhysicsContactType.swift */; };
 		CB495CAB1E196E4300284473 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CAA1E196E4300284473 /* Scene.swift */; };
 		CB495CAC1E196E4300284473 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CAA1E196E4300284473 /* Scene.swift */; };
 		CB495CAF1E196E8E00284473 /* AntlerKitView-iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CAE1E196E8E00284473 /* AntlerKitView-iOS.swift */; };
@@ -43,6 +45,7 @@
 		CB1121F31E184E7A0001FB85 /* Aliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Aliases.swift; path = AntlerKit/Aliases.swift; sourceTree = "<group>"; };
 		CB1121F61E1850890001FB85 /* Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Component.swift; path = AntlerKit/Component.swift; sourceTree = "<group>"; };
 		CB2A27561E1ACDC5009FC4C4 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Camera.swift; path = AntlerKit/Camera.swift; sourceTree = "<group>"; };
+		CB2A275B1E1AD5C4009FC4C4 /* PhysicsContactType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicsContactType.swift; sourceTree = "<group>"; };
 		CB495CAA1E196E4300284473 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Scene.swift; path = AntlerKit/Scene.swift; sourceTree = "<group>"; };
 		CB495CAE1E196E8E00284473 /* AntlerKitView-iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AntlerKitView-iOS.swift"; sourceTree = "<group>"; };
 		CB495CB51E19759400284473 /* WrappedScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WrappedScene.swift; path = AntlerKit/WrappedScene.swift; sourceTree = "<group>"; };
@@ -155,6 +158,14 @@
 			name = "Game Objects";
 			sourceTree = "<group>";
 		};
+		CB2A275E1E1AD5C7009FC4C4 /* Raw Data Types */ = {
+			isa = PBXGroup;
+			children = (
+				CB2A275B1E1AD5C4009FC4C4 /* PhysicsContactType.swift */,
+			);
+			name = "Raw Data Types";
+			sourceTree = "<group>";
+		};
 		CB495CAD1E196E4600284473 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				CB495CD81E19916900284473 /* ImplicitConversions.swift */,
+				CB2A275E1E1AD5C7009FC4C4 /* Raw Data Types */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -306,6 +318,7 @@
 				CB495CB91E197FE500284473 /* AntlerKitView.swift in Sources */,
 				CB1121EE1E184BD30001FB85 /* GameObject.swift in Sources */,
 				CB2A27571E1ACDC5009FC4C4 /* Camera.swift in Sources */,
+				CB2A275C1E1AD5C4009FC4C4 /* PhysicsContactType.swift in Sources */,
 				CB495CD91E19916900284473 /* ImplicitConversions.swift in Sources */,
 				CB1121F41E184E7A0001FB85 /* Aliases.swift in Sources */,
 				CB495CB61E19759400284473 /* WrappedScene.swift in Sources */,
@@ -323,6 +336,7 @@
 				CB1121EF1E184BD30001FB85 /* GameObject.swift in Sources */,
 				CB495CBA1E197FE500284473 /* AntlerKitView.swift in Sources */,
 				CB2A27581E1ACDC5009FC4C4 /* Camera.swift in Sources */,
+				CB2A275D1E1AD5C4009FC4C4 /* PhysicsContactType.swift in Sources */,
 				CB495CDA1E19916900284473 /* ImplicitConversions.swift in Sources */,
 				CB1121F51E184E7A0001FB85 /* Aliases.swift in Sources */,
 				CB495CB71E19759400284473 /* WrappedScene.swift in Sources */,

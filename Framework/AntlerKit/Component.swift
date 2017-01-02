@@ -19,6 +19,8 @@ public protocol Component : AnyObject {
 	func configure()
 	func update(deltaTime: TimeInterval)
 	
+	func onContact(with other: GameObject, type: PhysicsContactType)
+	
 }
 
 //
@@ -44,6 +46,10 @@ open class SimpleComponent : Component {
 		// override point...
 	}
 	
+	public func onContact(with other: GameObject, type: PhysicsContactType) {
+		// override point...
+	}
+	
 }
 
 // GKComponent Type
@@ -55,6 +61,10 @@ open class InspectableComponent : GKComponent, Component {
 	open weak var gameObject : GameObject?
 	
 	open func configure() {
+		// override point...
+	}
+	
+	public func onContact(with other: GameObject, type: PhysicsContactType) {
 		// override point...
 	}
 	

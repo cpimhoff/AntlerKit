@@ -33,17 +33,6 @@ open class GameObject {
 		}
 	}
 	
-	// MARK: - Physics
-	
-	public var body : PhysicsBody? {
-		get {
-			return self.root.physicsBody
-		}
-		set {
-			self.root.physicsBody = body
-		}
-	}
-	
 	// MARK: - Component
 	
 	fileprivate var components = [String: Component]()
@@ -105,6 +94,32 @@ open class GameObject {
 	// MARK: - Override Points
 	
 	open func update(deltaTime: TimeInterval) {}
+	
+	open func onContact(with other: GameObject, type: PhysicsContactType) {}
+	
+}
+
+// MARK: - Physics
+public extension GameObject {
+	
+	public var body : PhysicsBody? {
+		get {
+			return self.root.physicsBody
+		}
+		set {
+			self.root.physicsBody = body
+		}
+	}
+	
+	internal func _onContact(with other: GameObject, type: PhysicsContactType) {
+		self.onContact(with: other, type: type)
+		
+		for component in self.components.values {
+			component.onContact(with: other, type: type)
+		}
+		
+		// TODO: Send this to children if some property is set?
+	}
 	
 }
 
