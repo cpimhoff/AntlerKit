@@ -95,7 +95,7 @@ open class GameObject {
 	
 	open func update(deltaTime: TimeInterval) {}
 	
-	open func onContact(with other: GameObject, type: PhysicsContactType) {}
+	open func onContact(with other: GameObject?, type: PhysicsContactType) {}
 	
 }
 
@@ -111,7 +111,7 @@ public extension GameObject {
 		}
 	}
 	
-	internal func _onContact(with other: GameObject, type: PhysicsContactType) {
+	internal func _onContact(with other: GameObject?, type: PhysicsContactType) {
 		self.onContact(with: other, type: type)
 		
 		for component in self.components.values {

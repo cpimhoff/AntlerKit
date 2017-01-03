@@ -83,9 +83,12 @@ open class Scene {
 // MARK: - Handling Physics
 internal extension Scene {
 	
-	internal func handleContact(_ contact: SKPhysicsContact, begin: Bool) {
+	internal func handleContact(_ contact: SKPhysicsContact, type: PhysicsContactType) {
 		let a = (contact.bodyA.node as? RootTransform)?.gameObject
 		let b = (contact.bodyB.node as? RootTransform)?.gameObject
+		
+		a?._onContact(with: b, type: type)
+		b?._onContact(with: a, type: type)
 	}
 	
 }
