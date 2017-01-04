@@ -20,11 +20,24 @@ public struct PhysicsBodyCategory : OptionSet, Hashable {
 		self.rawValue = rawValue
 	}
 	
-	fileprivate static var collisions	= [PhysicsBodyCategory : Set<PhysicsBodyCategory>]()
-	fileprivate static var contacts		= [PhysicsBodyCategory : Set<PhysicsBodyCategory>]()
+	 internal static var collisions	= [PhysicsBodyCategory : Set<PhysicsBodyCategory>]()
+	 internal static var contacts		= [PhysicsBodyCategory : Set<PhysicsBodyCategory>]()
 	
 }
 
+// MARK: - Built In Categories
+public extension PhysicsBodyCategory {
+	
+	public static let none			= PhysicsBodyCategory(rawValue: UInt32.allZeros)
+	public static let all 			= PhysicsBodyCategory(rawValue: ~UInt32.allZeros)
+	
+	public static let `static` 		= PhysicsBodyCategory(rawValue: 1 << 31)
+	public static let enviroment	= PhysicsBodyCategory(rawValue: 1 << 30)
+	public static let effect 		= PhysicsBodyCategory(rawValue: 1 << 29)
+	
+}
+
+// MARK: - Setting Collisions and Contacts
 public extension PhysicsBodyCategory {
 	
 	public static func enableCollision(between a: PhysicsBodyCategory, and b: PhysicsBodyCategory) {
@@ -39,7 +52,7 @@ public extension PhysicsBodyCategory {
 		combineSeperatedFlags(compositeA: a, compositeB: b) { (x, y) in
 			let previous = PhysicsBodyCategory.contacts[x] ?? Set<PhysicsBodyCategory>()
 			let updated = previous.union([y])
-			PhysicsBodyCategory.collisions[x] = updated
+			PhysicsBodyCategory.contacts[x] = updated
 		}
 	}
 	
@@ -56,10 +69,48 @@ public extension PhysicsBodyCategory {
 		}
 	}
 	
-	private var seperatedFlags : Set<PhysicsBodyCategory> {
+}
+
+// MARK: - SpriteKit Integration
+internal extension PhysicsBodyCategory {
+	
+	var categoryBitMask : UInt32 {
+		return rawValue
+	}
+
+	var collisionBitMask : UInt32 {
+		var mask = PhysicsBodyCategory.none
+		
+		for flag in self.seperatedFlags {
+			PhysicsBodyCategory.collisions[flag]?.forEach {
+				mask.insert($0)
+			}
+		}
+		
+		return mask.rawValue
+	}
+	
+	var contactTestBitMask : UInt32 {
+		var mask = PhysicsBodyCategory.none
+		
+		for flag in self.seperatedFlags {
+			PhysicsBodyCategory.contacts[flag]?.forEach {
+				mask.insert($0)
+			}
+		}
+		
+		return mask.rawValue
+	}
+	
+}
+
+// MARK: - Decomposing Flags
+fileprivate extension PhysicsBodyCategory {
+	
+	fileprivate var seperatedFlags : Set<PhysicsBodyCategory> {
 		var flags = Set<PhysicsBodyCategory>()
 		
-		for i : UInt32 in 0..<31 {
+		for i : UInt32 in 0..<32 {
 			let mask = PhysicsBodyCategory(rawValue: 1 << i)
 			if self.contains(mask) {
 				flags.insert(mask)
@@ -68,32 +119,5 @@ public extension PhysicsBodyCategory {
 		
 		return flags
 	}
-	
-}
-
-internal extension PhysicsBodyCategory {
-	
-	var categoryBitMask : UInt32 {
-		return rawValue
-	}
-//
-//	var contactTestBitMask : UInt32 {
-//		
-//	}
-//	
-//	var collisionBitMask : UInt32 {
-//		
-//	}
-	
-}
-
-public extension PhysicsBodyCategory {
-	
-	public static let none			= PhysicsBodyCategory(rawValue: UInt32.allZeros)
-	public static let all 			= PhysicsBodyCategory(rawValue: ~UInt32.allZeros)
-	
-	public static let `static` 		= PhysicsBodyCategory(rawValue: 1 << 31)
-	public static let enviroment	= PhysicsBodyCategory(rawValue: 1 << 30)
-	public static let effect 		= PhysicsBodyCategory(rawValue: 1 << 29)
 	
 }
