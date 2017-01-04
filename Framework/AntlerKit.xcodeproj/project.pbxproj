@@ -124,10 +124,10 @@
 			children = (
 				CB1121F31E184E7A0001FB85 /* Aliases.swift */,
 				CB495CD71E198AC200284473 /* Utilities */,
-				CB2A275E1E1AD5C7009FC4C4 /* Physics Structures */,
 				CB1121861E1847AB0001FB85 /* Game Object */,
 				CB1121F91E18508D0001FB85 /* Component */,
 				CB495CAD1E196E4600284473 /* Scene */,
+				CB2A275E1E1AD5C7009FC4C4 /* Physics Structures */,
 				CB2A27591E1ACDC8009FC4C4 /* Built In */,
 				CB495CBB1E197FEB00284473 /* View */,
 			);

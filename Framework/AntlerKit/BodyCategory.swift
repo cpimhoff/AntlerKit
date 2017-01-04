@@ -72,6 +72,21 @@ public extension PhysicsBodyCategory {
 }
 
 // MARK: - SpriteKit Integration
+public extension PhysicsBody {
+	
+	public var category : PhysicsBodyCategory {
+		get {
+			return PhysicsBodyCategory(rawValue: self.categoryBitMask)
+		}
+		set {
+			self.categoryBitMask = newValue.categoryBitMask
+			self.collisionBitMask = newValue.collisionBitMask
+			self.contactTestBitMask = newValue.contactTestBitMask
+		}
+	}
+	
+}
+
 internal extension PhysicsBodyCategory {
 	
 	var categoryBitMask : UInt32 {
