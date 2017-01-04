@@ -59,14 +59,14 @@
 		CB1121F31E184E7A0001FB85 /* Aliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Aliases.swift; path = AntlerKit/Aliases.swift; sourceTree = "<group>"; };
 		CB1121F61E1850890001FB85 /* Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Component.swift; path = AntlerKit/Component.swift; sourceTree = "<group>"; };
 		CB2A27561E1ACDC5009FC4C4 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Camera.swift; path = AntlerKit/Camera.swift; sourceTree = "<group>"; };
-		CB2A275B1E1AD5C4009FC4C4 /* PhysicsContactType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicsContactType.swift; sourceTree = "<group>"; };
+		CB2A275B1E1AD5C4009FC4C4 /* PhysicsContactType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhysicsContactType.swift; path = AntlerKit/PhysicsContactType.swift; sourceTree = "<group>"; };
 		CB495CAA1E196E4300284473 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Scene.swift; path = AntlerKit/Scene.swift; sourceTree = "<group>"; };
 		CB495CAE1E196E8E00284473 /* AntlerKitView-iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AntlerKitView-iOS.swift"; sourceTree = "<group>"; };
 		CB495CB51E19759400284473 /* WrappedScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WrappedScene.swift; path = AntlerKit/WrappedScene.swift; sourceTree = "<group>"; };
 		CB495CB81E197FE500284473 /* AntlerKitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AntlerKitView.swift; path = AntlerKit/AntlerKitView.swift; sourceTree = "<group>"; };
 		CB495CBC1E19816900284473 /* AntlerKitView-macOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AntlerKitView-macOS.swift"; sourceTree = "<group>"; };
 		CB495CD81E19916900284473 /* ImplicitConversions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImplicitConversions.swift; path = AntlerKit/ImplicitConversions.swift; sourceTree = "<group>"; };
-		CBC537621E1C6B1600A8C145 /* BodyCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyCategory.swift; sourceTree = "<group>"; };
+		CBC537621E1C6B1600A8C145 /* BodyCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BodyCategory.swift; path = AntlerKit/BodyCategory.swift; sourceTree = "<group>"; };
 		CBE96D651E1C7BF2008C0CD1 /* AntlerKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AntlerKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE96D671E1C7BF2008C0CD1 /* AntlerKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntlerKitTests.swift; sourceTree = "<group>"; };
 		CBE96D691E1C7BF2008C0CD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -124,6 +124,7 @@
 			children = (
 				CB1121F31E184E7A0001FB85 /* Aliases.swift */,
 				CB495CD71E198AC200284473 /* Utilities */,
+				CB2A275E1E1AD5C7009FC4C4 /* Physics Structures */,
 				CB1121861E1847AB0001FB85 /* Game Object */,
 				CB1121F91E18508D0001FB85 /* Component */,
 				CB495CAD1E196E4600284473 /* Scene */,
@@ -186,13 +187,13 @@
 			name = "Game Objects";
 			sourceTree = "<group>";
 		};
-		CB2A275E1E1AD5C7009FC4C4 /* Raw Data Types */ = {
+		CB2A275E1E1AD5C7009FC4C4 /* Physics Structures */ = {
 			isa = PBXGroup;
 			children = (
 				CBC537621E1C6B1600A8C145 /* BodyCategory.swift */,
 				CB2A275B1E1AD5C4009FC4C4 /* PhysicsContactType.swift */,
 			);
-			name = "Raw Data Types";
+			name = "Physics Structures";
 			sourceTree = "<group>";
 		};
 		CB495CAD1E196E4600284473 /* Scene */ = {
@@ -216,7 +217,6 @@
 			isa = PBXGroup;
 			children = (
 				CB495CD81E19916900284473 /* ImplicitConversions.swift */,
-				CB2A275E1E1AD5C7009FC4C4 /* Raw Data Types */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
