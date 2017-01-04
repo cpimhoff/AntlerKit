@@ -33,7 +33,19 @@
 		CB495CDA1E19916900284473 /* ImplicitConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CD81E19916900284473 /* ImplicitConversions.swift */; };
 		CBC537631E1C6B1600A8C145 /* BodyCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC537621E1C6B1600A8C145 /* BodyCategory.swift */; };
 		CBC537641E1C6BF400A8C145 /* BodyCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC537621E1C6B1600A8C145 /* BodyCategory.swift */; };
+		CBE96D681E1C7BF2008C0CD1 /* AntlerKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE96D671E1C7BF2008C0CD1 /* AntlerKitTests.swift */; };
+		CBE96D6A1E1C7BF2008C0CD1 /* AntlerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB11217C1E1846E20001FB85 /* AntlerKit.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CBE96D6B1E1C7BF2008C0CD1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB11213B1E1845B10001FB85 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB11217B1E1846E20001FB85;
+			remoteInfo = "AntlerKit-macOS";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		CB11216F1E1846D10001FB85 /* AntlerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AntlerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +67,9 @@
 		CB495CBC1E19816900284473 /* AntlerKitView-macOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AntlerKitView-macOS.swift"; sourceTree = "<group>"; };
 		CB495CD81E19916900284473 /* ImplicitConversions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImplicitConversions.swift; path = AntlerKit/ImplicitConversions.swift; sourceTree = "<group>"; };
 		CBC537621E1C6B1600A8C145 /* BodyCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyCategory.swift; sourceTree = "<group>"; };
+		CBE96D651E1C7BF2008C0CD1 /* AntlerKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AntlerKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBE96D671E1C7BF2008C0CD1 /* AntlerKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntlerKitTests.swift; sourceTree = "<group>"; };
+		CBE96D691E1C7BF2008C0CD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +87,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CBE96D621E1C7BF2008C0CD1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBE96D6A1E1C7BF2008C0CD1 /* AntlerKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -81,6 +104,7 @@
 				CB1121691E1846940001FB85 /* AntlerKit */,
 				CB1121701E1846D10001FB85 /* AntlerKit-iOS */,
 				CB11217D1E1846E30001FB85 /* AntlerKit-macOS */,
+				CBE96D661E1C7BF2008C0CD1 /* AntlerKitTests */,
 				CB1121451E1845B10001FB85 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +114,7 @@
 			children = (
 				CB11216F1E1846D10001FB85 /* AntlerKit.framework */,
 				CB11217C1E1846E20001FB85 /* AntlerKit.framework */,
+				CBE96D651E1C7BF2008C0CD1 /* AntlerKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -196,6 +221,15 @@
 			name = Utilities;
 			sourceTree = "<group>";
 		};
+		CBE96D661E1C7BF2008C0CD1 /* AntlerKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				CBE96D671E1C7BF2008C0CD1 /* AntlerKitTests.swift */,
+				CBE96D691E1C7BF2008C0CD1 /* Info.plist */,
+			);
+			path = AntlerKitTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -254,12 +288,31 @@
 			productReference = CB11217C1E1846E20001FB85 /* AntlerKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		CBE96D641E1C7BF2008C0CD1 /* AntlerKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBE96D6F1E1C7BF2008C0CD1 /* Build configuration list for PBXNativeTarget "AntlerKitTests" */;
+			buildPhases = (
+				CBE96D611E1C7BF2008C0CD1 /* Sources */,
+				CBE96D621E1C7BF2008C0CD1 /* Frameworks */,
+				CBE96D631E1C7BF2008C0CD1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CBE96D6C1E1C7BF2008C0CD1 /* PBXTargetDependency */,
+			);
+			name = AntlerKitTests;
+			productName = AntlerKitTests;
+			productReference = CBE96D651E1C7BF2008C0CD1 /* AntlerKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		CB11213B1E1845B10001FB85 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Charlie Imhoff";
 				TargetAttributes = {
@@ -272,6 +325,10 @@
 						CreatedOnToolsVersion = 8.2;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Manual;
+					};
+					CBE96D641E1C7BF2008C0CD1 = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -289,6 +346,7 @@
 			targets = (
 				CB11216E1E1846D10001FB85 /* AntlerKit-iOS */,
 				CB11217B1E1846E20001FB85 /* AntlerKit-macOS */,
+				CBE96D641E1C7BF2008C0CD1 /* AntlerKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -302,6 +360,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		CB11217A1E1846E20001FB85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBE96D631E1C7BF2008C0CD1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -349,7 +414,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CBE96D611E1C7BF2008C0CD1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBE96D681E1C7BF2008C0CD1 /* AntlerKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CBE96D6C1E1C7BF2008C0CD1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB11217B1E1846E20001FB85 /* AntlerKit-macOS */;
+			targetProxy = CBE96D6B1E1C7BF2008C0CD1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		CB11214A1E1845B10001FB85 /* Debug */ = {
@@ -543,6 +624,30 @@
 			};
 			name = Release;
 		};
+		CBE96D6D1E1C7BF2008C0CD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = AntlerKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.carleton.AntlerKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		CBE96D6E1E1C7BF2008C0CD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = AntlerKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.carleton.AntlerKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -572,6 +677,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		CBE96D6F1E1C7BF2008C0CD1 /* Build configuration list for PBXNativeTarget "AntlerKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBE96D6D1E1C7BF2008C0CD1 /* Debug */,
+				CBE96D6E1E1C7BF2008C0CD1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
