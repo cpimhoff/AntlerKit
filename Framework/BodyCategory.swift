@@ -27,16 +27,6 @@ public struct PhysicsBodyCategory : OptionSet, Hashable {
 
 public extension PhysicsBodyCategory {
 	
-	/*
-	public func enableCollisions(with others: PhysicsBodyCategory) {
-		PhysicsBodyCategory.enableCollision(between: self, and: others)
-	}
-	
-	public func enableContacts(with others: PhysicsBodyCategory) {
-		PhysicsBodyCategory.enableContacts(between: self, and: others)
-	}
-	*/
-	
 	public static func enableCollision(between a: PhysicsBodyCategory, and b: PhysicsBodyCategory) {
 		combineSeperatedFlags(compositeA: a, compositeB: b) { (x, y) in
 			let previous = PhysicsBodyCategory.collisions[x] ?? Set<PhysicsBodyCategory>()
@@ -45,7 +35,7 @@ public extension PhysicsBodyCategory {
 		}
 	}
 	
-	public static func enableContacts(between a: PhysicsBodyCategory, and b: PhysicsBodyCategory) {
+	public static func enableContact(between a: PhysicsBodyCategory, and b: PhysicsBodyCategory) {
 		combineSeperatedFlags(compositeA: a, compositeB: b) { (x, y) in
 			let previous = PhysicsBodyCategory.contacts[x] ?? Set<PhysicsBodyCategory>()
 			let updated = previous.union([y])
@@ -66,8 +56,17 @@ public extension PhysicsBodyCategory {
 		}
 	}
 	
-	private var seperatedFlags : [PhysicsBodyCategory] {
-		return [PhysicsBodyCategory]()
+	private var seperatedFlags : Set<PhysicsBodyCategory> {
+		var flags = Set<PhysicsBodyCategory>()
+		
+		for i : UInt32 in 0..<31 {
+			let mask = PhysicsBodyCategory(rawValue: 1 << i)
+			if self.contains(mask) {
+				flags.insert(mask)
+			}
+		}
+		
+		return flags
 	}
 	
 }
