@@ -38,18 +38,18 @@ class AntlerKitTests: XCTestCase {
 		XCTAssertNil(PhysicsBodyCategory.contacts[.effect])
 		
 		XCTAssertEqual(PhysicsBodyCategory.enviroment.collisionBitMask,
-		               ([.static, .effect] as PhysicsBodyCategory).rawValue)
+		               PhysicsBodyCategory(.static, .effect).rawValue)
 		XCTAssertEqual(PhysicsBodyCategory.static.collisionBitMask,
-		               ([.enviroment] as PhysicsBodyCategory).rawValue)
+		                PhysicsBodyCategory(.enviroment).rawValue)
 		XCTAssertEqual(PhysicsBodyCategory.effect.collisionBitMask,
-		               ([.enviroment] as PhysicsBodyCategory).rawValue)
+		               PhysicsBodyCategory(.enviroment).rawValue)
 		
 		XCTAssertEqual(PhysicsBodyCategory.enviroment.contactTestBitMask,
-		               ([.static] as PhysicsBodyCategory).rawValue)
+		               PhysicsBodyCategory(.static).rawValue)
 		XCTAssertEqual(PhysicsBodyCategory.static.contactTestBitMask,
-		               ([.enviroment] as PhysicsBodyCategory).rawValue)
+		               PhysicsBodyCategory(.enviroment).rawValue)
 		XCTAssertEqual(PhysicsBodyCategory.effect.contactTestBitMask,
-		               ([.none] as PhysicsBodyCategory).rawValue)
+		               PhysicsBodyCategory(.none).rawValue)
 	}
     
 }
