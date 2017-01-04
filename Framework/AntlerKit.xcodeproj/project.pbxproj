@@ -31,6 +31,8 @@
 		CB495CBE1E19816900284473 /* AntlerKitView-macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CBC1E19816900284473 /* AntlerKitView-macOS.swift */; };
 		CB495CD91E19916900284473 /* ImplicitConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CD81E19916900284473 /* ImplicitConversions.swift */; };
 		CB495CDA1E19916900284473 /* ImplicitConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CD81E19916900284473 /* ImplicitConversions.swift */; };
+		CBC537631E1C6B1600A8C145 /* BodyCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC537621E1C6B1600A8C145 /* BodyCategory.swift */; };
+		CBC537641E1C6BF400A8C145 /* BodyCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC537621E1C6B1600A8C145 /* BodyCategory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,7 @@
 		CB495CB81E197FE500284473 /* AntlerKitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AntlerKitView.swift; path = AntlerKit/AntlerKitView.swift; sourceTree = "<group>"; };
 		CB495CBC1E19816900284473 /* AntlerKitView-macOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AntlerKitView-macOS.swift"; sourceTree = "<group>"; };
 		CB495CD81E19916900284473 /* ImplicitConversions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImplicitConversions.swift; path = AntlerKit/ImplicitConversions.swift; sourceTree = "<group>"; };
+		CBC537621E1C6B1600A8C145 /* BodyCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyCategory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +164,7 @@
 		CB2A275E1E1AD5C7009FC4C4 /* Raw Data Types */ = {
 			isa = PBXGroup;
 			children = (
+				CBC537621E1C6B1600A8C145 /* BodyCategory.swift */,
 				CB2A275B1E1AD5C4009FC4C4 /* PhysicsContactType.swift */,
 			);
 			name = "Raw Data Types";
@@ -312,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB1121F11E184D8D0001FB85 /* RootTransform.swift in Sources */,
+				CBC537631E1C6B1600A8C145 /* BodyCategory.swift in Sources */,
 				CB1121F71E1850890001FB85 /* Component.swift in Sources */,
 				CB495CAF1E196E8E00284473 /* AntlerKitView-iOS.swift in Sources */,
 				CB495CAB1E196E4300284473 /* Scene.swift in Sources */,
@@ -330,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB495CBE1E19816900284473 /* AntlerKitView-macOS.swift in Sources */,
+				CBC537641E1C6BF400A8C145 /* BodyCategory.swift in Sources */,
 				CB1121F21E184D8D0001FB85 /* RootTransform.swift in Sources */,
 				CB1121F81E1850890001FB85 /* Component.swift in Sources */,
 				CB495CAC1E196E4300284473 /* Scene.swift in Sources */,
