@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreGraphics
 
 func +(lhs: Float, rhs: CGFloat) -> Float {
 	return lhs + Float(rhs)
