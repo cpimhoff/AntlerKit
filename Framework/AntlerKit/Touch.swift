@@ -7,18 +7,12 @@
 //
 
 import Foundation
+import UIKit
 
 public struct Touch {
 	
 	public var sceneLocation : Point
 	
-	public var state : TouchState
-	
-}
-
-public enum TouchState {
-	
-	case tap
-	case heldDown
+	public var phase : UITouchPhase
 	
 }

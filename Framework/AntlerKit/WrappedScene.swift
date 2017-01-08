@@ -10,9 +10,17 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
+#if os(iOS)
+typealias GestureRecognizer = UIGestureRecognizer
+#elseif os(OSX)
+typealias GestureRecognizer = NSGestureRecognizer
+#endif
+
 internal class WrappedScene : SKScene {
 	
 	weak var delegateScene : Scene!
+	
+	var gestureRecognizers = [GestureRecognizer]()
 	
 	var lastUpdate : TimeInterval?
 	override func update(_ currentTime: TimeInterval) {
@@ -21,6 +29,16 @@ internal class WrappedScene : SKScene {
 			delegateScene._update(deltaTime: delta)
 		}
 		lastUpdate = currentTime
+	}
+	
+	override func didMove(to view: SKView) {
+		super.didMove(to: view)
+		setupGestureRecognizers()
+	}
+	
+	override func willMove(from view: SKView) {
+		super.willMove(from: view)
+		removeGestureRecognizers()
 	}
 	
 }
@@ -36,3 +54,102 @@ extension WrappedScene : SKPhysicsContactDelegate {
 	}
 	
 }
+
+#if os(iOS)
+	extension WrappedScene {
+		
+		fileprivate func setupGestureRecognizers() {
+			let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(onTap))
+			tapRecognizer.delaysTouchesBegan = true
+			tapRecognizer.cancelsTouchesInView = false
+			self.view?.addGestureRecognizer(tapRecognizer)
+		}
+		
+		fileprivate func removeGestureRecognizers() {
+			for gr in self.gestureRecognizers {
+				self.view?.removeGestureRecognizer(gr)
+			}
+		}
+		
+		func onTap(sender: UITapGestureRecognizer) {
+			guard let view = self.view, sender.state == .ended
+				else { return }
+			
+			for i in 0..<sender.numberOfTouches {
+				let viewLocation = sender.location(ofTouch: i, in: view)
+				let sceneLocation = self.convertPoint(fromView: viewLocation)
+				
+				// TODO: dispatch to interface selection
+				let selectedNodes = self.nodes(at: sceneLocation)
+				let sortedGameObjects = selectedNodes
+					.filter { $0 is RootTransform }
+					.map { return ($0 as! RootTransform).gameObject }
+					.sorted { $0.0.layer > $0.1.layer }
+				
+				for gameObject in sortedGameObjects {
+					// do some shit...
+				}
+				
+				// TODO: dispatch to global input
+			}
+		}
+		
+		override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+			handleAllRawTouches(event: event)
+		}
+		override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+			handleAllRawTouches(event: event)
+		}
+		override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+			handleAllRawTouches(event: event)
+		}
+		override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+			handleAllRawTouches(event: event)
+		}
+		
+		func handleAllRawTouches(event: UIEvent?) {
+			guard let touches = event?.allTouches
+				else { return }
+			
+			// update with new info
+			Input.global.touches.removeAll(keepingCapacity: true)
+			
+			for rawTouch in touches {
+				if rawTouch.view != self.view { continue }
+				
+				let sceneLocation = rawTouch.location(in: self)
+				let touch = Touch(sceneLocation: sceneLocation, phase: rawTouch.phase)
+				Input.global.touches.append(touch)
+			}
+		}
+		
+	}
+#elseif os(OSX)
+	extension WrappedScene {
+		
+		fileprivate func setupGestureRecognizers() {
+			
+		}
+		
+		fileprivate func removeGestureRecognizers() {
+			
+		}
+
+		override func mouseUp(with event: NSEvent) {
+
+		}
+
+		override func mouseDown(with event: NSEvent) {
+
+		}
+
+		override func mouseMoved(with event: NSEvent) {
+
+		}
+
+		override func mouseDragged(with event: NSEvent) {
+
+		}
+		
+	}
+#endif
