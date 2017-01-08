@@ -12,4 +12,6 @@ public protocol HandlesSelectionInterfaceInput {
 	
 	func handleSelected() -> Bool
 	
+	var selectionBoundingBox : Size { get }
+	
 }
