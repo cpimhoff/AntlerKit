@@ -20,13 +20,15 @@ open class Input {
 	open static var global = Input()
 	
 	#if os(iOS)
-	open var touches = [UITouch]()
+	open var touches = [Touch]()
 	
 	// var deviceTilt...
 	#endif
 	
 	#if os(OSX)
 	open var activeKeys = Set<String>()
+	
+	open var cursor = Cursor()
 	#endif
 	
 }
