@@ -36,6 +36,9 @@ open class GameObject {
 	// MARK: - Component
 	
 	fileprivate var components = [String: Component]()
+	public var allComponents : LazyMapCollection<Dictionary<String, Component>, Component> {
+		return self.components.values
+	}
 	
 	open func add(_ component: Component) {
 		let typeName = String(describing: type(of: component))
@@ -45,9 +48,9 @@ open class GameObject {
 		component.configure()
 	}
 	
-	open func component<T: Component>() -> T? {
-		let typeName = String(describing: T.self)
-		return self.components[typeName] as? T
+	open func component(type: Component.Type) -> Component? {
+		let typeName = String(describing: type)
+		return self.components[typeName] ?? nil
 	}
 	
 	// MARK: - Children

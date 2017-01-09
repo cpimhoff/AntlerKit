@@ -32,3 +32,32 @@ open class Input {
 	#endif
 	
 }
+
+extension Input {
+	
+	func removeCachedInput() {
+		#if os(iOS)
+			self.touches = self.touches.filter { touch in touch.type == .tap }
+		#endif
+	}
+	
+	internal func updateStaleInput() {
+		#if os(iOS)
+			let updatedTouches = self.touches.flatMap
+				{ touch -> Touch? in
+					var nextType : TouchType
+					
+					switch touch.type {
+					case .began, .moved, .stationary:	// should be set to stationary after a frame
+						nextType = .stationary
+					case .cancelled, .ended, .tap:		// should be removed after one frame
+						return nil
+					}
+					return Touch(sceneLocation: touch.sceneLocation, type: nextType)
+				}
+			
+			self.touches = updatedTouches
+		#endif
+	}
+	
+}

@@ -79,20 +79,29 @@ extension WrappedScene : SKPhysicsContactDelegate {
 				let viewLocation = sender.location(ofTouch: i, in: view)
 				let sceneLocation = self.convertPoint(fromView: viewLocation)
 				
-				// TODO: dispatch to interface selection
+				// Give selected nodes interested in this first option to handle it
 				let selectedNodes = self.nodes(at: sceneLocation)
 				let sortedGameObjects = selectedNodes
-					.filter { $0 is RootTransform }
-					.map { return ($0 as! RootTransform).gameObject }
-					.sorted { $0.0.layer > $0.1.layer }
+					.filter { n in		n is RootTransform }
+					.map 	{ rt in		(rt as! RootTransform).gameObject }
+					.sorted { a, b in	a.layer > b.layer }
 				
 				for gameObject in sortedGameObjects {
-					// do some shit...
+					if gameObject.handleSelected() {
+						return
+					}
 				}
 				
-				// TODO: dispatch to global input
+				// If unhandled, dispatch to global input
+				let tap = Touch(sceneLocation: sceneLocation, type: .tap)
+				Input.global.touches.append(tap)
 			}
 		}
+		
+		///
+		///		Our goal is to have a complete list of the touches at all times
+		///		Whenever a touch update occurs, we flash `all` active touches to memory
+		///
 		
 		override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 			handleAllRawTouches(event: event)
@@ -112,13 +121,13 @@ extension WrappedScene : SKPhysicsContactDelegate {
 				else { return }
 			
 			// update with new info
-			Input.global.touches.removeAll(keepingCapacity: true)
+			Input.global.removeCachedInput()
 			
 			for rawTouch in touches {
 				if rawTouch.view != self.view { continue }
 				
 				let sceneLocation = rawTouch.location(in: self)
-				let touch = Touch(sceneLocation: sceneLocation, phase: rawTouch.phase)
+				let touch = Touch(sceneLocation: sceneLocation, type: TouchType(phase: rawTouch.phase))
 				Input.global.touches.append(touch)
 			}
 		}
