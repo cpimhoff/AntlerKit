@@ -11,7 +11,7 @@ import GameplayKit
 
 public protocol Component : AnyObject {
 	
-	/// If false, this component is not updated
+	/// If false, this component is not updated, nor does it respond to events
 	var enabled : Bool { get }
 	
 	var gameObject : GameObject? { get set }

@@ -87,7 +87,9 @@ open class GameObject {
 		}
 		
 		for component in self.components.values {
-			component.update(deltaTime: deltaTime)
+			if component.enabled {
+				component.update(deltaTime: deltaTime)
+			}
 		}
 		
 		// call override point of update
@@ -118,7 +120,9 @@ public extension GameObject {
 		self.onContact(with: other, type: type)
 		
 		for component in self.components.values {
-			component.onContact(with: other, type: type)
+			if component.enabled {
+				component.onContact(with: other, type: type)
+			}
 		}
 		
 		// TODO: Send this to children if some property is set?

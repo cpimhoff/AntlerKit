@@ -12,14 +12,13 @@ public protocol HandlesSelectionInterfaceInput {
 	
 	func handleSelected() -> Bool
 	
-//	var selectionBoundingBox : Size { get }
-	
 }
 
 extension GameObject : HandlesSelectionInterfaceInput {
 	
 	public func handleSelected() -> Bool {
 		for c in self.allComponents {
+			if !c.enabled { continue }
 			if let handler = c as? HandlesSelectionInterfaceInput {
 				if handler.handleSelected() {
 					return true
