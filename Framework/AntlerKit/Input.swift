@@ -26,7 +26,7 @@ open class Input {
 	#endif
 	
 	#if os(macOS)
-	open var activeKeys = Set<String>()
+	open var activeKeys = Set<KeyboardKey>()
 	
 	open var cursor = Cursor()
 	#endif

@@ -23,6 +23,7 @@
 		CB2A275D1E1AD5C4009FC4C4 /* PhysicsContactType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2A275B1E1AD5C4009FC4C4 /* PhysicsContactType.swift */; };
 		CB4283451E28A5A2007D97C0 /* WrappedScene+Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4283441E28A5A2007D97C0 /* WrappedScene+Input.swift */; };
 		CB4283461E28A5A4007D97C0 /* WrappedScene+Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4283441E28A5A2007D97C0 /* WrappedScene+Input.swift */; };
+		CB4283481E28B25F007D97C0 /* KeyboardKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4283471E28B25F007D97C0 /* KeyboardKey.swift */; };
 		CB495CAB1E196E4300284473 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CAA1E196E4300284473 /* Scene.swift */; };
 		CB495CAC1E196E4300284473 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CAA1E196E4300284473 /* Scene.swift */; };
 		CB495CAF1E196E8E00284473 /* AntlerKitView-iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CAE1E196E8E00284473 /* AntlerKitView-iOS.swift */; };
@@ -71,6 +72,7 @@
 		CB2A27561E1ACDC5009FC4C4 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Camera.swift; path = AntlerKit/Camera.swift; sourceTree = "<group>"; };
 		CB2A275B1E1AD5C4009FC4C4 /* PhysicsContactType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhysicsContactType.swift; path = AntlerKit/PhysicsContactType.swift; sourceTree = "<group>"; };
 		CB4283441E28A5A2007D97C0 /* WrappedScene+Input.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "WrappedScene+Input.swift"; path = "AntlerKit/WrappedScene+Input.swift"; sourceTree = "<group>"; };
+		CB4283471E28B25F007D97C0 /* KeyboardKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyboardKey.swift; path = AntlerKit/KeyboardKey.swift; sourceTree = "<group>"; };
 		CB495CAA1E196E4300284473 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Scene.swift; path = AntlerKit/Scene.swift; sourceTree = "<group>"; };
 		CB495CAE1E196E8E00284473 /* AntlerKitView-iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AntlerKitView-iOS.swift"; sourceTree = "<group>"; };
 		CB495CB51E19759400284473 /* WrappedScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WrappedScene.swift; path = AntlerKit/WrappedScene.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				CB6A87061E21E9B400451F62 /* Input.swift */,
 				CB6A870F1E21F67D00451F62 /* Cursor.swift */,
 				CB6A87111E21F8BC00451F62 /* Touch.swift */,
+				CB4283471E28B25F007D97C0 /* KeyboardKey.swift */,
 				CB6A87091E21EBA400451F62 /* HandlesSelectionInterfaceInput.swift */,
 				CB6A870C1E21EBB000451F62 /* HandlesTextInterfaceInput.swift */,
 			);
@@ -441,6 +444,7 @@
 				CB495CAC1E196E4300284473 /* Scene.swift in Sources */,
 				CB6A87101E21F67D00451F62 /* Cursor.swift in Sources */,
 				CB4283461E28A5A4007D97C0 /* WrappedScene+Input.swift in Sources */,
+				CB4283481E28B25F007D97C0 /* KeyboardKey.swift in Sources */,
 				CB1121EF1E184BD30001FB85 /* GameObject.swift in Sources */,
 				CB495CBA1E197FE500284473 /* AntlerKitView.swift in Sources */,
 				CB2A27581E1ACDC5009FC4C4 /* Camera.swift in Sources */,
