@@ -21,6 +21,6 @@ public typealias PhysicsBody = SKPhysicsBody
 // Cross Platform
 #if os(iOS)
 	internal typealias View = UIView
-#elseif os(OSX)
+#elseif os(macOS)
 	internal typealias View = NSView
 #endif

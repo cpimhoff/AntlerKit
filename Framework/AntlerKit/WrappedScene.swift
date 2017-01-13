@@ -12,7 +12,7 @@ import GameplayKit
 
 #if os(iOS)
 typealias GestureRecognizer = UIGestureRecognizer
-#elseif os(OSX)
+#elseif os(macOS)
 typealias GestureRecognizer = NSGestureRecognizer
 #endif
 
@@ -133,16 +133,8 @@ extension WrappedScene : SKPhysicsContactDelegate {
 		}
 		
 	}
-#elseif os(OSX)
+#elseif os(macOS)
 	extension WrappedScene {
-		
-		fileprivate func setupGestureRecognizers() {
-			
-		}
-		
-		fileprivate func removeGestureRecognizers() {
-			
-		}
 
 		override func mouseUp(with event: NSEvent) {
 

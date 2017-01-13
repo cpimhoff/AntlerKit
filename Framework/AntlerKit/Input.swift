@@ -10,7 +10,7 @@ import Foundation
 
 #if os(iOS)
 	import UIKit
-#elseif os(OSX)
+#elseif os(macOS)
 	import AppKit
 #endif
 
@@ -25,7 +25,7 @@ open class Input {
 	// var deviceTilt...
 	#endif
 	
-	#if os(OSX)
+	#if os(macOS)
 	open var activeKeys = Set<String>()
 	
 	open var cursor = Cursor()
@@ -35,12 +35,16 @@ open class Input {
 
 extension Input {
 	
+	/// Removes all input not related to an event (such as a tap)
+	/// Called when new a input data batch comes in 
 	func removeCachedInput() {
 		#if os(iOS)
 			self.touches = self.touches.filter { touch in touch.type == .tap }
 		#endif
 	}
 	
+	/// Progresses input types into their next state
+	/// Called each frame
 	internal func updateStaleInput() {
 		#if os(iOS)
 			let updatedTouches = self.touches.flatMap
