@@ -35,9 +35,9 @@ open class Input {
 
 extension Input {
 	
-	/// Removes all input not related to an event (such as a tap)
-	/// Called when new a input data batch comes in 
-	func removeCachedInput() {
+	/// Removes all input which we gather in batches
+	/// preparing for a new batch
+	func removePreviousInputBatch() {
 		#if os(iOS)
 			self.touches = self.touches.filter { touch in touch.type == .tap }
 		#endif
@@ -61,6 +61,13 @@ extension Input {
 				}
 			
 			self.touches = updatedTouches
+		#elseif os(macOS)
+			if self.cursor.mainButton == .click {
+				self.cursor.secondaryButton = .up
+			}
+			if self.cursor.secondaryButton == .click {
+				self.cursor.secondaryButton = .up
+			}
 		#endif
 	}
 	
