@@ -27,3 +27,21 @@ internal struct _HandlesTextInterfaceInput {
 	internal static var currentResponder : HandlesTextInterfaceInput?
 	
 }
+
+extension GameObject : HandlesTextInterfaceInput {
+	
+	public func handle(textInput text: String) -> Bool {
+		for c in self.allComponents {
+			if !c.enabled { continue }
+			if let handler = c as? HandlesTextInterfaceInput {
+				if handler.handle(textInput: text) {
+					return true
+				}
+			}
+		}
+		
+		// nobody handled it
+		return false
+	}
+	
+}
