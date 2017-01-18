@@ -13,7 +13,7 @@ import GameplayKit
 open class Scene {
 	
 	// MARK: - Static
-	internal static var stack : SceneStack!
+	internal static var stack = SceneStack()
 	
 	// MARK: - Top Level References
 	

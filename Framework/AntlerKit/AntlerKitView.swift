@@ -9,20 +9,19 @@
 import Foundation
 import SpriteKit
 
-public protocol AntlerKitViewProtocol : AnyObject {
+public class AntlerKitView : SKView {
 	
-	var renderingView : SKView { get }
+	public init(firstScene: Scene, frame: Rect) {
+		super.init(frame: frame)
+		Scene.stack.swapEntire(toNewBase: firstScene, on: self)
+	}
 	
-}
-
-extension AntlerKitViewProtocol {
+	required public init?(coder: NSCoder) {
+		super.init(coder: coder)
+	}
 	
-	public func present(_ nextScene: Scene, with transition: SKTransition? = nil) {
-		if transition != nil {
-			renderingView.presentScene(nextScene.root, transition: transition!)
-		} else {
-			renderingView.presentScene(nextScene.root)
-		}
+	public func begin(with firstScene: Scene) {
+		Scene.stack.swapEntire(toNewBase: firstScene, on: self)
 	}
 	
 }
