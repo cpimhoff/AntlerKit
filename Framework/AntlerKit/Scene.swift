@@ -12,6 +12,9 @@ import GameplayKit
 
 open class Scene {
 	
+	// MARK: - Static
+	internal static var stack : SceneStack!
+	
 	// MARK: - Top Level References
 	
 	private var topLevelGameObjects = [GameObject]()
