@@ -26,12 +26,10 @@
 		CB4283481E28B25F007D97C0 /* KeyboardKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4283471E28B25F007D97C0 /* KeyboardKey.swift */; };
 		CB495CAB1E196E4300284473 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CAA1E196E4300284473 /* Scene.swift */; };
 		CB495CAC1E196E4300284473 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CAA1E196E4300284473 /* Scene.swift */; };
-		CB495CAF1E196E8E00284473 /* AntlerKitView-iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CAE1E196E8E00284473 /* AntlerKitView-iOS.swift */; };
 		CB495CB61E19759400284473 /* WrappedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CB51E19759400284473 /* WrappedScene.swift */; };
 		CB495CB71E19759400284473 /* WrappedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CB51E19759400284473 /* WrappedScene.swift */; };
 		CB495CB91E197FE500284473 /* AntlerKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CB81E197FE500284473 /* AntlerKitView.swift */; };
 		CB495CBA1E197FE500284473 /* AntlerKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CB81E197FE500284473 /* AntlerKitView.swift */; };
-		CB495CBE1E19816900284473 /* AntlerKitView-macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CBC1E19816900284473 /* AntlerKitView-macOS.swift */; };
 		CB495CD91E19916900284473 /* ImplicitConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CD81E19916900284473 /* ImplicitConversions.swift */; };
 		CB495CDA1E19916900284473 /* ImplicitConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CD81E19916900284473 /* ImplicitConversions.swift */; };
 		CB6A87071E21E9B400451F62 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A87061E21E9B400451F62 /* Input.swift */; };
@@ -76,10 +74,8 @@
 		CB4283441E28A5A2007D97C0 /* WrappedScene+Input.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "WrappedScene+Input.swift"; path = "AntlerKit/WrappedScene+Input.swift"; sourceTree = "<group>"; };
 		CB4283471E28B25F007D97C0 /* KeyboardKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyboardKey.swift; path = AntlerKit/KeyboardKey.swift; sourceTree = "<group>"; };
 		CB495CAA1E196E4300284473 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Scene.swift; path = AntlerKit/Scene.swift; sourceTree = "<group>"; };
-		CB495CAE1E196E8E00284473 /* AntlerKitView-iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AntlerKitView-iOS.swift"; sourceTree = "<group>"; };
 		CB495CB51E19759400284473 /* WrappedScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WrappedScene.swift; path = AntlerKit/WrappedScene.swift; sourceTree = "<group>"; };
 		CB495CB81E197FE500284473 /* AntlerKitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AntlerKitView.swift; path = AntlerKit/AntlerKitView.swift; sourceTree = "<group>"; };
-		CB495CBC1E19816900284473 /* AntlerKitView-macOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AntlerKitView-macOS.swift"; sourceTree = "<group>"; };
 		CB495CD81E19916900284473 /* ImplicitConversions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImplicitConversions.swift; path = AntlerKit/ImplicitConversions.swift; sourceTree = "<group>"; };
 		CB6A87061E21E9B400451F62 /* Input.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Input.swift; path = AntlerKit/Input.swift; sourceTree = "<group>"; };
 		CB6A87091E21EBA400451F62 /* HandlesSelectionInterfaceInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HandlesSelectionInterfaceInput.swift; path = AntlerKit/HandlesSelectionInterfaceInput.swift; sourceTree = "<group>"; };
@@ -159,7 +155,6 @@
 		CB1121701E1846D10001FB85 /* AntlerKit-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				CB495CAE1E196E8E00284473 /* AntlerKitView-iOS.swift */,
 				CB1121711E1846D10001FB85 /* AntlerKit-iOS.h */,
 				CB1121721E1846D10001FB85 /* Info.plist */,
 			);
@@ -169,7 +164,6 @@
 		CB11217D1E1846E30001FB85 /* AntlerKit-macOS */ = {
 			isa = PBXGroup;
 			children = (
-				CB495CBC1E19816900284473 /* AntlerKitView-macOS.swift */,
 				CB11217E1E1846E30001FB85 /* AntlerKit-macOS.h */,
 				CB11217F1E1846E30001FB85 /* Info.plist */,
 			);
@@ -420,7 +414,6 @@
 				CB1121F11E184D8D0001FB85 /* RootTransform.swift in Sources */,
 				CBC537631E1C6B1600A8C145 /* BodyCategory.swift in Sources */,
 				CB1121F71E1850890001FB85 /* Component.swift in Sources */,
-				CB495CAF1E196E8E00284473 /* AntlerKitView-iOS.swift in Sources */,
 				CB495CAB1E196E4300284473 /* Scene.swift in Sources */,
 				CB495CB91E197FE500284473 /* AntlerKitView.swift in Sources */,
 				CB4283451E28A5A2007D97C0 /* WrappedScene+Input.swift in Sources */,
@@ -442,7 +435,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB495CBE1E19816900284473 /* AntlerKitView-macOS.swift in Sources */,
 				CBC537641E1C6BF400A8C145 /* BodyCategory.swift in Sources */,
 				CB1121F21E184D8D0001FB85 /* RootTransform.swift in Sources */,
 				CB1121F81E1850890001FB85 /* Component.swift in Sources */,
