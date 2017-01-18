@@ -12,7 +12,10 @@ import SpriteKit
 open class AntlerKitView : UIView, AntlerKitViewProtocol {
 	
 	open var renderingView : SKView
-	open var currentScene: Scene?
+	
+	convenience public init() {
+		self.init(frame: .zero)
+	}
 	
 	override public init(frame: CGRect) {
 		let bounds = CGRect(origin: Point.zero, size: frame.size)
@@ -21,10 +24,6 @@ open class AntlerKitView : UIView, AntlerKitViewProtocol {
 		super.init(frame: frame)
 		
 		self.addRenderingSubview()
-	}
-	
-	convenience public init() {
-		self.init(frame: .zero)
 	}
 	
 	required public init?(coder aDecoder: NSCoder) {

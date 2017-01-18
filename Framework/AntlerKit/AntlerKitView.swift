@@ -13,8 +13,6 @@ public protocol AntlerKitViewProtocol : AnyObject {
 	
 	var renderingView : SKView { get }
 	
-	var currentScene : Scene? { get set }
-	
 }
 
 extension AntlerKitViewProtocol {
@@ -25,8 +23,6 @@ extension AntlerKitViewProtocol {
 		} else {
 			renderingView.presentScene(nextScene.root)
 		}
-		
-		self.currentScene = nextScene
 	}
 	
 }

@@ -12,7 +12,6 @@ import SpriteKit
 open class AntlerKitView : NSView, AntlerKitViewProtocol {
 	
 	open var renderingView : SKView
-	open var currentScene: Scene?
 	
 	override public init(frame: NSRect) {
 		let bounds = NSRect(origin: Point.zero, size: frame.size)
