@@ -13,6 +13,7 @@ import GameplayKit
 // Geometry
 public typealias Point = CGPoint
 public typealias Size = CGSize
+public typealias Color = SKColor
 
 // SpriteKit
 public typealias Primitive = SKNode

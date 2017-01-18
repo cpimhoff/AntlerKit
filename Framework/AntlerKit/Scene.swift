@@ -85,6 +85,23 @@ open class Scene {
 	
 }
 
+// MARK: - Exposing Key Properties
+public extension Scene {
+	
+	public var size : Size {
+		return self.root.size
+	}
+	
+	public var backgroundColor : Color {
+		get {
+			return self.root.backgroundColor
+		} set {
+			self.root.backgroundColor = newValue
+		}
+	}
+	
+}
+
 // MARK: - Handling Physics
 internal extension Scene {
 	
