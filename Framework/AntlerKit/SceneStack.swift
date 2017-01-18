@@ -13,7 +13,7 @@ public extension Scene {
 	
 	/// The currently rendered scene
 	public static var current : Scene! {
-		return Scene.stack.top
+		return Scene.stack.head
 	}
 	
 	/// Adds the scene to the top of the scene stack and transitions to it
@@ -51,7 +51,7 @@ internal class SceneStack {
 	
 	private var scenes = [Scene]()
 	
-	var top : Scene! {
+	var head : Scene! {
 		return scenes.last
 	}
 	
