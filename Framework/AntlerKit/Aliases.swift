@@ -12,12 +12,13 @@ import GameplayKit
 
 // Geometry
 public typealias Point = CGPoint
+public typealias Vector = CGVector
 public typealias Size = CGSize
-public typealias Color = SKColor
 
 // SpriteKit
 public typealias Primitive = SKNode
 public typealias PhysicsBody = SKPhysicsBody
+public typealias Color = SKColor
 
 // Cross Platform
 #if os(iOS)

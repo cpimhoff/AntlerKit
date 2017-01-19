@@ -30,8 +30,6 @@
 		CB495CB71E19759400284473 /* WrappedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CB51E19759400284473 /* WrappedScene.swift */; };
 		CB495CB91E197FE500284473 /* AntlerKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CB81E197FE500284473 /* AntlerKitView.swift */; };
 		CB495CBA1E197FE500284473 /* AntlerKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CB81E197FE500284473 /* AntlerKitView.swift */; };
-		CB495CD91E19916900284473 /* ImplicitConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CD81E19916900284473 /* ImplicitConversions.swift */; };
-		CB495CDA1E19916900284473 /* ImplicitConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CD81E19916900284473 /* ImplicitConversions.swift */; };
 		CB6A87071E21E9B400451F62 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A87061E21E9B400451F62 /* Input.swift */; };
 		CB6A87081E21E9D200451F62 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A87061E21E9B400451F62 /* Input.swift */; };
 		CB6A870A1E21EBA400451F62 /* HandlesSelectionInterfaceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A87091E21EBA400451F62 /* HandlesSelectionInterfaceInput.swift */; };
@@ -44,6 +42,10 @@
 		CBC537641E1C6BF400A8C145 /* BodyCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC537621E1C6B1600A8C145 /* BodyCategory.swift */; };
 		CBD54AC61E2F674A0042D318 /* SceneStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD54AC51E2F674A0042D318 /* SceneStack.swift */; };
 		CBD54AC71E2F674A0042D318 /* SceneStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD54AC51E2F674A0042D318 /* SceneStack.swift */; };
+		CBE54F481E3034580037CD21 /* GeometeryHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE54F471E3034580037CD21 /* GeometeryHelpers.swift */; };
+		CBE54F491E3034580037CD21 /* GeometeryHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE54F471E3034580037CD21 /* GeometeryHelpers.swift */; };
+		CBE54F4B1E3037360037CD21 /* MathHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE54F4A1E3037360037CD21 /* MathHelpers.swift */; };
+		CBE54F4C1E3037360037CD21 /* MathHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE54F4A1E3037360037CD21 /* MathHelpers.swift */; };
 		CBE96D681E1C7BF2008C0CD1 /* AntlerKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE96D671E1C7BF2008C0CD1 /* AntlerKitTests.swift */; };
 		CBE96D6A1E1C7BF2008C0CD1 /* AntlerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB11217C1E1846E20001FB85 /* AntlerKit.framework */; };
 /* End PBXBuildFile section */
@@ -76,7 +78,6 @@
 		CB495CAA1E196E4300284473 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Scene.swift; path = AntlerKit/Scene.swift; sourceTree = "<group>"; };
 		CB495CB51E19759400284473 /* WrappedScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WrappedScene.swift; path = AntlerKit/WrappedScene.swift; sourceTree = "<group>"; };
 		CB495CB81E197FE500284473 /* AntlerKitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AntlerKitView.swift; path = AntlerKit/AntlerKitView.swift; sourceTree = "<group>"; };
-		CB495CD81E19916900284473 /* ImplicitConversions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImplicitConversions.swift; path = AntlerKit/ImplicitConversions.swift; sourceTree = "<group>"; };
 		CB6A87061E21E9B400451F62 /* Input.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Input.swift; path = AntlerKit/Input.swift; sourceTree = "<group>"; };
 		CB6A87091E21EBA400451F62 /* HandlesSelectionInterfaceInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HandlesSelectionInterfaceInput.swift; path = AntlerKit/HandlesSelectionInterfaceInput.swift; sourceTree = "<group>"; };
 		CB6A870C1E21EBB000451F62 /* HandlesTextInterfaceInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HandlesTextInterfaceInput.swift; path = AntlerKit/HandlesTextInterfaceInput.swift; sourceTree = "<group>"; };
@@ -84,6 +85,8 @@
 		CB6A87111E21F8BC00451F62 /* Touch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Touch.swift; path = AntlerKit/Touch.swift; sourceTree = "<group>"; };
 		CBC537621E1C6B1600A8C145 /* BodyCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BodyCategory.swift; path = AntlerKit/BodyCategory.swift; sourceTree = "<group>"; };
 		CBD54AC51E2F674A0042D318 /* SceneStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneStack.swift; path = AntlerKit/SceneStack.swift; sourceTree = "<group>"; };
+		CBE54F471E3034580037CD21 /* GeometeryHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeometeryHelpers.swift; path = AntlerKit/GeometeryHelpers.swift; sourceTree = "<group>"; };
+		CBE54F4A1E3037360037CD21 /* MathHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MathHelpers.swift; path = AntlerKit/MathHelpers.swift; sourceTree = "<group>"; };
 		CBE96D651E1C7BF2008C0CD1 /* AntlerKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AntlerKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE96D671E1C7BF2008C0CD1 /* AntlerKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntlerKitTests.swift; sourceTree = "<group>"; };
 		CBE96D691E1C7BF2008C0CD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -234,7 +237,8 @@
 		CB495CD71E198AC200284473 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				CB495CD81E19916900284473 /* ImplicitConversions.swift */,
+				CBE54F471E3034580037CD21 /* GeometeryHelpers.swift */,
+				CBE54F4A1E3037360037CD21 /* MathHelpers.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -416,14 +420,15 @@
 				CB1121F71E1850890001FB85 /* Component.swift in Sources */,
 				CB495CAB1E196E4300284473 /* Scene.swift in Sources */,
 				CB495CB91E197FE500284473 /* AntlerKitView.swift in Sources */,
+				CBE54F4B1E3037360037CD21 /* MathHelpers.swift in Sources */,
 				CB4283451E28A5A2007D97C0 /* WrappedScene+Input.swift in Sources */,
 				CB1121EE1E184BD30001FB85 /* GameObject.swift in Sources */,
 				CB2A27571E1ACDC5009FC4C4 /* Camera.swift in Sources */,
 				CBD54AC61E2F674A0042D318 /* SceneStack.swift in Sources */,
 				CB2A275C1E1AD5C4009FC4C4 /* PhysicsContactType.swift in Sources */,
 				CB6A87121E21F8BC00451F62 /* Touch.swift in Sources */,
-				CB495CD91E19916900284473 /* ImplicitConversions.swift in Sources */,
 				CB1121F41E184E7A0001FB85 /* Aliases.swift in Sources */,
+				CBE54F481E3034580037CD21 /* GeometeryHelpers.swift in Sources */,
 				CB6A87071E21E9B400451F62 /* Input.swift in Sources */,
 				CB6A870A1E21EBA400451F62 /* HandlesSelectionInterfaceInput.swift in Sources */,
 				CB495CB61E19759400284473 /* WrappedScene.swift in Sources */,
@@ -436,6 +441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBC537641E1C6BF400A8C145 /* BodyCategory.swift in Sources */,
+				CBE54F4C1E3037360037CD21 /* MathHelpers.swift in Sources */,
 				CB1121F21E184D8D0001FB85 /* RootTransform.swift in Sources */,
 				CB1121F81E1850890001FB85 /* Component.swift in Sources */,
 				CB495CAC1E196E4300284473 /* Scene.swift in Sources */,
@@ -447,7 +453,7 @@
 				CB495CBA1E197FE500284473 /* AntlerKitView.swift in Sources */,
 				CB2A27581E1ACDC5009FC4C4 /* Camera.swift in Sources */,
 				CB2A275D1E1AD5C4009FC4C4 /* PhysicsContactType.swift in Sources */,
-				CB495CDA1E19916900284473 /* ImplicitConversions.swift in Sources */,
+				CBE54F491E3034580037CD21 /* GeometeryHelpers.swift in Sources */,
 				CB1121F51E184E7A0001FB85 /* Aliases.swift in Sources */,
 				CB6A87081E21E9D200451F62 /* Input.swift in Sources */,
 				CB6A870B1E21EBA400451F62 /* HandlesSelectionInterfaceInput.swift in Sources */,
