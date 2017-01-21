@@ -190,24 +190,65 @@ extension WrappedScene {
 extension WrappedScene {
 	
 	override func keyDown(with event: NSEvent) {
-		
+		self.bridgeKeys(event: event, toInput: Input.global, down: true)
 	}
 	
 	override func keyUp(with event: NSEvent) {
+		self.bridgeKeys(event: event, toInput: Input.global, down: false)
+	}
+	
+	private func bridgeKeys(event: NSEvent, toInput input: Input, down: Bool) {
+		let updateInputWith : (KeyboardKey) -> ()
+		if down {
+			updateInputWith = { k in input.activeKeys.insert(k) }
+		} else {
+			updateInputWith = { k in input.activeKeys.remove(k) }
+		}
 		
+		let characters = event.charactersIgnoringModifiers?.components(separatedBy: "") ?? []
+		
+		// standard keys
+		for char in characters {
+			if let key = KeyboardKey(rawValue: char.lowercased()) {
+				updateInputWith(key)
+			}
+		}
+		
+		// special keys
+		switch Int(event.keyCode) {
+			
+		case NSUpArrowFunctionKey:
+			updateInputWith(.up)
+		case NSLeftArrowFunctionKey:
+			updateInputWith(.left)
+		case NSRightArrowFunctionKey:
+			updateInputWith(.right)
+		case NSDownArrowFunctionKey:
+			updateInputWith(.down)
+			
+		case NSNewlineCharacter:
+			updateInputWith(.return)
+		case NSTabCharacter:
+			updateInputWith(.tab)
+		case NSBackspaceCharacter:
+			updateInputWith(.backspace)
+			
+		default:
+			break
+		}
 	}
 	
 	override func flagsChanged(with event: NSEvent) {
 		let input = Input.global
 		
-		bridge(event: event, .capsLock, toInput: input, .capsLock)
-		bridge(event: event, .command, toInput: input, .command)
-		bridge(event: event, .shift, toInput: input, .shift)
-		bridge(event: event, .option, toInput: input, .option)
-		bridge(event: event, .control, toInput: input, .control)
+		bridgeModifier(event: event, .capsLock, toInput: input, .capsLock)
+		bridgeModifier(event: event, .command, toInput: input, .command)
+		bridgeModifier(event: event, .shift, toInput: input, .shift)
+		bridgeModifier(event: event, .option, toInput: input, .option)
+		bridgeModifier(event: event, .control, toInput: input, .control)
 	}
 	
-	private func bridge(event: NSEvent, _ flag: NSEventModifierFlags, toInput input: Input, _ key: KeyboardKey) {
+	private func bridgeModifier(event: NSEvent, _ flag: NSEventModifierFlags, toInput input: Input, _ key: KeyboardKey) {
 		if event.modifierFlags.contains(flag) {
 			input.activeKeys.insert(key)
 		} else {
