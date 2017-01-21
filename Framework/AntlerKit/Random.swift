@@ -19,21 +19,21 @@ public class Random {
 		self.seed = seed
 	}
 	
-	public enum RandomnessLevel {
-		/// Quite random, fairly quick
-		case balanced
+	public enum RandomnessQuality {
+		/// Quite random, pretty quick
+		case `default`
 		/// Less random, but faster
-		case fast
+		case fastResults
 		/// Very random, but slower
-		case slow
+		case highQuality
 		
 		internal var randomSource : GKRandomSource {
 			switch self {
-			case .balanced:
+			case .default:
 				return GKARC4RandomSource()
-			case .fast:
+			case .fastResults:
 				return GKLinearCongruentialRandomSource()
-			case .slow:
+			case .highQuality:
 				return GKMersenneTwisterRandomSource()
 			}
 		}
@@ -59,19 +59,15 @@ public class Random {
 		}
 	}
 	
-	convenience init() {
-		self.init(seed: GKARC4RandomSource())
+	convenience init(quality: RandomnessQuality = .default) {
+		self.init(seed: quality.randomSource)
 	}
 	
-	convenience init(uniform level: RandomnessLevel) {
-		self.init(seed: level.randomSource)
-	}
-	
-	convenience init(distribution type: RandomDistributionType, level: RandomnessLevel,
-	                 lowestValue: Int = 0, highestValue: Int) {
+	convenience init(distribution type: RandomDistributionType, quality: RandomnessQuality = .default,
+	                 lowest: Int, highest: Int) {
 		
-		let seed = type.distributionSource(with: level.randomSource,
-		                                   lowestValue: lowestValue, highestValue: highestValue)
+		let seed = type.distributionSource(with: quality.randomSource,
+		                                   lowestValue: lowest, highestValue: highest)
 		self.init(seed: seed)
 	}
 	
