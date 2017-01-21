@@ -15,10 +15,6 @@ public class Random {
 	
 	var seed : GKRandom
 	
-	init() {
-		self.seed = GKARC4RandomSource()
-	}
-	
 	init(seed: GKRandom) {
 		self.seed = seed
 	}
@@ -61,6 +57,10 @@ public class Random {
 				return GKShuffledDistribution(randomSource: seed, lowestValue: lowestValue, highestValue: highestValue)
 			}
 		}
+	}
+	
+	convenience init() {
+		self.init(seed: GKARC4RandomSource())
 	}
 	
 	convenience init(uniform level: RandomnessLevel) {
