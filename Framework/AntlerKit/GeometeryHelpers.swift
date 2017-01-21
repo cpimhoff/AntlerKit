@@ -52,7 +52,7 @@ extension Point {
 extension Vector {
 	
 	/// Returns a new vector scaled evenly to both axis
-	func scaled(_ amount:CGFloat) -> CGVector {
+	func scaled(_ amount:CGFloat) -> Vector {
 		return CGVector(dx: self.dx * amount, dy: self.dy * amount)
 	}
 	
@@ -78,23 +78,23 @@ extension Vector {
 	}
 	
 	/// Returns a vector in the oppisite direction as the reciever.
-	var reversed : CGVector {
-		return CGVector(dx: -dx, dy: -dy)
+	var reversed : Vector {
+		return Vector(dx: -dx, dy: -dy)
 	}
 	
 	/// Returns a vector with inverted dx and dy as the reciever.
-	var inverted : CGVector {
-		return CGVector(dx: dy, dy: dx)
+	var inverted : Vector {
+		return Vector(dx: dy, dy: dx)
 	}
 	
 	/// Normalized version of the vector
-	var normalized : CGVector {
+	var normalized : Vector {
 		get {
 			let length = self.length
 			if length != 0 {
-				return CGVector(dx: dx/length, dy: dy/length)
+				return Vector(dx: dx/length, dy: dy/length)
 			} else {
-				return CGVector.zero
+				return Vector.zero
 			}
 		}
 	}
