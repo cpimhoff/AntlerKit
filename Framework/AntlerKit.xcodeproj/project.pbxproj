@@ -30,6 +30,8 @@
 		CB495CB71E19759400284473 /* WrappedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CB51E19759400284473 /* WrappedScene.swift */; };
 		CB495CB91E197FE500284473 /* AntlerKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CB81E197FE500284473 /* AntlerKitView.swift */; };
 		CB495CBA1E197FE500284473 /* AntlerKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CB81E197FE500284473 /* AntlerKitView.swift */; };
+		CB693E0E1E32EBAA00750C36 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB693E0D1E32EBAA00750C36 /* Random.swift */; };
+		CB693E0F1E32EBAA00750C36 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB693E0D1E32EBAA00750C36 /* Random.swift */; };
 		CB6A87071E21E9B400451F62 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A87061E21E9B400451F62 /* Input.swift */; };
 		CB6A87081E21E9D200451F62 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A87061E21E9B400451F62 /* Input.swift */; };
 		CB6A870A1E21EBA400451F62 /* HandlesSelectionInterfaceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A87091E21EBA400451F62 /* HandlesSelectionInterfaceInput.swift */; };
@@ -78,6 +80,7 @@
 		CB495CAA1E196E4300284473 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Scene.swift; path = AntlerKit/Scene.swift; sourceTree = "<group>"; };
 		CB495CB51E19759400284473 /* WrappedScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WrappedScene.swift; path = AntlerKit/WrappedScene.swift; sourceTree = "<group>"; };
 		CB495CB81E197FE500284473 /* AntlerKitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AntlerKitView.swift; path = AntlerKit/AntlerKitView.swift; sourceTree = "<group>"; };
+		CB693E0D1E32EBAA00750C36 /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Random.swift; path = AntlerKit/Random.swift; sourceTree = "<group>"; };
 		CB6A87061E21E9B400451F62 /* Input.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Input.swift; path = AntlerKit/Input.swift; sourceTree = "<group>"; };
 		CB6A87091E21EBA400451F62 /* HandlesSelectionInterfaceInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HandlesSelectionInterfaceInput.swift; path = AntlerKit/HandlesSelectionInterfaceInput.swift; sourceTree = "<group>"; };
 		CB6A870C1E21EBB000451F62 /* HandlesTextInterfaceInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HandlesTextInterfaceInput.swift; path = AntlerKit/HandlesTextInterfaceInput.swift; sourceTree = "<group>"; };
@@ -239,6 +242,7 @@
 			children = (
 				CBE54F471E3034580037CD21 /* GeometeryHelpers.swift */,
 				CBE54F4A1E3037360037CD21 /* MathHelpers.swift */,
+				CB693E0D1E32EBAA00750C36 /* Random.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -431,6 +435,7 @@
 				CBE54F481E3034580037CD21 /* GeometeryHelpers.swift in Sources */,
 				CB6A87071E21E9B400451F62 /* Input.swift in Sources */,
 				CB6A870A1E21EBA400451F62 /* HandlesSelectionInterfaceInput.swift in Sources */,
+				CB693E0E1E32EBAA00750C36 /* Random.swift in Sources */,
 				CB495CB61E19759400284473 /* WrappedScene.swift in Sources */,
 				CB6A870D1E21EBB000451F62 /* HandlesTextInterfaceInput.swift in Sources */,
 			);
@@ -452,6 +457,7 @@
 				CB1121EF1E184BD30001FB85 /* GameObject.swift in Sources */,
 				CB495CBA1E197FE500284473 /* AntlerKitView.swift in Sources */,
 				CB2A27581E1ACDC5009FC4C4 /* Camera.swift in Sources */,
+				CB693E0F1E32EBAA00750C36 /* Random.swift in Sources */,
 				CB2A275D1E1AD5C4009FC4C4 /* PhysicsContactType.swift in Sources */,
 				CBE54F491E3034580037CD21 /* GeometeryHelpers.swift in Sources */,
 				CB1121F51E184E7A0001FB85 /* Aliases.swift in Sources */,
