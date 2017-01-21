@@ -22,7 +22,6 @@ class GameScene : Scene {
 	}
 	
 	override func update(deltaTime: TimeInterval) {
-		print("frameTime: \(deltaTime)")
 	}
 	
 }

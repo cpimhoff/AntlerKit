@@ -18,7 +18,7 @@ class ViewController: NSViewController {
 		
 		if let view = self.akView {
 			let s = GameScene(size: view.bounds.size)
-			view.present(s)
+			view.begin(with: s)
 		}
     }
 }

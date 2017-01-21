@@ -23,4 +23,12 @@ class Player: GameObject {
 		self.add(dr)
 	}
 	
+	override func update(deltaTime: TimeInterval) {
+		let allKeys = Input.global.activeKeys.reduce("") { (prev, nextKey) -> String in
+			return prev + " " + nextKey.rawValue
+		}
+		
+		print(allKeys)
+	}
+	
 }
