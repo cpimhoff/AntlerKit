@@ -16,6 +16,7 @@ import Foundation
 #endif
 
 
+// MARK: - Gesture Recognization
 extension WrappedScene {
 	
 	internal func setupGestureRecognizers() {
@@ -47,6 +48,7 @@ extension WrappedScene {
 	
 }
 
+// MARK: - Selection Event
 extension WrappedScene {
 	
 	/// Called on tap or click event, find the node at the selection point
@@ -100,6 +102,7 @@ extension WrappedScene {
 
 
 #if os(iOS)
+// MARK: - Touch Input
 extension WrappedScene {
 	
 	///
@@ -150,6 +153,7 @@ extension WrappedScene {
 #endif
 
 #if os(macOS)
+// MARK: - Mouse Input
 extension WrappedScene {
 	
 	///
@@ -176,6 +180,39 @@ extension WrappedScene {
 	
 	override func rightMouseDown(with event: NSEvent) {
 		Input.global.cursor.secondaryButton = .heldDown
+	}
+	
+}
+#endif
+
+#if os(macOS)
+// MARK: - Keyboard Input and Events
+extension WrappedScene {
+	
+	override func keyDown(with event: NSEvent) {
+		
+	}
+	
+	override func keyUp(with event: NSEvent) {
+		
+	}
+	
+	override func flagsChanged(with event: NSEvent) {
+		let input = Input.global
+		
+		bridge(event: event, .capsLock, toInput: input, .capsLock)
+		bridge(event: event, .command, toInput: input, .command)
+		bridge(event: event, .shift, toInput: input, .shift)
+		bridge(event: event, .option, toInput: input, .option)
+		bridge(event: event, .control, toInput: input, .control)
+	}
+	
+	private func bridge(event: NSEvent, _ flag: NSEventModifierFlags, toInput input: Input, _ key: KeyboardKey) {
+		if event.modifierFlags.contains(flag) {
+			input.activeKeys.insert(key)
+		} else {
+			input.activeKeys.remove(key)
+		}
 	}
 	
 }
