@@ -205,36 +205,40 @@ extension WrappedScene {
 			updateInputWith = { k in input.activeKeys.remove(k) }
 		}
 		
-		let characters = event.charactersIgnoringModifiers?.components(separatedBy: "") ?? []
+		let characters = event.characters?.components(separatedBy: "") ?? []
 		
 		// standard keys
 		for char in characters {
 			if let key = KeyboardKey(rawValue: char.lowercased()) {
 				updateInputWith(key)
+				continue
 			}
-		}
-		
-		// special keys
-		switch Int(event.keyCode) {
 			
-		case NSUpArrowFunctionKey:
-			updateInputWith(.up)
-		case NSLeftArrowFunctionKey:
-			updateInputWith(.left)
-		case NSRightArrowFunctionKey:
-			updateInputWith(.right)
-		case NSDownArrowFunctionKey:
-			updateInputWith(.down)
-			
-		case NSNewlineCharacter:
-			updateInputWith(.return)
-		case NSTabCharacter:
-			updateInputWith(.tab)
-		case NSBackspaceCharacter:
-			updateInputWith(.backspace)
-			
-		default:
-			break
+			if let someCode = char.unicodeScalars.first?.value {
+				switch someCode {
+				case 63232:
+					updateInputWith(.up)
+				case 63234:
+					updateInputWith(.left)
+				case 63235:
+					updateInputWith(.right)
+				case 63233:
+					updateInputWith(.down)
+				
+				case 13:
+					updateInputWith(.return)
+				case 9:
+					updateInputWith(.tab)
+				case 127:
+					updateInputWith(.backspace)
+					
+				case 96:
+					updateInputWith(.tilde)
+				
+				default:
+					break
+				}
+			}
 		}
 	}
 	
@@ -254,6 +258,14 @@ extension WrappedScene {
 		} else {
 			input.activeKeys.remove(key)
 		}
+	}
+	
+}
+	
+public extension AntlerKitView {
+	
+	override func flagsChanged(with event: NSEvent) {
+		Scene.stack.head?.root.flagsChanged(with: event)
 	}
 	
 }

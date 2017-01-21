@@ -22,6 +22,7 @@ public class AntlerKitView : SKView {
 	
 	public func begin(with firstScene: Scene) {
 		Scene.stack.swapEntire(toNewBase: firstScene, on: self)
+		self.becomeFirstResponder()
 	}
 	
 }
