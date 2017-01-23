@@ -8,7 +8,7 @@
 import Foundation
 import SpriteKit
 
-public class Animation {
+open class Animation {
 	
 	public var frames : [SKTexture]
 	

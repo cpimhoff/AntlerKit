@@ -33,7 +33,14 @@ open class GameObject {
 		}
 	}
 	
-	public var animator : Animator?
+	public var animator : Animator? {
+		didSet {
+			if self.primitive == nil {
+				// animator requires a primitive to be present
+				self.primitive = SKNode()
+			}
+		}
+	}
 	
 	// MARK: - Component
 	

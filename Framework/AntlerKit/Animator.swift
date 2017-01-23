@@ -10,16 +10,25 @@ import SpriteKit
 
 open class Animator {
 	
-	open internal(set) weak var gameObject : GameObject?
+	internal weak var gameObject : GameObject?
 	
-	public let sheet : AnimationSheet
+	public let sheetName : String
 	
-	public init(sheetNamed sheetName: String) {
-		self.sheet = AnimationSheet(named: sheetName)
+	/// cache for animations
+	fileprivate var animations = [String: Animation]()
+	
+	public init(sheetName: String) {
+		self.sheetName = sheetName
+	}
+	
+	convenience public init(sheetName: String, cacheImmediately: [String]) {
+		self.init(sheetName: sheetName)
+		self.cache(animationsNamed: cacheImmediately)
 	}
 	
 }
 
+// MARK: - Running animations
 extension Animator {
 	
 	fileprivate var loopingAnimationKey : String {
@@ -29,16 +38,15 @@ extension Animator {
 	fileprivate var singleAnimationKey : String {
 		return "AK- Single Animation"
 	}
-	
-	/// Runs the animation on the reciever's sheet, at the specified rate.
-	/// When the animation ends, return to the previous animation.
+
+	/// Runs the animation at the specified rate.
+	/// When the animation ends, return to the previous looping animation (if there was one).
 	///
 	/// - Parameters:
-	///   - animationName: Name of the animation on the reciever's sheet to run
+	///   - animationName: Animation to run
 	///   - frameTime: Seconds between animation frames
-	open func runOnce(animationNamed animationName: String, frameTime: TimeInterval = 0.2) {
+	open func runOnce(animation: Animation, frameTime: TimeInterval) {
 		guard let primitive = self.gameObject?.primitive else { return }
-		guard let animation = self.sheet.load(animationNamed: animationName) else { return }
 		
 		// save (and then stop) current looping animation
 		let previousAnimation = primitive.action(forKey: loopingAnimationKey)
@@ -56,14 +64,25 @@ extension Animator {
 		primitive.run(sequence, withKey: self.singleAnimationKey)
 	}
 	
-	/// Loops the animation on the reciever's sheet, at the specified rate.
+	/// Runs the animation on the reciever's sheet, at the specified rate.
+	/// When the animation ends, return to the previous looping animation (if there was one).
 	///
 	/// - Parameters:
 	///   - animationName: Name of the animation on the reciever's sheet to run
 	///   - frameTime: Seconds between animation frames
-	open func transition(toAnimationNamed animationName: String, frameTime: TimeInterval = 0.2) {
+	open func runOnce(animationNamed animationName: String, frameTime: TimeInterval = 0.2) {
+		guard let animation = self.load(animationNamed: animationName) else { return }
+		
+		self.runOnce(animation: animation, frameTime: frameTime)
+	}
+	
+	/// Loops the animation at the specified rate.
+	///
+	/// - Parameters:
+	///   - animation: Animation to run
+	///   - frameTime: Seconds between animation frames
+	open func transition(to animation: Animation, frameTime: TimeInterval) {
 		guard let primitive = self.gameObject?.primitive else { return }
-		guard let animation = self.sheet.load(animationNamed: animationName) else { return }
 		
 		// cancel a midflight one-off immediately (its `previousAnimation` would be out of date)
 		primitive.removeAction(forKey: singleAnimationKey)
@@ -75,18 +94,43 @@ extension Animator {
 		primitive.run(loopingAnimation, withKey: loopingAnimationKey)
 	}
 	
+	/// Loops the animation on the reciever's sheet, at the specified rate.
+	///
+	/// - Parameters:
+	///   - animationName: Name of the animation on the reciever's sheet to run
+	///   - frameTime: Seconds between animation frames
+	open func transition(toAnimationNamed animationName: String, frameTime: TimeInterval = 0.2) {
+		guard let animation = self.load(animationNamed: animationName) else { return }
+		
+		self.transition(to: animation, frameTime: frameTime)
+	}
+	
 }
 
+// MARK: - Loading animations
 extension Animator {
 	
 	/// Loads all the specified animations on the reciever's sheet to memory,
 	/// accelerating access to them later.
 	///
 	/// - Parameter animationNames: names of animations to load
-	open func cache(animationsNamed animationNames: String...) {
+	open func cache(animationsNamed animationNames: [String]) {
 		for animation in animationNames {
-			self.sheet.load(animationNamed: animation)
+			self.load(animationNamed: animation)
 		}
+	}
+	
+	@discardableResult
+	fileprivate func load(animationNamed animationName: String) -> Animation? {
+		if let fromCache = self.animations[animationName] {
+			return fromCache
+		}
+		
+		guard let animation = Animation(sheetName: self.sheetName, animationName: animationName)
+			else { return nil }
+		
+		self.animations[animationName] = animation
+		return animation
 	}
 	
 }
