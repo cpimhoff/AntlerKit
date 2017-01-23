@@ -9,7 +9,7 @@
 import Foundation
 import SpriteKit
 
-public class Label : GameObject {
+open class Label : GameObject {
 	
 	fileprivate var textNode : SKLabelNode! {
 		get {
