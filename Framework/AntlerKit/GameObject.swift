@@ -33,6 +33,8 @@ open class GameObject {
 		}
 	}
 	
+	public var animator : Animator?
+	
 	// MARK: - Component
 	
 	fileprivate var components = [String: Component]()
