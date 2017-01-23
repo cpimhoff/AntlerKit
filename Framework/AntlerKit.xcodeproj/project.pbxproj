@@ -17,6 +17,8 @@
 		CB1121F51E184E7A0001FB85 /* Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1121F31E184E7A0001FB85 /* Aliases.swift */; };
 		CB1121F71E1850890001FB85 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1121F61E1850890001FB85 /* Component.swift */; };
 		CB1121F81E1850890001FB85 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1121F61E1850890001FB85 /* Component.swift */; };
+		CB1310D91E35D691003E6BD0 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1310D81E35D691003E6BD0 /* Label.swift */; };
+		CB1310DA1E35D691003E6BD0 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1310D81E35D691003E6BD0 /* Label.swift */; };
 		CB2A27571E1ACDC5009FC4C4 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2A27561E1ACDC5009FC4C4 /* Camera.swift */; };
 		CB2A27581E1ACDC5009FC4C4 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2A27561E1ACDC5009FC4C4 /* Camera.swift */; };
 		CB2A275C1E1AD5C4009FC4C4 /* PhysicsContactType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2A275B1E1AD5C4009FC4C4 /* PhysicsContactType.swift */; };
@@ -73,6 +75,7 @@
 		CB1121F01E184D8D0001FB85 /* RootTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootTransform.swift; path = AntlerKit/RootTransform.swift; sourceTree = "<group>"; };
 		CB1121F31E184E7A0001FB85 /* Aliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Aliases.swift; path = AntlerKit/Aliases.swift; sourceTree = "<group>"; };
 		CB1121F61E1850890001FB85 /* Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Component.swift; path = AntlerKit/Component.swift; sourceTree = "<group>"; };
+		CB1310D81E35D691003E6BD0 /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Label.swift; path = AntlerKit/Label.swift; sourceTree = "<group>"; };
 		CB2A27561E1ACDC5009FC4C4 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Camera.swift; path = AntlerKit/Camera.swift; sourceTree = "<group>"; };
 		CB2A275B1E1AD5C4009FC4C4 /* PhysicsContactType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhysicsContactType.swift; path = AntlerKit/PhysicsContactType.swift; sourceTree = "<group>"; };
 		CB4283441E28A5A2007D97C0 /* WrappedScene+Input.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "WrappedScene+Input.swift"; path = "AntlerKit/WrappedScene+Input.swift"; sourceTree = "<group>"; };
@@ -205,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				CB2A27561E1ACDC5009FC4C4 /* Camera.swift */,
+				CB1310D81E35D691003E6BD0 /* Label.swift */,
 			);
 			name = "Game Objects";
 			sourceTree = "<group>";
@@ -425,6 +429,7 @@
 				CB495CAB1E196E4300284473 /* Scene.swift in Sources */,
 				CB495CB91E197FE500284473 /* AntlerKitView.swift in Sources */,
 				CBE54F4B1E3037360037CD21 /* MathHelpers.swift in Sources */,
+				CB1310D91E35D691003E6BD0 /* Label.swift in Sources */,
 				CB4283451E28A5A2007D97C0 /* WrappedScene+Input.swift in Sources */,
 				CB1121EE1E184BD30001FB85 /* GameObject.swift in Sources */,
 				CB2A27571E1ACDC5009FC4C4 /* Camera.swift in Sources */,
@@ -455,6 +460,7 @@
 				CB4283481E28B25F007D97C0 /* KeyboardKey.swift in Sources */,
 				CBD54AC71E2F674A0042D318 /* SceneStack.swift in Sources */,
 				CB1121EF1E184BD30001FB85 /* GameObject.swift in Sources */,
+				CB1310DA1E35D691003E6BD0 /* Label.swift in Sources */,
 				CB495CBA1E197FE500284473 /* AntlerKitView.swift in Sources */,
 				CB2A27581E1ACDC5009FC4C4 /* Camera.swift in Sources */,
 				CB693E0F1E32EBAA00750C36 /* Random.swift in Sources */,
