@@ -42,6 +42,20 @@ open class GameObject {
 		}
 	}
 	
+	// MARK: - Agent
+	
+	// use this to check if we have an agent (without touching, and thus initializing it)
+	private var isAgentInitialized = false
+	public lazy var agent : GKAgent2D = {
+		let a = GKAgent2D()
+		
+		a.position = vector_float2(self.scenePosition)
+		a.rotation = self.rotation
+		
+		self.isAgentInitialized = true
+		return GKAgent2D()
+	}()
+	
 	// MARK: - Component
 	
 	fileprivate var components = [String: Component]()
@@ -91,6 +105,10 @@ open class GameObject {
 	// MARK: - Update
 	
 	internal func _update(deltaTime: TimeInterval) {
+		if self.isAgentInitialized {
+			self.updateAgent(deltaTime: deltaTime)
+		}
+		
 		for child in self.children {
 			child.update(deltaTime: deltaTime)
 		}

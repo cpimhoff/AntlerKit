@@ -36,6 +36,12 @@
 		CB495CB71E19759400284473 /* WrappedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CB51E19759400284473 /* WrappedScene.swift */; };
 		CB495CB91E197FE500284473 /* AntlerKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CB81E197FE500284473 /* AntlerKitView.swift */; };
 		CB495CBA1E197FE500284473 /* AntlerKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CB81E197FE500284473 /* AntlerKitView.swift */; };
+		CB603A2A1E3C0B5B00CF1D15 /* AgentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB603A291E3C0B5B00CF1D15 /* AgentProtocol.swift */; };
+		CB603A2B1E3C0B5B00CF1D15 /* AgentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB603A291E3C0B5B00CF1D15 /* AgentProtocol.swift */; };
+		CB603A2E1E3C0F7900CF1D15 /* GameObjectAgentDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB603A2D1E3C0F7900CF1D15 /* GameObjectAgentDelegate.swift */; };
+		CB603A2F1E3C0F7900CF1D15 /* GameObjectAgentDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB603A2D1E3C0F7900CF1D15 /* GameObjectAgentDelegate.swift */; };
+		CB603A311E3C103600CF1D15 /* TypeConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB603A301E3C103600CF1D15 /* TypeConversions.swift */; };
+		CB603A321E3C103600CF1D15 /* TypeConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB603A301E3C103600CF1D15 /* TypeConversions.swift */; };
 		CB693E0E1E32EBAA00750C36 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB693E0D1E32EBAA00750C36 /* Random.swift */; };
 		CB693E0F1E32EBAA00750C36 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB693E0D1E32EBAA00750C36 /* Random.swift */; };
 		CB6A87071E21E9B400451F62 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A87061E21E9B400451F62 /* Input.swift */; };
@@ -89,6 +95,9 @@
 		CB495CAA1E196E4300284473 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		CB495CB51E19759400284473 /* WrappedScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrappedScene.swift; sourceTree = "<group>"; };
 		CB495CB81E197FE500284473 /* AntlerKitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntlerKitView.swift; sourceTree = "<group>"; };
+		CB603A291E3C0B5B00CF1D15 /* AgentProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AgentProtocol.swift; path = Agent/AgentProtocol.swift; sourceTree = "<group>"; };
+		CB603A2D1E3C0F7900CF1D15 /* GameObjectAgentDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameObjectAgentDelegate.swift; path = Agent/GameObjectAgentDelegate.swift; sourceTree = "<group>"; };
+		CB603A301E3C103600CF1D15 /* TypeConversions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeConversions.swift; sourceTree = "<group>"; };
 		CB693E0D1E32EBAA00750C36 /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
 		CB6A87061E21E9B400451F62 /* Input.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
 		CB6A87091E21EBA400451F62 /* HandlesSelectionInterfaceInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandlesSelectionInterfaceInput.swift; sourceTree = "<group>"; };
@@ -157,6 +166,7 @@
 				CB2A27591E1ACDC8009FC4C4 /* Built In */,
 				CB1121F91E18508D0001FB85 /* Component */,
 				CB1121861E1847AB0001FB85 /* Game Object */,
+				CB603A2C1E3C0B6200CF1D15 /* Agent */,
 				CB6A87051E21E9A500451F62 /* Input */,
 				CB2A275E1E1AD5C7009FC4C4 /* Physics Structures */,
 				CB1310DE1E35D98C003E6BD0 /* Rendering */,
@@ -262,9 +272,19 @@
 			children = (
 				CBE54F471E3034580037CD21 /* GeometeryHelpers.swift */,
 				CBE54F4A1E3037360037CD21 /* MathHelpers.swift */,
+				CB603A301E3C103600CF1D15 /* TypeConversions.swift */,
 				CB693E0D1E32EBAA00750C36 /* Random.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		CB603A2C1E3C0B6200CF1D15 /* Agent */ = {
+			isa = PBXGroup;
+			children = (
+				CB603A291E3C0B5B00CF1D15 /* AgentProtocol.swift */,
+				CB603A2D1E3C0F7900CF1D15 /* GameObjectAgentDelegate.swift */,
+			);
+			name = Agent;
 			sourceTree = "<group>";
 		};
 		CB6A87051E21E9A500451F62 /* Input */ = {
@@ -450,12 +470,15 @@
 				CB1121EE1E184BD30001FB85 /* GameObject.swift in Sources */,
 				CB2A27571E1ACDC5009FC4C4 /* Camera.swift in Sources */,
 				CBD54AC61E2F674A0042D318 /* SceneStack.swift in Sources */,
+				CB603A2E1E3C0F7900CF1D15 /* GameObjectAgentDelegate.swift in Sources */,
 				CB2A275C1E1AD5C4009FC4C4 /* PhysicsContactPhase.swift in Sources */,
 				CB1310DC1E35D988003E6BD0 /* Animator.swift in Sources */,
 				CB6A87121E21F8BC00451F62 /* Touch.swift in Sources */,
 				CB1121F41E184E7A0001FB85 /* Aliases.swift in Sources */,
+				CB603A2A1E3C0B5B00CF1D15 /* AgentProtocol.swift in Sources */,
 				CBE54F481E3034580037CD21 /* GeometeryHelpers.swift in Sources */,
 				CB1310E01E35DA5C003E6BD0 /* Animation.swift in Sources */,
+				CB603A311E3C103600CF1D15 /* TypeConversions.swift in Sources */,
 				CB6A87071E21E9B400451F62 /* Input.swift in Sources */,
 				CB6A870A1E21EBA400451F62 /* HandlesSelectionInterfaceInput.swift in Sources */,
 				CB693E0E1E32EBAA00750C36 /* Random.swift in Sources */,
@@ -471,11 +494,13 @@
 				CBC537641E1C6BF400A8C145 /* BodyCategory.swift in Sources */,
 				CBE54F4C1E3037360037CD21 /* MathHelpers.swift in Sources */,
 				CB1121F21E184D8D0001FB85 /* RootTransform.swift in Sources */,
+				CB603A321E3C103600CF1D15 /* TypeConversions.swift in Sources */,
 				CB1121F81E1850890001FB85 /* Component.swift in Sources */,
 				CB495CAC1E196E4300284473 /* Scene.swift in Sources */,
 				CB6A87101E21F67D00451F62 /* Cursor.swift in Sources */,
 				CB4283461E28A5A4007D97C0 /* WrappedScene+Input.swift in Sources */,
 				CB4283481E28B25F007D97C0 /* KeyboardKey.swift in Sources */,
+				CB603A2F1E3C0F7900CF1D15 /* GameObjectAgentDelegate.swift in Sources */,
 				CBD54AC71E2F674A0042D318 /* SceneStack.swift in Sources */,
 				CB1121EF1E184BD30001FB85 /* GameObject.swift in Sources */,
 				CB1310E11E35DA5C003E6BD0 /* Animation.swift in Sources */,
@@ -483,6 +508,7 @@
 				CB495CBA1E197FE500284473 /* AntlerKitView.swift in Sources */,
 				CB2A27581E1ACDC5009FC4C4 /* Camera.swift in Sources */,
 				CB693E0F1E32EBAA00750C36 /* Random.swift in Sources */,
+				CB603A2B1E3C0B5B00CF1D15 /* AgentProtocol.swift in Sources */,
 				CB2A275D1E1AD5C4009FC4C4 /* PhysicsContactPhase.swift in Sources */,
 				CBE54F491E3034580037CD21 /* GeometeryHelpers.swift in Sources */,
 				CB1121F51E184E7A0001FB85 /* Aliases.swift in Sources */,
