@@ -8,6 +8,12 @@
 import Foundation
 import SpriteKit
 
+#if os(iOS)
+	private typealias Image = UIImage
+#elseif os(macOS)
+	private typealias Image = NSImage
+#endif
+
 open class Animation {
 	
 	public var frames : [SKTexture]
@@ -29,11 +35,7 @@ open class Animation {
 		while true {
 			let frameName = baseName + String(frameNumber)
 			
-			#if os(iOS)
-				guard let image = UIImage(named: frameName) else { break }
-			#elseif os(macOS)
-				guard let image = NSImage(named: frameName) else { break }
-			#endif
+			guard let image = Image(named: frameName) else { break }
 			let frame = SKTexture(image: image)
 			
 			frameList.append(frame)
