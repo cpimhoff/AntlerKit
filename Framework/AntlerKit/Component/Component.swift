@@ -19,7 +19,7 @@ public protocol Component : AnyObject {
 	func configure()
 	func update(deltaTime: TimeInterval)
 	
-	func onContact(with other: GameObject?, type: PhysicsContactType)
+	func onContact(with other: GameObject?, phase: PhysicsContactPhase)
 	
 }
 
@@ -46,7 +46,7 @@ open class SimpleComponent : Component {
 		// override point...
 	}
 	
-	public func onContact(with other: GameObject?, type: PhysicsContactType) {
+	public func onContact(with other: GameObject?, phase: PhysicsContactPhase) {
 		// override point...
 	}
 	
@@ -64,7 +64,7 @@ open class InspectableComponent : GKComponent, Component {
 		// override point...
 	}
 	
-	public func onContact(with other: GameObject?, type: PhysicsContactType) {
+	public func onContact(with other: GameObject?, phase: PhysicsContactPhase) {
 		// override point...
 	}
 	

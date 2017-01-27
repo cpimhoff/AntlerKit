@@ -104,12 +104,26 @@ open class GameObject {
 		// call override point of update
 		self.update(deltaTime: deltaTime)
 	}
+	
+	// MARK: - Configuration
+	
+	/// If true, any contact event on this gameObject will be forwarded
+	/// to the children of this game object.
+	var propogateContactsToChildren = false
 
 	// MARK: - Override Points
 	
+	/// Called every frame.
+	///
+	/// - Parameter deltaTime: The amount of time, in seconds, since the last call to `update`
 	open func update(deltaTime: TimeInterval) {}
 	
-	open func onContact(with other: GameObject?, type: PhysicsContactType) {}
+	/// Called when another game object has contacted with this one
+	///
+	/// - Parameters:
+	///   - other: The game object involved in the collision, or nil if it was triggered by a primitive
+	///   - phase: The phase of the contact
+	open func onContact(with other: GameObject?, phase: PhysicsContactPhase) {}
 	
 }
 
@@ -124,17 +138,23 @@ public extension GameObject {
 			self.root.physicsBody = body
 		}
 	}
-	
-	internal func _onContact(with other: GameObject?, type: PhysicsContactType) {
-		self.onContact(with: other, type: type)
+
+	/// Internal call for `onContact`
+	internal func _onContact(with other: GameObject?, phase: PhysicsContactPhase) {
+		self.onContact(with: other, phase: phase)
 		
 		for component in self.components.values {
 			if component.enabled {
-				component.onContact(with: other, type: type)
+				component.onContact(with: other, phase: phase)
 			}
 		}
 		
-		// TODO: Send this to children if some property is set?
+		// send to child if configured to do so
+		if self.propogateContactsToChildren {
+			for child in self.children {
+				child._onContact(with: other, phase: phase)
+			}
+		}
 	}
 	
 }
@@ -142,6 +162,7 @@ public extension GameObject {
 // MARK: - Location
 public extension GameObject {
 	
+	/// The current position, relative to parent, of the reciever
 	public var position : Point {
 		get {
 			return root.position
@@ -151,6 +172,17 @@ public extension GameObject {
 		}
 	}
 	
+	/// The current position in scene space of the reciever.
+	public var scenePosition : Point! {
+		get {
+			guard let wrappedScene = root.scene else {
+				fatalError("GameObject has not been added to a scene and thus has no scene-relative position")
+			}
+			return wrappedScene.convert(self.position, from: self.root)
+		}
+	}
+	
+	/// The current rotation, relative to parent, of the reciever
 	public var rotation : Float {
 		get {
 			return Float(self.root.zRotation)
@@ -160,6 +192,7 @@ public extension GameObject {
 		}
 	}
 	
+	/// The current layer, relative to parent, of the reciever
 	public var layer : Int {
 		get {
 			return Int(root.zPosition)

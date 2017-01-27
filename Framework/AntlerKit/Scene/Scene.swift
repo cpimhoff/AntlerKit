@@ -105,12 +105,12 @@ public extension Scene {
 // MARK: - Handling Physics
 internal extension Scene {
 	
-	internal func handleContact(_ contact: SKPhysicsContact, type: PhysicsContactType) {
+	internal func handleContact(_ contact: SKPhysicsContact, phase: PhysicsContactPhase) {
 		let a = (contact.bodyA.node as? RootTransform)?.gameObject
 		let b = (contact.bodyB.node as? RootTransform)?.gameObject
 		
-		a?._onContact(with: b, type: type)
-		b?._onContact(with: a, type: type)
+		a?._onContact(with: b, phase: phase)
+		b?._onContact(with: a, phase: phase)
 	}
 	
 }

@@ -40,11 +40,11 @@ internal class WrappedScene : SKScene {
 extension WrappedScene : SKPhysicsContactDelegate {
 	
 	func didBegin(_ contact: SKPhysicsContact) {
-		delegateScene.handleContact(contact, type: .begin)
+		delegateScene.handleContact(contact, phase: .begin)
 	}
 	
 	func didEnd(_ contact: SKPhysicsContact) {
-		delegateScene.handleContact(contact, type: .end)
+		delegateScene.handleContact(contact, phase: .end)
 	}
 	
 }

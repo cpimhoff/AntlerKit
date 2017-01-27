@@ -1,5 +1,5 @@
 //
-//  PhysicsContactType.swift
+//  PhysicsContactPhase.swift
 //  AntlerKit
 //
 //  Created by Charlie Imhoff on 1/2/17.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum PhysicsContactType {
+public enum PhysicsContactPhase {
 	
 	case begin
 	case end

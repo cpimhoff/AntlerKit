@@ -25,8 +25,8 @@
 		CB1310E11E35DA5C003E6BD0 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1310DF1E35DA5C003E6BD0 /* Animation.swift */; };
 		CB2A27571E1ACDC5009FC4C4 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2A27561E1ACDC5009FC4C4 /* Camera.swift */; };
 		CB2A27581E1ACDC5009FC4C4 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2A27561E1ACDC5009FC4C4 /* Camera.swift */; };
-		CB2A275C1E1AD5C4009FC4C4 /* PhysicsContactType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2A275B1E1AD5C4009FC4C4 /* PhysicsContactType.swift */; };
-		CB2A275D1E1AD5C4009FC4C4 /* PhysicsContactType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2A275B1E1AD5C4009FC4C4 /* PhysicsContactType.swift */; };
+		CB2A275C1E1AD5C4009FC4C4 /* PhysicsContactPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2A275B1E1AD5C4009FC4C4 /* PhysicsContactPhase.swift */; };
+		CB2A275D1E1AD5C4009FC4C4 /* PhysicsContactPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2A275B1E1AD5C4009FC4C4 /* PhysicsContactPhase.swift */; };
 		CB4283451E28A5A2007D97C0 /* WrappedScene+Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4283441E28A5A2007D97C0 /* WrappedScene+Input.swift */; };
 		CB4283461E28A5A4007D97C0 /* WrappedScene+Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4283441E28A5A2007D97C0 /* WrappedScene+Input.swift */; };
 		CB4283481E28B25F007D97C0 /* KeyboardKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4283471E28B25F007D97C0 /* KeyboardKey.swift */; };
@@ -83,7 +83,7 @@
 		CB1310DB1E35D988003E6BD0 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		CB1310DF1E35DA5C003E6BD0 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		CB2A27561E1ACDC5009FC4C4 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
-		CB2A275B1E1AD5C4009FC4C4 /* PhysicsContactType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicsContactType.swift; sourceTree = "<group>"; };
+		CB2A275B1E1AD5C4009FC4C4 /* PhysicsContactPhase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicsContactPhase.swift; sourceTree = "<group>"; };
 		CB4283441E28A5A2007D97C0 /* WrappedScene+Input.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WrappedScene+Input.swift"; sourceTree = "<group>"; };
 		CB4283471E28B25F007D97C0 /* KeyboardKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardKey.swift; sourceTree = "<group>"; };
 		CB495CAA1E196E4300284473 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
@@ -233,7 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				CBC537621E1C6B1600A8C145 /* BodyCategory.swift */,
-				CB2A275B1E1AD5C4009FC4C4 /* PhysicsContactType.swift */,
+				CB2A275B1E1AD5C4009FC4C4 /* PhysicsContactPhase.swift */,
 			);
 			path = "Physics Structures";
 			sourceTree = "<group>";
@@ -450,7 +450,7 @@
 				CB1121EE1E184BD30001FB85 /* GameObject.swift in Sources */,
 				CB2A27571E1ACDC5009FC4C4 /* Camera.swift in Sources */,
 				CBD54AC61E2F674A0042D318 /* SceneStack.swift in Sources */,
-				CB2A275C1E1AD5C4009FC4C4 /* PhysicsContactType.swift in Sources */,
+				CB2A275C1E1AD5C4009FC4C4 /* PhysicsContactPhase.swift in Sources */,
 				CB1310DC1E35D988003E6BD0 /* Animator.swift in Sources */,
 				CB6A87121E21F8BC00451F62 /* Touch.swift in Sources */,
 				CB1121F41E184E7A0001FB85 /* Aliases.swift in Sources */,
@@ -483,7 +483,7 @@
 				CB495CBA1E197FE500284473 /* AntlerKitView.swift in Sources */,
 				CB2A27581E1ACDC5009FC4C4 /* Camera.swift in Sources */,
 				CB693E0F1E32EBAA00750C36 /* Random.swift in Sources */,
-				CB2A275D1E1AD5C4009FC4C4 /* PhysicsContactType.swift in Sources */,
+				CB2A275D1E1AD5C4009FC4C4 /* PhysicsContactPhase.swift in Sources */,
 				CBE54F491E3034580037CD21 /* GeometeryHelpers.swift in Sources */,
 				CB1121F51E184E7A0001FB85 /* Aliases.swift in Sources */,
 				CB6A87081E21E9D200451F62 /* Input.swift in Sources */,
