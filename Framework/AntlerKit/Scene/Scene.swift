@@ -66,6 +66,19 @@ open class Scene {
 		self.root.addChild(child.root)			// append the base primitive to render
 	}
 	
+	open func remove(_ child: GameObject) {
+		child.removeFromParent()	// will call `removeFromTopLevelList` if appropriate
+	}
+	
+	internal func removeFromTopLevelList(_ child: GameObject) {
+		for i in 0..<self.topLevelGameObjects.count {
+			if self.topLevelGameObjects[i] === child {
+				self.topLevelGameObjects.remove(at: i)
+				break
+			}
+		}
+	}
+	
 	// MARK: - Updating Scene Content
 	
 	internal func _update(deltaTime: TimeInterval) {

@@ -90,11 +90,10 @@ open class GameObject {
 	// MARK: - Destruction
 	
 	open func removeFromParent() {
-		self.root.removeFromParent()
-	}
-	open func destroy() {
-		// just a different name
-		self.removeFromParent()
+		let scene = (self.root.scene as? WrappedScene)?.delegateScene
+		scene?.removeFromTopLevelList(self)	// unhook self from scene (if needed)
+		
+		self.root.removeFromParent()	// unhook primitive from everything
 	}
 	
 	// MARK: - Update
