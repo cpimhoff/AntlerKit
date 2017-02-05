@@ -27,15 +27,15 @@ public struct PhysicsBodyCategory : OptionSet, Hashable {
 	}
 	
 	 internal static var collisions	= [PhysicsBodyCategory : Set<PhysicsBodyCategory>]()
-	 internal static var contacts		= [PhysicsBodyCategory : Set<PhysicsBodyCategory>]()
+	 internal static var contacts	= [PhysicsBodyCategory : Set<PhysicsBodyCategory>]()
 	
 }
 
 // MARK: - Built In Categories
 public extension PhysicsBodyCategory {
 	
-	public static let none			= PhysicsBodyCategory(rawValue: UInt32.allZeros)
-	public static let all 			= PhysicsBodyCategory(rawValue: ~UInt32.allZeros)
+	public static let none	= PhysicsBodyCategory(rawValue: UInt32.allZeros)
+	public static let all 	= PhysicsBodyCategory(rawValue: ~UInt32.allZeros)
 	
 }
 
