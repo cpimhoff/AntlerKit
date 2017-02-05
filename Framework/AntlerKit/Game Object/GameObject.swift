@@ -123,7 +123,11 @@ open class GameObject {
 	/// to the children of this game object.
 	var propogateContactsToChildren = false
 	
-	var tags : GameObjectTag = .none
+	/// If true, this gameObject should never move positions (directly moved or indirectly moved)
+	/// The object is still allowed to animate frames, but its position and bounding box can not change.
+	///
+	/// Used to generate object graphs
+	var isStatic = false
 
 	// MARK: - Override Points
 	
