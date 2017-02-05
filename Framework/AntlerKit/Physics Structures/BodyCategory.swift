@@ -37,10 +37,6 @@ public extension PhysicsBodyCategory {
 	public static let none			= PhysicsBodyCategory(rawValue: UInt32.allZeros)
 	public static let all 			= PhysicsBodyCategory(rawValue: ~UInt32.allZeros)
 	
-	public static let `static` 		= PhysicsBodyCategory(rawValue: 1 << 31)
-	public static let enviroment	= PhysicsBodyCategory(rawValue: 1 << 30)
-	public static let effect 		= PhysicsBodyCategory(rawValue: 1 << 29)
-	
 }
 
 // MARK: - Setting Collisions and Contacts

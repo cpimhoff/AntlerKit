@@ -28,6 +28,11 @@ struct GameObjectTag : OptionSet, Hashable {
 	}
 	
 	/// `none` no special tags
+	static var enviroment : GameObjectTag {
+		return GameObjectTag(rawValue: 0)
+	}
+	
+	/// `none` no special tags
 	static var none : GameObjectTag {
 		return GameObjectTag(rawValue: 0)
 	}
