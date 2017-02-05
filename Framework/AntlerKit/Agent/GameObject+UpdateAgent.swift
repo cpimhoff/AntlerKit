@@ -1,5 +1,5 @@
 //
-//  GameObjectAgentDelegate.swift
+//  GameObject+UpdateAgent.swift
 //  AntlerKit
 //
 //  Created by Charlie Imhoff on 1/27/17.
