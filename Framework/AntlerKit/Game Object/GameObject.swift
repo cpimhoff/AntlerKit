@@ -122,6 +122,8 @@ open class GameObject {
 	/// If true, any contact event on this gameObject will be forwarded
 	/// to the children of this game object.
 	var propogateContactsToChildren = false
+	
+	var tags : GameObjectTag = .none
 
 	// MARK: - Override Points
 	
