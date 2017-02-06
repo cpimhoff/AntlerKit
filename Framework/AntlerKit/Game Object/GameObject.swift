@@ -127,7 +127,11 @@ open class GameObject {
 	/// The object is still allowed to animate frames, but its position and bounding box can not change.
 	///
 	/// Used to generate object graphs
-	var isStatic = false
+	var isStatic = false {
+		didSet {
+			self.body?.isDynamic = self.isStatic
+		}
+	}
 
 	// MARK: - Override Points
 	
@@ -154,6 +158,7 @@ public extension GameObject {
 		}
 		set {
 			self.root.physicsBody = body
+			self.root.physicsBody?.isDynamic = self.isStatic
 		}
 	}
 
