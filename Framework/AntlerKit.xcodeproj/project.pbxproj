@@ -245,8 +245,7 @@
 				CBC537621E1C6B1600A8C145 /* BodyCategory.swift */,
 				CB2A275B1E1AD5C4009FC4C4 /* PhysicsContactPhase.swift */,
 			);
-			name = Physics;
-			path = "Physics Structures";
+			path = Physics;
 			sourceTree = "<group>";
 		};
 		CB495CAD1E196E4600284473 /* Scene */ = {
