@@ -36,8 +36,6 @@
 		CB495CB71E19759400284473 /* WrappedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CB51E19759400284473 /* WrappedScene.swift */; };
 		CB495CB91E197FE500284473 /* AntlerKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CB81E197FE500284473 /* AntlerKitView.swift */; };
 		CB495CBA1E197FE500284473 /* AntlerKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CB81E197FE500284473 /* AntlerKitView.swift */; };
-		CB603A2A1E3C0B5B00CF1D15 /* AgentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB603A291E3C0B5B00CF1D15 /* AgentProtocol.swift */; };
-		CB603A2B1E3C0B5B00CF1D15 /* AgentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB603A291E3C0B5B00CF1D15 /* AgentProtocol.swift */; };
 		CB603A2E1E3C0F7900CF1D15 /* GameObject+UpdateAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB603A2D1E3C0F7900CF1D15 /* GameObject+UpdateAgent.swift */; };
 		CB603A2F1E3C0F7900CF1D15 /* GameObject+UpdateAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB603A2D1E3C0F7900CF1D15 /* GameObject+UpdateAgent.swift */; };
 		CB603A311E3C103600CF1D15 /* TypeConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB603A301E3C103600CF1D15 /* TypeConversions.swift */; };
@@ -95,7 +93,6 @@
 		CB495CAA1E196E4300284473 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		CB495CB51E19759400284473 /* WrappedScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrappedScene.swift; sourceTree = "<group>"; };
 		CB495CB81E197FE500284473 /* AntlerKitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntlerKitView.swift; sourceTree = "<group>"; };
-		CB603A291E3C0B5B00CF1D15 /* AgentProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AgentProtocol.swift; path = Agent/AgentProtocol.swift; sourceTree = "<group>"; };
 		CB603A2D1E3C0F7900CF1D15 /* GameObject+UpdateAgent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "GameObject+UpdateAgent.swift"; path = "Agent/GameObject+UpdateAgent.swift"; sourceTree = "<group>"; };
 		CB603A301E3C103600CF1D15 /* TypeConversions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeConversions.swift; sourceTree = "<group>"; };
 		CB693E0D1E32EBAA00750C36 /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
@@ -281,7 +278,6 @@
 		CB603A2C1E3C0B6200CF1D15 /* Agent */ = {
 			isa = PBXGroup;
 			children = (
-				CB603A291E3C0B5B00CF1D15 /* AgentProtocol.swift */,
 				CB603A2D1E3C0F7900CF1D15 /* GameObject+UpdateAgent.swift */,
 			);
 			name = Agent;
@@ -475,7 +471,6 @@
 				CB1310DC1E35D988003E6BD0 /* Animator.swift in Sources */,
 				CB6A87121E21F8BC00451F62 /* Touch.swift in Sources */,
 				CB1121F41E184E7A0001FB85 /* Aliases.swift in Sources */,
-				CB603A2A1E3C0B5B00CF1D15 /* AgentProtocol.swift in Sources */,
 				CBE54F481E3034580037CD21 /* GeometeryHelpers.swift in Sources */,
 				CB1310E01E35DA5C003E6BD0 /* Animation.swift in Sources */,
 				CB603A311E3C103600CF1D15 /* TypeConversions.swift in Sources */,
@@ -508,7 +503,6 @@
 				CB495CBA1E197FE500284473 /* AntlerKitView.swift in Sources */,
 				CB2A27581E1ACDC5009FC4C4 /* Camera.swift in Sources */,
 				CB693E0F1E32EBAA00750C36 /* Random.swift in Sources */,
-				CB603A2B1E3C0B5B00CF1D15 /* AgentProtocol.swift in Sources */,
 				CB2A275D1E1AD5C4009FC4C4 /* PhysicsContactPhase.swift in Sources */,
 				CBE54F491E3034580037CD21 /* GeometeryHelpers.swift in Sources */,
 				CB1121F51E184E7A0001FB85 /* Aliases.swift in Sources */,
