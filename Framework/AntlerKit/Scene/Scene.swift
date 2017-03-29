@@ -15,7 +15,7 @@ open class Scene {
 	// MARK: - Static
 	internal static var stack = SceneStack()
 	
-	// MARK: - Top Level References
+	// MARK: - Top Level Objects
 	
 	private var topLevelGameObjects = [GameObject]()
 	
@@ -37,7 +37,7 @@ open class Scene {
 		
 		initializeRoot()
 		
-		// postprocess scene into GameObjects, Components...
+		// TODO: postprocess scene into GameObjects, Components...
 		
 		self.setup()
 	}
@@ -45,6 +45,9 @@ open class Scene {
 	private func initializeRoot() {
 		self.root.delegateScene = self
 		self.root.physicsWorld.contactDelegate = self.root
+		
+		self.ambientLightSource.categoryBitMask = ~(.allZeros)	// apply to all categories
+		self.root.addChild(self.ambientLightSource)
 	}
 	
 	// MARK: - Properties
@@ -52,6 +55,16 @@ open class Scene {
 	open var camera : Camera? {
 		didSet {
 			self.root.camera = self.camera?.cameraNode
+		}
+	}
+	
+	private var ambientLightSource = SKLightNode()
+	open var ambientColor : Color {
+		get {
+			return self.ambientLightSource.ambientColor
+		}
+		set {
+			self.ambientLightSource.ambientColor = newValue
 		}
 	}
 	
