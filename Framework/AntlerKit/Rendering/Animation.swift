@@ -22,10 +22,6 @@ open class Animation {
 		self.frames = frames
 	}
 	
-	public convenience init() {
-		self.init(frames: [SKTexture]())
-	}
-	
 	public convenience init?(sheetName: String, animationName: String) {
 		let baseName = sheetName + " " + animationName
 		
