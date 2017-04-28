@@ -13,6 +13,13 @@ import GameplayKit
 open class Scene {
 	
 	// MARK: - Static
+	
+	/// The currently rendered scene
+	public static var current : Scene! {
+		return Scene.stack.head
+	}
+	
+	/// This application's scene stack
 	internal static var stack = SceneStack()
 	
 	// MARK: - Top Level Objects
