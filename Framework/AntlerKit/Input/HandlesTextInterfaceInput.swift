@@ -31,8 +31,7 @@ internal struct _HandlesTextInterfaceInput {
 extension GameObject : HandlesTextInterfaceInput {
 	
 	public func handle(textInput text: String) -> Bool {
-		for c in self.allComponents {
-			if !c.enabled { continue }
+		for c in self.enabledComponents {
 			if let handler = c as? HandlesTextInterfaceInput {
 				if handler.handle(textInput: text) {
 					return true

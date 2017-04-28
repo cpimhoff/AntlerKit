@@ -17,8 +17,7 @@ public protocol HandlesSelectionInterfaceInput {
 extension GameObject : HandlesSelectionInterfaceInput {
 	
 	public func handleSelected() -> Bool {
-		for c in self.allComponents {
-			if !c.enabled { continue }
+		for c in self.enabledComponents {
 			if let handler = c as? HandlesSelectionInterfaceInput {
 				if handler.handleSelected() {
 					return true
