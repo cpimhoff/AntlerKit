@@ -14,7 +14,7 @@ public protocol Component : AnyObject {
 	/// If false, this component is not updated, nor does it respond to events
 	var enabled : Bool { get }
 	
-	var gameObject : GameObject? { get set }
+	var gameObject : GameObject! { get set }
 	
 	func configure()
 	func update(deltaTime: TimeInterval)
@@ -33,7 +33,7 @@ open class SimpleComponent : Component {
 	
 	open var enabled : Bool = true
 
-	open weak var gameObject : GameObject?
+	open weak var gameObject : GameObject!
 	
 	open func update(deltaTime: TimeInterval) {
 		// override point...
@@ -58,7 +58,7 @@ open class InspectableComponent : GKComponent, Component {
 	
 	open var enabled : Bool = true
 	
-	open weak var gameObject : GameObject?
+	open weak var gameObject : GameObject!
 	
 	open func configure() {
 		// override point...
