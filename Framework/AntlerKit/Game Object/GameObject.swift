@@ -54,8 +54,12 @@ open class GameObject {
 	// MARK: - Component
 	
 	fileprivate var components = [String: Component]()
-	public var allComponents : LazyMapCollection<Dictionary<String, Component>, Component> {
-		return self.components.values
+	
+	public var allComponents : [Component] {
+		return Array(self.components.values)
+	}
+	internal var enabledComponents : [Component] {
+		return self.components.values.filter { $0.enabled }
 	}
 	
 	open func add(_ component: Component) {
@@ -109,10 +113,8 @@ open class GameObject {
 			child.update(deltaTime: deltaTime)
 		}
 		
-		for component in self.components.values {
-			if component.enabled {
-				component.update(deltaTime: deltaTime)
-			}
+		for component in self.enabledComponents {
+			component.update(deltaTime: deltaTime)
 		}
 		
 		// call override point of update
@@ -168,10 +170,8 @@ public extension GameObject {
 	internal func _onContact(with other: GameObject?, phase: PhysicsContactPhase) {
 		self.onContact(with: other, phase: phase)
 		
-		for component in self.components.values {
-			if component.enabled {
-				component.onContact(with: other, phase: phase)
-			}
+		for component in self.enabledComponents.flatMap({$0 as? ContactResponder}) {
+			component.onContact(with: other, phase: phase)
 		}
 		
 		// send to child if configured to do so
