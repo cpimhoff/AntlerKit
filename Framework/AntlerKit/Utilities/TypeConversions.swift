@@ -35,4 +35,8 @@ extension Vector {
 		self.init(dx: CGFloat(vector.x), dy: CGFloat(vector.y))
 	}
 	
+	init(dx: Float, dy: Float) {
+		self.init(dx: Double(dx), dy: Double(dy))
+	}
+	
 }
