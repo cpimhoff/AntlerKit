@@ -19,8 +19,7 @@ class Player: GameObject {
 		c.fillColor = .red
 		self.primitive = c
 		
-		let dr = DriftRightComponent()
-		self.add(dr)
+		
 	}
 	
 	override func update(deltaTime: TimeInterval) {
