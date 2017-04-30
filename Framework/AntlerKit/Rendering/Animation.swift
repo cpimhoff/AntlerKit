@@ -23,13 +23,11 @@ open class Animation {
 	}
 	
 	public convenience init?(sheetName: String, animationName: String) {
-		let baseName = sheetName + " " + animationName
-		
 		var frameList = [SKTexture]()
 		
 		var frameNumber = 0
 		while true {
-			let frameName = baseName + String(frameNumber)
+			let frameName = "\(sheetName) \(animationName) \(frameNumber)"
 			
 			guard let image = Image(named: frameName) else { break }
 			let frame = SKTexture(image: image)

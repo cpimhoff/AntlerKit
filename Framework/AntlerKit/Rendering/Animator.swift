@@ -21,9 +21,12 @@ open class Animator {
 		self.sheetName = sheetName
 	}
 	
-	convenience public init(sheetName: String, cacheImmediately: [String]) {
+	convenience public init(sheetName: String, cacheImmediately: [String]? = nil) {
 		self.init(sheetName: sheetName)
-		self.cache(animationsNamed: cacheImmediately)
+		
+		if cacheImmediately != nil {
+			self.cache(animationsNamed: cacheImmediately!)
+		}
 	}
 	
 }
