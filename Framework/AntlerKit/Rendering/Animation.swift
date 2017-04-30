@@ -14,6 +14,11 @@ import SpriteKit
 	private typealias Image = NSImage
 #endif
 
+//
+//	Animation Naming Format
+//	"sheet animation 0"
+//
+
 open class Animation {
 	
 	public var frames : [SKTexture]
