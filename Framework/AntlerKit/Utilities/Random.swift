@@ -19,46 +19,6 @@ public class Random {
 		self.seed = seed
 	}
 	
-	public enum RandomnessQuality {
-		/// Quite random, pretty quick
-		case `default`
-		/// Less random, but faster
-		case fastResults
-		/// Very random, but slower
-		case highQuality
-		
-		internal var randomSource : GKRandomSource {
-			switch self {
-			case .default:
-				return GKARC4RandomSource()
-			case .fastResults:
-				return GKLinearCongruentialRandomSource()
-			case .highQuality:
-				return GKMersenneTwisterRandomSource()
-			}
-		}
-	}
-	
-	public enum RandomDistributionType {
-		/// All values in the distribution have an equal chance
-		case equalOdds
-		/// Values in the middle of the distribution have a greater chance than those on the edges
-		case bellCurve
-		/// Values that have yet to be "drawn" have greater chance
-		case shuffled
-		
-		func distributionSource(with seed: GKRandomSource, lowestValue: Int, highestValue: Int) -> GKRandomDistribution {
-			switch self {
-			case .equalOdds:
-				return GKRandomDistribution(randomSource: seed, lowestValue: lowestValue, highestValue: highestValue)
-			case .bellCurve:
-				return GKGaussianDistribution(randomSource: seed, lowestValue: lowestValue, highestValue: highestValue)
-			case .shuffled:
-				return GKShuffledDistribution(randomSource: seed, lowestValue: lowestValue, highestValue: highestValue)
-			}
-		}
-	}
-	
 	convenience init(quality: RandomnessQuality = .default) {
 		self.init(seed: quality.randomSource)
 	}
@@ -112,4 +72,44 @@ extension Random {
 		return angleVector.normalized.scaled(magnitude)
 	}
 	
+}
+
+public enum RandomnessQuality {
+	/// Quite random, pretty quick
+	case `default`
+	/// Less random, but faster
+	case fastResults
+	/// Very random, but slower
+	case highQuality
+	
+	internal var randomSource : GKRandomSource {
+		switch self {
+		case .default:
+			return GKARC4RandomSource()
+		case .fastResults:
+			return GKLinearCongruentialRandomSource()
+		case .highQuality:
+			return GKMersenneTwisterRandomSource()
+		}
+	}
+}
+
+public enum RandomDistributionType {
+	/// All values in the distribution have an equal chance
+	case equalOdds
+	/// Values in the middle of the distribution have a greater chance than those on the edges
+	case bellCurve
+	/// Values that have yet to be "drawn" have greater chance
+	case shuffled
+	
+	func distributionSource(with seed: GKRandomSource, lowestValue: Int, highestValue: Int) -> GKRandomDistribution {
+		switch self {
+		case .equalOdds:
+			return GKRandomDistribution(randomSource: seed, lowestValue: lowestValue, highestValue: highestValue)
+		case .bellCurve:
+			return GKGaussianDistribution(randomSource: seed, lowestValue: lowestValue, highestValue: highestValue)
+		case .shuffled:
+			return GKShuffledDistribution(randomSource: seed, lowestValue: lowestValue, highestValue: highestValue)
+		}
+	}
 }
