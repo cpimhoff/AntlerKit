@@ -170,7 +170,7 @@ public extension GameObject {
 	internal func _onContact(with other: GameObject?, phase: PhysicsContactPhase) {
 		self.onContact(with: other, phase: phase)
 		
-		for component in self.enabledComponents.flatMap({$0 as? ContactResponder}) {
+		for component in self.enabledComponents.flatMap({$0 as? ContactEventsComponent}) {
 			component.onContact(with: other, phase: phase)
 		}
 		

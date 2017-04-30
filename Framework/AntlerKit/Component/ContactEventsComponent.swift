@@ -1,5 +1,5 @@
 //
-//  ContactResponder.swift
+//  ContactComponent.swift
 //  AntlerKit
 //
 //  Created by Charlie Imhoff on 4/28/17.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol ContactResponder {
+public protocol ContactEventsComponent {
 	
 	func onContactBegan(with other: GameObject?)
 	
@@ -16,7 +16,7 @@ public protocol ContactResponder {
 	
 }
 
-extension ContactResponder {
+extension ContactEventsComponent {
 	
 	func onContact(with other: GameObject?, phase: PhysicsContactPhase) {
 		switch phase {
