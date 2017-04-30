@@ -58,8 +58,8 @@
 		CB9B27DF1EB3E3F0008F0A84 /* MovementComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B27DD1EB3E3F0008F0A84 /* MovementComponent.swift */; };
 		CB9B27E11EB3EA2C008F0A84 /* ContactEventsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B27E01EB3EA2C008F0A84 /* ContactEventsComponent.swift */; };
 		CB9B27E21EB3EA2C008F0A84 /* ContactEventsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B27E01EB3EA2C008F0A84 /* ContactEventsComponent.swift */; };
-		CBC537631E1C6B1600A8C145 /* BodyCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC537621E1C6B1600A8C145 /* BodyCategory.swift */; };
-		CBC537641E1C6BF400A8C145 /* BodyCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC537621E1C6B1600A8C145 /* BodyCategory.swift */; };
+		CBC537631E1C6B1600A8C145 /* PhysicsBodyCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC537621E1C6B1600A8C145 /* PhysicsBodyCategory.swift */; };
+		CBC537641E1C6BF400A8C145 /* PhysicsBodyCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC537621E1C6B1600A8C145 /* PhysicsBodyCategory.swift */; };
 		CBD54AC61E2F674A0042D318 /* SceneStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD54AC51E2F674A0042D318 /* SceneStack.swift */; };
 		CBD54AC71E2F674A0042D318 /* SceneStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD54AC51E2F674A0042D318 /* SceneStack.swift */; };
 		CBE54F481E3034580037CD21 /* GeometeryHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE54F471E3034580037CD21 /* GeometeryHelpers.swift */; };
@@ -113,7 +113,7 @@
 		CB9B27DA1EB3E189008F0A84 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		CB9B27DD1EB3E3F0008F0A84 /* MovementComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovementComponent.swift; path = Components/MovementComponent.swift; sourceTree = "<group>"; };
 		CB9B27E01EB3EA2C008F0A84 /* ContactEventsComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactEventsComponent.swift; sourceTree = "<group>"; };
-		CBC537621E1C6B1600A8C145 /* BodyCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BodyCategory.swift; path = ../Physics/BodyCategory.swift; sourceTree = "<group>"; };
+		CBC537621E1C6B1600A8C145 /* PhysicsBodyCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicsBodyCategory.swift; sourceTree = "<group>"; };
 		CBD54AC51E2F674A0042D318 /* SceneStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneStack.swift; sourceTree = "<group>"; };
 		CBE54F471E3034580037CD21 /* GeometeryHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeometeryHelpers.swift; sourceTree = "<group>"; };
 		CBE54F4A1E3037360037CD21 /* MathHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathHelpers.swift; sourceTree = "<group>"; };
@@ -254,7 +254,7 @@
 		CB2A275E1E1AD5C7009FC4C4 /* Physics */ = {
 			isa = PBXGroup;
 			children = (
-				CBC537621E1C6B1600A8C145 /* BodyCategory.swift */,
+				CBC537621E1C6B1600A8C145 /* PhysicsBodyCategory.swift */,
 				CB2A275B1E1AD5C4009FC4C4 /* PhysicsContactPhase.swift */,
 			);
 			path = Physics;
@@ -480,7 +480,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB1121F11E184D8D0001FB85 /* RootTransform.swift in Sources */,
-				CBC537631E1C6B1600A8C145 /* BodyCategory.swift in Sources */,
+				CBC537631E1C6B1600A8C145 /* PhysicsBodyCategory.swift in Sources */,
 				CB9B27E11EB3EA2C008F0A84 /* ContactEventsComponent.swift in Sources */,
 				CB1121F71E1850890001FB85 /* Component.swift in Sources */,
 				CB495CAB1E196E4300284473 /* Scene.swift in Sources */,
@@ -514,7 +514,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBC537641E1C6BF400A8C145 /* BodyCategory.swift in Sources */,
+				CBC537641E1C6BF400A8C145 /* PhysicsBodyCategory.swift in Sources */,
 				CBE54F4C1E3037360037CD21 /* MathHelpers.swift in Sources */,
 				CB1121F21E184D8D0001FB85 /* RootTransform.swift in Sources */,
 				CB603A321E3C103600CF1D15 /* TypeConversions.swift in Sources */,

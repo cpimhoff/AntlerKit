@@ -1,5 +1,5 @@
 //
-//  BodyCategory.swift
+//  PhysicsBodyCategory.swift
 //  AntlerKit
 //
 //  Created by Charlie Imhoff on 1/3/17.
