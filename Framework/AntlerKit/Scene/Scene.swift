@@ -91,11 +91,8 @@ open class Scene {
 	}
 	
 	internal func removeFromTopLevelList(_ child: GameObject) {
-		for i in 0..<self.topLevelGameObjects.count {
-			if self.topLevelGameObjects[i] === child {
-				self.topLevelGameObjects.remove(at: i)
-				break
-			}
+		if let i = self.topLevelGameObjects.index(where: { $0 === child }) {
+			self.topLevelGameObjects.remove(at: i)
 		}
 	}
 	
