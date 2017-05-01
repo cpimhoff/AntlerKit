@@ -15,7 +15,7 @@ open class Audio {
 	#if os(iOS)
 	/// Configures the application's audio session for game sounds and music.
 	/// By default, the audio session is non-primary and mixable.
-	open func configureAudioSession() {
+	open static func configureAudioSession() {
 		let sessionType = AVAudioSessionCategoryAmbient
 		try? AVAudioSession.sharedInstance().setCategory(sessionType)
 		try? AVAudioSession.sharedInstance().setActive(true)
