@@ -43,8 +43,7 @@ open class Scene {
 		self.root = scene
 		
 		initializeRoot()
-		
-		// TODO: postprocess scene into GameObjects, Components...
+		self.preprocessLoadedSceneFile()
 		
 		self.setup()
 	}
@@ -73,6 +72,10 @@ open class Scene {
 		set {
 			self.ambientLightSource.ambientColor = newValue
 		}
+	}
+	
+	public var physicsWorld : SKPhysicsWorld {
+		return self.root.physicsWorld
 	}
 	
 	// MARK: - Adding Content

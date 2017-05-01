@@ -14,6 +14,7 @@ open class GameObject {
 	
 	internal let root : RootTransform
 	
+	/// Creates a new GameObject
 	public init() {
 		self.root = RootTransform()
 		self.root.gameObject = self

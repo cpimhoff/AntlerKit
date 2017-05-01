@@ -52,6 +52,9 @@
 		CB6A87121E21F8BC00451F62 /* Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A87111E21F8BC00451F62 /* Touch.swift */; };
 		CB6DFAB51E8C6D6C00B636F6 /* PointLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6DFAB41E8C6D6C00B636F6 /* PointLight.swift */; };
 		CB6DFAB61E8C6D6C00B636F6 /* PointLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6DFAB41E8C6D6C00B636F6 /* PointLight.swift */; };
+		CB75C4251EB7DC5F00F7E7A3 /* Scene+File.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB75C4241EB7DC5F00F7E7A3 /* Scene+File.swift */; };
+		CB75C4261EB7DDAF00F7E7A3 /* Scene+File.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB75C4241EB7DC5F00F7E7A3 /* Scene+File.swift */; };
+		CB75C4281EB7DDD300F7E7A3 /* MyScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = CB75C4271EB7DDD300F7E7A3 /* MyScene.sks */; };
 		CB9B27DB1EB3E189008F0A84 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B27DA1EB3E189008F0A84 /* Enums.swift */; };
 		CB9B27DC1EB3E189008F0A84 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B27DA1EB3E189008F0A84 /* Enums.swift */; };
 		CB9B27DE1EB3E3F0008F0A84 /* MovementComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B27DD1EB3E3F0008F0A84 /* MovementComponent.swift */; };
@@ -114,6 +117,8 @@
 		CB6A870F1E21F67D00451F62 /* Cursor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cursor.swift; sourceTree = "<group>"; };
 		CB6A87111E21F8BC00451F62 /* Touch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Touch.swift; sourceTree = "<group>"; };
 		CB6DFAB41E8C6D6C00B636F6 /* PointLight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointLight.swift; sourceTree = "<group>"; };
+		CB75C4241EB7DC5F00F7E7A3 /* Scene+File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Scene+File.swift"; sourceTree = "<group>"; };
+		CB75C4271EB7DDD300F7E7A3 /* MyScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyScene.sks; sourceTree = "<group>"; };
 		CB9B27DA1EB3E189008F0A84 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		CB9B27DD1EB3E3F0008F0A84 /* MovementComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovementComponent.swift; path = Components/MovementComponent.swift; sourceTree = "<group>"; };
 		CB9B27E01EB3EA2C008F0A84 /* ContactEventsComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactEventsComponent.swift; sourceTree = "<group>"; };
@@ -271,9 +276,11 @@
 			isa = PBXGroup;
 			children = (
 				CB495CAA1E196E4300284473 /* Scene.swift */,
+				CB75C4241EB7DC5F00F7E7A3 /* Scene+File.swift */,
+				CB75C4271EB7DDD300F7E7A3 /* MyScene.sks */,
 				CBD54AC51E2F674A0042D318 /* SceneStack.swift */,
-				CB4283441E28A5A2007D97C0 /* WrappedScene+Input.swift */,
 				CB495CB51E19759400284473 /* WrappedScene.swift */,
+				CB4283441E28A5A2007D97C0 /* WrappedScene+Input.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -471,6 +478,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB75C4281EB7DDD300F7E7A3 /* MyScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +510,7 @@
 				CB1121F71E1850890001FB85 /* Component.swift in Sources */,
 				CB495CAB1E196E4300284473 /* Scene.swift in Sources */,
 				CBB0F8451EB68796007869DC /* Audio.swift in Sources */,
+				CB75C4251EB7DC5F00F7E7A3 /* Scene+File.swift in Sources */,
 				CB495CB91E197FE500284473 /* AntlerKitView.swift in Sources */,
 				CBE54F4B1E3037360037CD21 /* MathHelpers.swift in Sources */,
 				CB1310D91E35D691003E6BD0 /* Label.swift in Sources */,
@@ -536,6 +545,7 @@
 				CBE54F4C1E3037360037CD21 /* MathHelpers.swift in Sources */,
 				CB1121F21E184D8D0001FB85 /* RootTransform.swift in Sources */,
 				CB603A321E3C103600CF1D15 /* TypeConversions.swift in Sources */,
+				CB75C4261EB7DDAF00F7E7A3 /* Scene+File.swift in Sources */,
 				CB1121F81E1850890001FB85 /* Component.swift in Sources */,
 				CB495CAC1E196E4300284473 /* Scene.swift in Sources */,
 				CB6A87101E21F67D00451F62 /* Cursor.swift in Sources */,
