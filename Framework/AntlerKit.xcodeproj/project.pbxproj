@@ -60,10 +60,8 @@
 		CB9B27E21EB3EA2C008F0A84 /* ContactEventsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B27E01EB3EA2C008F0A84 /* ContactEventsComponent.swift */; };
 		CBB0F8451EB68796007869DC /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB0F8441EB68796007869DC /* Audio.swift */; };
 		CBB0F8461EB68796007869DC /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB0F8441EB68796007869DC /* Audio.swift */; };
-		CBB0F8481EB6880D007869DC /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB0F8471EB6880D007869DC /* Music.swift */; };
-		CBB0F8491EB6880D007869DC /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB0F8471EB6880D007869DC /* Music.swift */; };
-		CBB0F84B1EB688EC007869DC /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB0F84A1EB688EC007869DC /* Sound.swift */; };
-		CBB0F84C1EB688EC007869DC /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB0F84A1EB688EC007869DC /* Sound.swift */; };
+		CBB0F84B1EB688EC007869DC /* AudioClip.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB0F84A1EB688EC007869DC /* AudioClip.swift */; };
+		CBB0F84C1EB688EC007869DC /* AudioClip.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB0F84A1EB688EC007869DC /* AudioClip.swift */; };
 		CBC537631E1C6B1600A8C145 /* PhysicsBodyCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC537621E1C6B1600A8C145 /* PhysicsBodyCategory.swift */; };
 		CBC537641E1C6BF400A8C145 /* PhysicsBodyCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC537621E1C6B1600A8C145 /* PhysicsBodyCategory.swift */; };
 		CBD54AC61E2F674A0042D318 /* SceneStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD54AC51E2F674A0042D318 /* SceneStack.swift */; };
@@ -120,8 +118,7 @@
 		CB9B27DD1EB3E3F0008F0A84 /* MovementComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovementComponent.swift; path = Components/MovementComponent.swift; sourceTree = "<group>"; };
 		CB9B27E01EB3EA2C008F0A84 /* ContactEventsComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactEventsComponent.swift; sourceTree = "<group>"; };
 		CBB0F8441EB68796007869DC /* Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Audio.swift; path = Audio/Audio.swift; sourceTree = "<group>"; };
-		CBB0F8471EB6880D007869DC /* Music.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Music.swift; path = Audio/Music.swift; sourceTree = "<group>"; };
-		CBB0F84A1EB688EC007869DC /* Sound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
+		CBB0F84A1EB688EC007869DC /* AudioClip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioClip.swift; sourceTree = "<group>"; };
 		CBC537621E1C6B1600A8C145 /* PhysicsBodyCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicsBodyCategory.swift; sourceTree = "<group>"; };
 		CBD54AC51E2F674A0042D318 /* SceneStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneStack.swift; sourceTree = "<group>"; };
 		CBE54F471E3034580037CD21 /* GeometeryHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeometeryHelpers.swift; sourceTree = "<group>"; };
@@ -334,8 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				CBB0F8441EB68796007869DC /* Audio.swift */,
-				CBB0F8471EB6880D007869DC /* Music.swift */,
-				CBB0F84A1EB688EC007869DC /* Sound.swift */,
+				CBB0F84A1EB688EC007869DC /* AudioClip.swift */,
 			);
 			name = Audio;
 			sourceTree = "<group>";
@@ -500,7 +496,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB1121F11E184D8D0001FB85 /* RootTransform.swift in Sources */,
-				CBB0F84B1EB688EC007869DC /* Sound.swift in Sources */,
+				CBB0F84B1EB688EC007869DC /* AudioClip.swift in Sources */,
 				CBC537631E1C6B1600A8C145 /* PhysicsBodyCategory.swift in Sources */,
 				CB9B27E11EB3EA2C008F0A84 /* ContactEventsComponent.swift in Sources */,
 				CB1121F71E1850890001FB85 /* Component.swift in Sources */,
@@ -517,7 +513,6 @@
 				CBD54AC61E2F674A0042D318 /* SceneStack.swift in Sources */,
 				CB603A2E1E3C0F7900CF1D15 /* GameObject+UpdateAgent.swift in Sources */,
 				CB2A275C1E1AD5C4009FC4C4 /* PhysicsContactPhase.swift in Sources */,
-				CBB0F8481EB6880D007869DC /* Music.swift in Sources */,
 				CB1310DC1E35D988003E6BD0 /* Animator.swift in Sources */,
 				CB6A87121E21F8BC00451F62 /* Touch.swift in Sources */,
 				CB9B27DB1EB3E189008F0A84 /* Enums.swift in Sources */,
@@ -552,8 +547,7 @@
 				CB1121EF1E184BD30001FB85 /* GameObject.swift in Sources */,
 				CB1310E11E35DA5C003E6BD0 /* Animation.swift in Sources */,
 				CB6DFAB61E8C6D6C00B636F6 /* PointLight.swift in Sources */,
-				CBB0F84C1EB688EC007869DC /* Sound.swift in Sources */,
-				CBB0F8491EB6880D007869DC /* Music.swift in Sources */,
+				CBB0F84C1EB688EC007869DC /* AudioClip.swift in Sources */,
 				CB1310DA1E35D691003E6BD0 /* Label.swift in Sources */,
 				CB495CBA1E197FE500284473 /* AntlerKitView.swift in Sources */,
 				CB2A27581E1ACDC5009FC4C4 /* Camera.swift in Sources */,

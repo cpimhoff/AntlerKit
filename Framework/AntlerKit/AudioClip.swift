@@ -1,5 +1,5 @@
 //
-//  Music.swift
+//  AudioClip.swift
 //  AntlerKit
 //
 //  Created by Charlie Imhoff on 4/30/17.
@@ -7,10 +7,13 @@
 //
 
 import Foundation
-import AVFoundation
 
-struct Music {
+public struct AudioClip {
 	
+	public let fileName : String
 	
+	public init(fileNamed fileName: String) {
+		self.fileName = fileName
+	}
 	
 }
