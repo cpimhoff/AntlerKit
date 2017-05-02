@@ -145,13 +145,6 @@ open class GameObject {
 	/// - Parameter deltaTime: The amount of time, in seconds, since the last call to `update`
 	open func update(deltaTime: TimeInterval) {}
 	
-	/// Called when another game object has contacted with this one
-	///
-	/// - Parameters:
-	///   - other: The game object involved in the collision, or nil if it was triggered by a primitive
-	///   - phase: The phase of the contact
-	open func onContact(with other: GameObject?, phase: PhysicsContactPhase) {}
-	
 }
 
 // MARK: - Physics
@@ -169,9 +162,11 @@ public extension GameObject {
 
 	/// Internal call for `onContact`
 	internal func _onContact(with other: GameObject?, phase: PhysicsContactPhase) {
-		self.onContact(with: other, phase: phase)
-		
-		for component in self.enabledComponents.flatMap({$0 as? ContactEventsComponent}) {
+		// send to self (if subscribed)
+		(self as? RespondsToContact)?.onContact(with: other, phase: phase)
+
+		// send to subscribed components
+		for component in self.enabledComponents.flatMap({$0 as? RespondsToContact}) {
 			component.onContact(with: other, phase: phase)
 		}
 		

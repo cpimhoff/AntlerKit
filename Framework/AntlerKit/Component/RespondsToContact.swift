@@ -1,5 +1,5 @@
 //
-//  ContactComponent.swift
+//  RespondsToContact.swift
 //  AntlerKit
 //
 //  Created by Charlie Imhoff on 4/28/17.
@@ -8,7 +8,9 @@
 
 import Foundation
 
-public protocol ContactEventsComponent {
+/// Declare comformance on a `GameObject` or a `Component` to hook into
+/// contact events related to the reciever.
+public protocol RespondsToContact {
 	
 	func onContactBegan(with other: GameObject?)
 	
@@ -16,7 +18,7 @@ public protocol ContactEventsComponent {
 	
 }
 
-extension ContactEventsComponent {
+extension RespondsToContact {
 	
 	func onContact(with other: GameObject?, phase: PhysicsContactPhase) {
 		switch phase {
