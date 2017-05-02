@@ -82,7 +82,7 @@ extension WrappedScene {
 				.sorted { a, b in	a.layer > b.layer }
 			
 			for gameObject in sortedGameObjects {
-				if gameObject.handleSelected() {
+				if gameObject._handleSelected() {
 					return
 				}
 			}

@@ -10,6 +10,7 @@ import Foundation
 
 public protocol HandlesTextInterfaceInput {
 	
+	@discardableResult
 	func handle(textInput text: String) -> Bool
 	
 }
@@ -28,19 +29,27 @@ internal struct _HandlesTextInterfaceInput {
 	
 }
 
-extension GameObject : HandlesTextInterfaceInput {
+internal extension GameObject {
 	
-	public func handle(textInput text: String) -> Bool {
-		for c in self.enabledComponents {
-			if let handler = c as? HandlesTextInterfaceInput {
-				if handler.handle(textInput: text) {
-					return true
+	// Internal propogation of text input responses
+	func _handle(textInput text: String) -> Bool {
+		// send to self (if subscribed)
+		var handled = (self as? HandlesTextInterfaceInput)?.handle(textInput: text) ?? false
+		
+		// send to subscribed components
+		for component in self.enabledComponents.flatMap({$0 as? HandlesTextInterfaceInput}) {
+			handled = component.handle(textInput: text) || handled
+		}
+		
+		if !handled {
+			for child in self.children {
+				if child._handle(textInput: text) {
+					break
 				}
 			}
 		}
 		
-		// nobody handled it
-		return false
+		return handled
 	}
 	
 }

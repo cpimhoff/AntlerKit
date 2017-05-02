@@ -18,14 +18,36 @@ public protocol RespondsToContact {
 	
 }
 
-extension RespondsToContact {
+public extension RespondsToContact {
 	
-	func onContact(with other: GameObject?, phase: PhysicsContactPhase) {
+	public func onContact(with other: GameObject?, phase: PhysicsContactPhase) {
 		switch phase {
 		case .begin:
 			self.onContactBegan(with: other)
 		case .end:
 			self.onContactEnded(with: other)
+		}
+	}
+	
+}
+
+internal extension GameObject {
+	
+	// Internal propogation of contact responses
+	func _onContact(with other: GameObject?, phase: PhysicsContactPhase) {
+		// send to self (if subscribed)
+		(self as? RespondsToContact)?.onContact(with: other, phase: phase)
+		
+		// send to subscribed components
+		for component in self.enabledComponents.flatMap({$0 as? RespondsToContact}) {
+			component.onContact(with: other, phase: phase)
+		}
+		
+		// send to child if configured to do so
+		if self.propogateContactsToChildren {
+			for child in self.children {
+				child._onContact(with: other, phase: phase)
+			}
 		}
 	}
 	

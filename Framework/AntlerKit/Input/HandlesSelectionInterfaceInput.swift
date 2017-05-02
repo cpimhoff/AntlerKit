@@ -10,23 +10,32 @@ import Foundation
 
 public protocol HandlesSelectionInterfaceInput {
 	
+	@discardableResult
 	func handleSelected() -> Bool
 	
 }
 
-extension GameObject : HandlesSelectionInterfaceInput {
+internal extension GameObject {
 	
-	public func handleSelected() -> Bool {
-		for c in self.enabledComponents {
-			if let handler = c as? HandlesSelectionInterfaceInput {
-				if handler.handleSelected() {
-					return true
+	// Internal propogation of selection input responses
+	func _handleSelected() -> Bool {
+		// send to self (if subscribed)
+		var handled = (self as? HandlesSelectionInterfaceInput)?.handleSelected() ?? false
+		
+		// send to subscribed components
+		for component in self.enabledComponents.flatMap({$0 as? HandlesSelectionInterfaceInput}) {
+			handled = component.handleSelected() || handled
+		}
+		
+		if !handled {
+			for child in self.children {
+				if child._handleSelected() {
+					break
 				}
 			}
 		}
 		
-		// nobody handled it
-		return false
+		return handled
 	}
 	
 }

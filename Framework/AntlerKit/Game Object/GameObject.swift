@@ -122,6 +122,11 @@ open class GameObject {
 		self.update(deltaTime: deltaTime)
 	}
 	
+	/// Called every frame.
+	///
+	/// - Parameter deltaTime: The amount of time, in seconds, since the last call to `update`
+	open func update(deltaTime: TimeInterval) {}
+	
 	// MARK: - Configuration
 	
 	/// If true, any contact event on this gameObject will be forwarded
@@ -137,50 +142,10 @@ open class GameObject {
 			self.body?.isDynamic = self.isStatic
 		}
 	}
-
-	// MARK: - Override Points
-	
-	/// Called every frame.
-	///
-	/// - Parameter deltaTime: The amount of time, in seconds, since the last call to `update`
-	open func update(deltaTime: TimeInterval) {}
 	
 }
 
-// MARK: - Physics
-public extension GameObject {
-	
-	public var body : PhysicsBody? {
-		get {
-			return self.root.physicsBody
-		}
-		set {
-			self.root.physicsBody = body
-			self.root.physicsBody?.isDynamic = self.isStatic
-		}
-	}
-
-	/// Internal call for `onContact`
-	internal func _onContact(with other: GameObject?, phase: PhysicsContactPhase) {
-		// send to self (if subscribed)
-		(self as? RespondsToContact)?.onContact(with: other, phase: phase)
-
-		// send to subscribed components
-		for component in self.enabledComponents.flatMap({$0 as? RespondsToContact}) {
-			component.onContact(with: other, phase: phase)
-		}
-		
-		// send to child if configured to do so
-		if self.propogateContactsToChildren {
-			for child in self.children {
-				child._onContact(with: other, phase: phase)
-			}
-		}
-	}
-	
-}
-
-// MARK: - Location
+// MARK: - Primitive Configuration
 public extension GameObject {
 	
 	/// The current position, relative to parent, of the reciever
@@ -220,6 +185,17 @@ public extension GameObject {
 		}
 		set {
 			root.zPosition = CGFloat(newValue)
+		}
+	}
+	
+	/// The GameObject's physics body
+	public var body : PhysicsBody? {
+		get {
+			return self.root.physicsBody
+		}
+		set {
+			self.root.physicsBody = body
+			self.root.physicsBody?.isDynamic = self.isStatic
 		}
 	}
 	
