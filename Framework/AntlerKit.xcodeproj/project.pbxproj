@@ -40,6 +40,8 @@
 		CB603A2F1E3C0F7900CF1D15 /* GameObject+UpdateAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB603A2D1E3C0F7900CF1D15 /* GameObject+UpdateAgent.swift */; };
 		CB603A311E3C103600CF1D15 /* TypeConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB603A301E3C103600CF1D15 /* TypeConversions.swift */; };
 		CB603A321E3C103600CF1D15 /* TypeConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB603A301E3C103600CF1D15 /* TypeConversions.swift */; };
+		CB63BEFB1EB93B280001997D /* QuickEventResponders.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63BEFA1EB93B280001997D /* QuickEventResponders.swift */; };
+		CB63BEFC1EB93B280001997D /* QuickEventResponders.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63BEFA1EB93B280001997D /* QuickEventResponders.swift */; };
 		CB693E0E1E32EBAA00750C36 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB693E0D1E32EBAA00750C36 /* Random.swift */; };
 		CB693E0F1E32EBAA00750C36 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB693E0D1E32EBAA00750C36 /* Random.swift */; };
 		CB6A87071E21E9B400451F62 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A87061E21E9B400451F62 /* Input.swift */; };
@@ -110,6 +112,7 @@
 		CB495CB81E197FE500284473 /* AntlerKitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntlerKitView.swift; sourceTree = "<group>"; };
 		CB603A2D1E3C0F7900CF1D15 /* GameObject+UpdateAgent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "GameObject+UpdateAgent.swift"; path = "Agent/GameObject+UpdateAgent.swift"; sourceTree = "<group>"; };
 		CB603A301E3C103600CF1D15 /* TypeConversions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeConversions.swift; sourceTree = "<group>"; };
+		CB63BEFA1EB93B280001997D /* QuickEventResponders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuickEventResponders.swift; path = Convenience/QuickEventResponders.swift; sourceTree = "<group>"; };
 		CB693E0D1E32EBAA00750C36 /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
 		CB6A87061E21E9B400451F62 /* Input.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
 		CB6A87091E21EBA400451F62 /* HandlesSelectionInterfaceInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandlesSelectionInterfaceInput.swift; sourceTree = "<group>"; };
@@ -248,6 +251,7 @@
 			children = (
 				CB2A275A1E1ACDE1009FC4C4 /* Game Objects */,
 				CB9B27D21EB3E046008F0A84 /* Components */,
+				CB63BEF91EB93AF70001997D /* Convenience */,
 			);
 			path = "Built In";
 			sourceTree = "<group>";
@@ -311,6 +315,14 @@
 				CB603A2D1E3C0F7900CF1D15 /* GameObject+UpdateAgent.swift */,
 			);
 			name = Agent;
+			sourceTree = "<group>";
+		};
+		CB63BEF91EB93AF70001997D /* Convenience */ = {
+			isa = PBXGroup;
+			children = (
+				CB63BEFA1EB93B280001997D /* QuickEventResponders.swift */,
+			);
+			name = Convenience;
 			sourceTree = "<group>";
 		};
 		CB6A87051E21E9A500451F62 /* Input */ = {
@@ -528,6 +540,7 @@
 				CB1121F41E184E7A0001FB85 /* Aliases.swift in Sources */,
 				CBE54F481E3034580037CD21 /* GeometeryHelpers.swift in Sources */,
 				CB1310E01E35DA5C003E6BD0 /* Animation.swift in Sources */,
+				CB63BEFB1EB93B280001997D /* QuickEventResponders.swift in Sources */,
 				CB603A311E3C103600CF1D15 /* TypeConversions.swift in Sources */,
 				CB6A87071E21E9B400451F62 /* Input.swift in Sources */,
 				CB6A870A1E21EBA400451F62 /* HandlesSelectionInterfaceInput.swift in Sources */,
@@ -555,6 +568,7 @@
 				CB603A2F1E3C0F7900CF1D15 /* GameObject+UpdateAgent.swift in Sources */,
 				CBD54AC71E2F674A0042D318 /* SceneStack.swift in Sources */,
 				CB1121EF1E184BD30001FB85 /* GameObject.swift in Sources */,
+				CB63BEFC1EB93B280001997D /* QuickEventResponders.swift in Sources */,
 				CB1310E11E35DA5C003E6BD0 /* Animation.swift in Sources */,
 				CB6DFAB61E8C6D6C00B636F6 /* PointLight.swift in Sources */,
 				CBB0F84C1EB688EC007869DC /* AudioClip.swift in Sources */,

@@ -71,6 +71,14 @@ open class GameObject {
 		component.configure()
 	}
 	
+	internal func add(anonymous component: Component) {
+		let anonymousName = UUID().uuidString
+		self.components[anonymousName] = component
+		
+		component.gameObject = self
+		component.configure()
+	}
+	
 	open func component(type: Component.Type) -> Component? {
 		let typeName = String(describing: type)
 		return self.components[typeName] ?? nil
