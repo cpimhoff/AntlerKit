@@ -11,6 +11,9 @@ import SpriteKit
 
 public struct PhysicsBodyCategory : OptionSet, Hashable {
 	
+	internal static var collisions	= [PhysicsBodyCategory : Set<PhysicsBodyCategory>]()
+	internal static var contacts	= [PhysicsBodyCategory : Set<PhysicsBodyCategory>]()
+	
 	public let rawValue : UInt32
 	public var hashValue : Int {
 		return rawValue.hashValue
@@ -25,9 +28,6 @@ public struct PhysicsBodyCategory : OptionSet, Hashable {
 				return result.union(next)
 			}).rawValue
 	}
-	
-	 internal static var collisions	= [PhysicsBodyCategory : Set<PhysicsBodyCategory>]()
-	 internal static var contacts	= [PhysicsBodyCategory : Set<PhysicsBodyCategory>]()
 	
 }
 
@@ -50,7 +50,7 @@ public extension PhysicsBodyCategory {
 		}
 	}
 	
-	public static func enableContact(between a: PhysicsBodyCategory, and b: PhysicsBodyCategory) {
+	public static func enableContacts(between a: PhysicsBodyCategory, and b: PhysicsBodyCategory) {
 		combineSeperatedFlags(compositeA: a, compositeB: b) { (x, y) in
 			let previous = PhysicsBodyCategory.contacts[x] ?? Set<PhysicsBodyCategory>()
 			let updated = previous.union([y])
