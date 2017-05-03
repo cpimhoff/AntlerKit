@@ -28,6 +28,8 @@ internal class WrappedScene : SKScene {
 	override func didMove(to view: SKView) {
 		super.didMove(to: view)
 		setupGestureRecognizers()
+		
+		delegateScene?.onEnter()
 	}
 	
 	override func willMove(from view: SKView) {

@@ -64,19 +64,7 @@ open class Scene {
 		}
 	}
 	
-	private var ambientLightSource = SKLightNode()
-	open var ambientColor : Color {
-		get {
-			return self.ambientLightSource.ambientColor
-		}
-		set {
-			self.ambientLightSource.ambientColor = newValue
-		}
-	}
-	
-	public var physicsWorld : SKPhysicsWorld {
-		return self.root.physicsWorld
-	}
+	fileprivate var ambientLightSource = SKLightNode()
 	
 	// MARK: - Adding Content
 	
@@ -114,6 +102,7 @@ open class Scene {
 	// MARK: - Override Points
 	
 	open func setup() {}
+	open func onEnter() {}
 	open func update(deltaTime: TimeInterval) {}
 	
 }
@@ -131,6 +120,19 @@ public extension Scene {
 		} set {
 			self.root.backgroundColor = newValue
 		}
+	}
+	
+	public var ambientColor : Color {
+		get {
+			return self.ambientLightSource.ambientColor
+		}
+		set {
+			self.ambientLightSource.ambientColor = newValue
+		}
+	}
+	
+	public var physicsWorld : SKPhysicsWorld {
+		return self.root.physicsWorld
 	}
 	
 }
