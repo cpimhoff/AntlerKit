@@ -17,19 +17,17 @@ import Foundation
 
 open class Input {
 	
-	open static var global = Input()
-	
 	#if os(iOS)
-	open var touches = [Touch]()
-	open let motion = Motion()
+	open static var touches = [Touch]()
+	open static let motion = Motion()
 	
 	// var deviceTilt...
 	#endif
 	
 	#if os(macOS)
-	open var activeKeys = Set<KeyboardKey>()
+	open static var activeKeys = Set<KeyboardKey>()
 	
-	open var cursor = Cursor()
+	open static var cursor = Cursor()
 	#endif
 	
 }
@@ -38,7 +36,7 @@ extension Input {
 	
 	/// Removes all input which we gather in batches
 	/// preparing for a new batch
-	func removePreviousInputBatch() {
+	internal static func removePreviousInputBatch() {
 		#if os(iOS)
 			self.touches = self.touches.filter { touch in touch.type == .tap }
 		#endif
@@ -46,7 +44,7 @@ extension Input {
 	
 	/// Progresses input types into their next state
 	/// Called each frame
-	internal func updateStaleInput() {
+	internal static func updateStaleInput() {
 		#if os(iOS)
 			let updatedTouches = self.touches.flatMap
 				{ touch -> Touch? in

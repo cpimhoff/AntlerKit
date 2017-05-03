@@ -96,7 +96,7 @@ open class Scene {
 		self.update(deltaTime: deltaTime)
 		
 		// actors had a chance to update based on input, tick the input
-		Input.global.updateStaleInput()
+		Input.updateStaleInput()
 	}
 	
 	// MARK: - Override Points

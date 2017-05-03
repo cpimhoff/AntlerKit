@@ -90,10 +90,10 @@ extension WrappedScene {
 			// If unhandled, dispatch to global input
 			#if os(iOS)
 				let tap = Touch(sceneLocation: selection, type: .tap)
-				Input.global.touches.append(tap)
+				Input.touches.append(tap)
 			#elseif os(macOS)
-				Input.global.cursor.sceneLocation = selection
-				Input.global.cursor.mainButton = .click
+				Input.cursor.sceneLocation = selection
+				Input.cursor.mainButton = .click
 			#endif
 		}
 	}
@@ -136,7 +136,7 @@ extension WrappedScene {
 			else { return }
 		
 		// update to new batch
-		Input.global.removePreviousInputBatch()
+		Input.removePreviousInputBatch()
 		
 		// filter and save this batch
 		for rawTouch in touches {
@@ -145,7 +145,7 @@ extension WrappedScene {
 			let sceneLocation = rawTouch.location(in: self)
 			let touch = Touch(sceneLocation: sceneLocation, type: TouchType(phase: rawTouch.phase))
 			
-			Input.global.touches.append(touch)
+			Input.touches.append(touch)
 		}
 	}
 	
