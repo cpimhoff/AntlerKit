@@ -21,6 +21,7 @@ open class Input {
 	
 	#if os(iOS)
 	open var touches = [Touch]()
+	open let motion = Motion()
 	
 	// var deviceTilt...
 	#endif
