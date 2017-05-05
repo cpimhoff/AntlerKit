@@ -9,6 +9,8 @@
 import Foundation
 import GameplayKit
 
+// Note: can't use `GKAgentDelegate` because `GameObject` is a pure Swift class
+
 internal extension GameObject {
 	
 	func updateAgent(deltaTime: TimeInterval) {
