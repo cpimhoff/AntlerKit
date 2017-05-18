@@ -126,6 +126,8 @@ open class GameObject {
 			component.update(deltaTime: deltaTime)
 		}
 		
+		self.animator?.update(deltaTime: deltaTime)
+		
 		// call override point of update
 		self.update(deltaTime: deltaTime)
 	}
