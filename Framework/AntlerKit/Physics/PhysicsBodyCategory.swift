@@ -22,6 +22,7 @@ public struct PhysicsBodyCategory : OptionSet, Hashable {
 	public init(rawValue: UInt32) {
 		self.rawValue = rawValue
 	}
+	
 	public init(_ categories: PhysicsBodyCategory...) {
 		self.rawValue = categories.reduce(PhysicsBodyCategory.none,
 			{ result, next -> PhysicsBodyCategory in
