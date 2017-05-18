@@ -45,9 +45,9 @@ public extension LightingCategory {
 // MARK: - SpriteKit Integration
 public extension GameObject {
 	
-	public var litBy : LightingCategory {
-		get { return LightingCategory(rawValue: self.root.lightingBitMask) }
-	}
+//	public var litBy : LightingCategory {
+//		get { return LightingCategory(rawValue: self.root.) }
+//	}
 	
 //	public var shadowedBy : LightingCategory {
 //		get { }
