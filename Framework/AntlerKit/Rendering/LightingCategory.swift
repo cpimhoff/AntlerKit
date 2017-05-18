@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SpriteKit
 
 public struct LightingCategory : OptionSet, Hashable {
 	
@@ -38,9 +39,18 @@ public extension LightingCategory {
 // MARK: - SpriteKit Integration
 public extension GameObject {
 	
-//	public var litBy : LightingCategory {
-//		get { return LightingCategory(rawValue: self.root.) }
-//	}
+	public var litBy : LightingCategory? {
+		get {
+			guard let sprite = self.primitive as? SKSpriteNode else { return nil }
+			return LightingCategory(rawValue: sprite.lightingBitMask)
+		}
+		set {
+			guard let sprite = self.primitive as? SKSpriteNode else { return }
+			guard let mask = newValue else { return }
+			
+			sprite.lightingBitMask = mask.rawValue
+		}
+	}
 	
 //	public var shadowedBy : LightingCategory {
 //		get { }
