@@ -52,7 +52,7 @@ open class Scene {
 		self.root.delegateScene = self
 		self.root.physicsWorld.contactDelegate = self.root
 		
-		self.ambientLightSource.categoryBitMask = ~(.allZeros)	// apply to all categories
+		self.ambientLightSource.categoryBitMask = ~.allZeros	// apply to all categories
 		self.root.addChild(self.ambientLightSource)
 	}
 	
