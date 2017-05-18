@@ -29,6 +29,11 @@ public struct PhysicsBodyCategory : OptionSet, Hashable {
 			}).rawValue
 	}
 	
+	public init(uniqueInt1Through32 index: UInt32) {
+		if index == 0 || index > 32 { fatalError("PhysicsBodyCategory index must be within 1...32") }
+		self.init(rawValue: 1 << (index - 1))
+	}
+	
 }
 
 // MARK: - Built In Categories
