@@ -23,13 +23,6 @@ public struct PhysicsBodyCategory : OptionSet, Hashable {
 		self.rawValue = rawValue
 	}
 	
-	public init(_ categories: PhysicsBodyCategory...) {
-		self.rawValue = categories.reduce(PhysicsBodyCategory.none,
-			{ result, next -> PhysicsBodyCategory in
-				return result.union(next)
-			}).rawValue
-	}
-	
 	public init(uniqueInt1Through32 index: UInt32) {
 		if index == 0 || index > 32 { fatalError("PhysicsBodyCategory index must be within 1...32") }
 		self.init(rawValue: 1 << (index - 1))

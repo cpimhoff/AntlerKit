@@ -19,13 +19,6 @@ public struct LightingCategory : OptionSet, Hashable {
 		self.rawValue = rawValue
 	}
 	
-	public init(_ categories: LightingCategory...) {
-		self.rawValue = categories.reduce(LightingCategory.none,
-		                                  { result, next -> LightingCategory in
-											return result.union(next)
-		}).rawValue
-	}
-	
 	public init(uniqueInt1Through32 index: UInt32) {
 		if index == 0 || index > 32 { fatalError("LightingCategory index must be within 1...32") }
 		self.init(rawValue: 1 << (index - 1))
