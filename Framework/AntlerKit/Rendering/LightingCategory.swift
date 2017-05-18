@@ -46,18 +46,30 @@ public extension GameObject {
 		}
 		set {
 			guard let sprite = self.primitive as? SKSpriteNode else { return }
-			guard let mask = newValue else { return }
-			
-			sprite.lightingBitMask = mask.rawValue
+			sprite.lightingBitMask = newValue?.rawValue ?? LightingCategory.none.rawValue
 		}
 	}
 	
-//	public var shadowedBy : LightingCategory {
-//		get { }
-//	}
-//	
-//	public var castShadowsFrom : LightingCategory {
-//		get { }
-//	}
+	public var shadowedBy : LightingCategory? {
+		get {
+			guard let sprite = self.primitive as? SKSpriteNode else { return nil }
+			return LightingCategory(rawValue: sprite.shadowedBitMask)
+		}
+		set {
+			guard let sprite = self.primitive as? SKSpriteNode else { return }
+			sprite.shadowedBitMask = newValue?.rawValue ?? LightingCategory.none.rawValue
+		}
+	}
+
+	public var castShadowsFrom : LightingCategory? {
+		get {
+			guard let sprite = self.primitive as? SKSpriteNode else { return nil }
+			return LightingCategory(rawValue: sprite.shadowCastBitMask)
+		}
+		set {
+			guard let sprite = self.primitive as? SKSpriteNode else { return }
+			sprite.shadowCastBitMask = newValue?.rawValue ?? LightingCategory.none.rawValue
+		}
+	}
 	
 }
