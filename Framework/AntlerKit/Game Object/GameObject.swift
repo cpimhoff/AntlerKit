@@ -167,7 +167,7 @@ public extension GameObject {
 	}
 	
 	/// The current position in scene space of the reciever.
-	public var scenePosition : Point! {
+	public var scenePosition : Point {
 		get {
 			guard let wrappedScene = root.scene else {
 				fatalError("GameObject has not been added to a scene and thus has no scene-relative position")
