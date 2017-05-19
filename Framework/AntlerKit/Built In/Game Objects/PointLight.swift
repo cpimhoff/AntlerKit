@@ -29,6 +29,15 @@ open class PointLight : GameObject {
 
 public extension PointLight {
 	
+	public var category : LightingCategory {
+		get {
+			return LightingCategory(rawValue: self.lightNode.categoryBitMask)
+		}
+		set {
+			self.lightNode.categoryBitMask = newValue.rawValue
+		}
+	}
+	
 	public var falloff : Float {
 		get {
 			return Float(self.lightNode.falloff)
