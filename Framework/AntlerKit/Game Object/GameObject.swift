@@ -64,17 +64,14 @@ open class GameObject {
 	}
 	
 	open func add(_ component: Component) {
-		let typeName = String(describing: type(of: component))
-		self.components[typeName] = component
+		if component is AnonymousComponent {
+			let anonymousName = UUID().uuidString
+			self.components[anonymousName] = component
+		} else {
+			let typeName = String(describing: type(of: component))
+			self.components[typeName] = component
+		}
 	
-		component.gameObject = self
-		component.configure()
-	}
-	
-	internal func add(anonymous component: Component) {
-		let anonymousName = UUID().uuidString
-		self.components[anonymousName] = component
-		
 		component.gameObject = self
 		component.configure()
 	}

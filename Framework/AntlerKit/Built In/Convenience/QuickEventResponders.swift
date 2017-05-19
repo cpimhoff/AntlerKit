@@ -8,9 +8,6 @@
 
 import Foundation
 
-/// An `AnonymousComponent` can be added to a `GameObject`, but not later accessed.
-internal protocol AnonymousComponent : Component {}
-
 // MARK: - Respond to Contact Quick Action
 
 internal class RespondToContactComponent : SimpleComponent, AnonymousComponent, RespondsToContact {
@@ -42,13 +39,13 @@ public extension GameObject {
 	/// Runs the closure whenever this GameObject makes contact with another.
 	public func defineOnContactsBegin(_ action: @escaping (_ other: GameObject?) -> Void) {
 		let responseComponent = RespondToContactComponent(phase: .begin, action: action)
-		self.add(anonymous: responseComponent)
+		self.add(responseComponent)
 	}
 	
 	/// Runs the closure whenever this GameObject ends contact with another.
 	public func defineOnContactsEnd(_ action: @escaping (_ other: GameObject?) -> Void) {
 		let responseComponent = RespondToContactComponent(phase: .end, action: action)
-		self.add(anonymous: responseComponent)
+		self.add(responseComponent)
 	}
 	
 }

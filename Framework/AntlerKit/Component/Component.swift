@@ -9,6 +9,9 @@
 import Foundation
 import GameplayKit
 
+/// An `AnonymousComponent` can be added to a `GameObject`, but not later accessed.
+public protocol AnonymousComponent : Component {}
+
 public protocol Component : AnyObject {
 	
 	/// If false, this component is not updated, nor does it respond to events
@@ -43,8 +46,6 @@ open class SimpleComponent : Component {
 	public init() {
 		// override point...
 	}
-	
-	
 	
 }
 
