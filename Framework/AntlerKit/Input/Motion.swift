@@ -52,9 +52,9 @@ public class Motion {
 
 public struct MotionReading {
 	
-	let pitch : Double
-	let roll : Double
-	let yaw : Double
+	public let pitch : Double
+	public let roll : Double
+	public let yaw : Double
 	
 }
 
