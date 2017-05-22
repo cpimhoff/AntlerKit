@@ -9,21 +9,21 @@
 import Foundation
 import GameplayKit
 
-public class Random {
+public struct Random {
 	
-	static var shared = Random()
+	public static var shared = Random()
 	
-	var seed : GKRandom
+	fileprivate var seed : GKRandom
 	
-	init(seed: GKRandom) {
+	public init(seed: GKRandom) {
 		self.seed = seed
 	}
 	
-	convenience init(quality: RandomnessQuality = .default) {
+	public init(quality: RandomnessQuality = .default) {
 		self.init(seed: quality.randomSource)
 	}
 	
-	convenience init(distribution type: RandomDistributionType, quality: RandomnessQuality = .default,
+	public init(distribution type: RandomDistributionType, quality: RandomnessQuality = .default,
 	                 lowest: Int, highest: Int) {
 		
 		let seed = type.distributionSource(with: quality.randomSource,
@@ -33,7 +33,7 @@ public class Random {
 	
 }
 
-extension Random {
+public extension Random {
 
 	func nextInt() -> Int {
 		return self.seed.nextInt()
@@ -102,7 +102,7 @@ public enum RandomDistributionType {
 	/// Values that have yet to be "drawn" have greater chance
 	case shuffled
 	
-	func distributionSource(with seed: GKRandomSource, lowestValue: Int, highestValue: Int) -> GKRandomDistribution {
+	internal func distributionSource(with seed: GKRandomSource, lowestValue: Int, highestValue: Int) -> GKRandomDistribution {
 		switch self {
 		case .equalOdds:
 			return GKRandomDistribution(randomSource: seed, lowestValue: lowestValue, highestValue: highestValue)

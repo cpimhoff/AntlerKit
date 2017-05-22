@@ -8,11 +8,11 @@
 
 import Foundation
 
-enum Direction {
+public enum Direction {
 	
 	case up, down, left, right
 	
-	var vector : Vector {
+	public var vector : Vector {
 		switch self {
 		case .up:
 			return Vector(dx: 0, dy: 1)

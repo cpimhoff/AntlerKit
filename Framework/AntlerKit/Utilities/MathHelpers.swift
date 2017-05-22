@@ -10,31 +10,31 @@ import Foundation
 import CoreGraphics
 
 /// Provides static methods for converting between units
-struct Convert {
+public struct Convert {
 	
 	///Returns the representation of the supplied radians in degrees
-	static func toDegrees<T: FloatingPoint>(fromRadians radians:T) -> T {
+	public static func toDegrees<T: FloatingPoint>(fromRadians radians:T) -> T {
 		return radians * (180/T.pi)
 	}
 	
 	///Returns the representation of the supplied degrees in radians
-	static func toRadians<T: FloatingPoint>(fromDegrees degrees:T) -> T {
+	public static func toRadians<T: FloatingPoint>(fromDegrees degrees:T) -> T {
 		return degrees * (T.pi/180)
 	}
 	
 }
 
 /// Provides static methods for interpolating between values
-struct Interpolate {
+public struct Interpolate {
 	
 	///Linear interpolation between two numbers based on alpha
-	static func linear<T: FloatingPoint>(from a:T, to b:T, alpha:T) -> T {
+	public static func linear<T: FloatingPoint>(from a:T, to b:T, alpha:T) -> T {
 		return a + (b - a) * alpha
 	}
 	
 	///Linear interpolation between two Floats based on a delta time and speed
 	///DeltaTime is in seconds, and speed is in units per second.
-	static func linear<T: BinaryFloatingPoint>(from current:T, toward target:T, deltaTime:TimeInterval, speed:T) -> T {
+	public static func linear<T: BinaryFloatingPoint>(from current:T, toward target:T, deltaTime:TimeInterval, speed:T) -> T {
 		if current < target {
 			return min(current + (speed * T(deltaTime)), target)
 		} else {
@@ -44,7 +44,7 @@ struct Interpolate {
 	
 	///Linear interpolation between two CGPoints based on a delta time and speed
 	///DeltaTime is in seconds, and speed is in units per second.
-	static func linear(from current:Point, toward target:Point, deltaTime:TimeInterval, rate:CGFloat) -> Point {
+	public static func linear(from current:Point, toward target:Point, deltaTime:TimeInterval, rate:CGFloat) -> Point {
 		let difX = current.x - target.x
 		let difY = current.y - target.y
 		

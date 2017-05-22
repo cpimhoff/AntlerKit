@@ -9,7 +9,7 @@
 import Foundation
 import GameplayKit
 
-extension vector_float2 {
+public extension vector_float2 {
 	
 	init(_ point: Point) {
 		self.init(Float(point.x), Float(point.y))
@@ -21,7 +21,7 @@ extension vector_float2 {
 	
 }
 
-extension Point {
+public extension Point {
 	
 	init(_ vector: vector_float2) {
 		self.init(x: CGFloat(vector.x), y: CGFloat(vector.y))
@@ -29,7 +29,7 @@ extension Point {
 	
 }
 
-extension Vector {
+public extension Vector {
 	
 	init(_ vector: vector_float2) {
 		self.init(dx: CGFloat(vector.x), dy: CGFloat(vector.y))

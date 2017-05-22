@@ -9,7 +9,7 @@
 import Foundation
 import CoreGraphics
 
-extension Point {
+public extension Point {
 	
 	/// The absolute distance to another point in the same space
 	func distance(to other:Point) -> CGFloat {
@@ -49,7 +49,7 @@ extension Point {
 	
 }
 
-extension Vector {
+public extension Vector {
 	
 	/// Returns a new vector scaled evenly to both axis
 	func scaled(_ amount:CGFloat) -> Vector {
