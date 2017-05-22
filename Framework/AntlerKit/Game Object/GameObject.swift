@@ -55,7 +55,7 @@ open class GameObject {
 	
 	// MARK: - Component
 	
-	fileprivate var components = [String: Component]()
+	private var components = [String: Component]()
 	
 	public var allComponents : [Component] {
 		return Array(self.components.values)
@@ -64,7 +64,7 @@ open class GameObject {
 		return self.components.values.filter { $0.enabled }
 	}
 	
-	open func add(_ component: Component) {
+	public func add(_ component: Component) {
 		if component is AnonymousComponent {
 			let anonymousName = UUID().uuidString
 			self.components[anonymousName] = component
@@ -77,7 +77,7 @@ open class GameObject {
 		component.configure()
 	}
 	
-	open func component(type: Component.Type) -> Component? {
+	public func component(type: Component.Type) -> Component? {
 		let typeName = String(describing: type)
 		return self.components[typeName] ?? nil
 	}
@@ -88,7 +88,7 @@ open class GameObject {
 		self.root.addChild(child.root)
 	}
 	
-	open var children : [GameObject] {
+	public var children : [GameObject] {
 		var gameObjects = [GameObject]()
 		for node in self.root.children {
 			if let transform = node as? RootTransform {
@@ -137,13 +137,13 @@ open class GameObject {
 	
 	/// If true, any contact event on this gameObject will be forwarded
 	/// to the children of this game object.
-	var propogateContactsToChildren = false
+	public var propogateContactsToChildren = false
 	
 	/// If true, this gameObject should never move positions (directly moved or indirectly moved)
 	/// The object is still allowed to animate frames, but its position and bounding box can not change.
 	///
 	/// Used to generate object graphs
-	var isStatic = false {
+	public var isStatic = false {
 		didSet {
 			self.body?.isDynamic = self.isStatic
 		}
@@ -155,7 +155,7 @@ open class GameObject {
 public extension GameObject {
 	
 	/// The current position, relative to parent, of the reciever
-	public var position : Point {
+	var position : Point {
 		get {
 			return root.position
 		}
@@ -165,7 +165,7 @@ public extension GameObject {
 	}
 	
 	/// The current position in scene space of the reciever.
-	public var scenePosition : Point {
+	var scenePosition : Point {
 		get {
 			guard let wrappedScene = root.scene else {
 				fatalError("GameObject has not been added to a scene and thus has no scene-relative position")
@@ -175,7 +175,7 @@ public extension GameObject {
 	}
 	
 	/// The current rotation, relative to parent, of the reciever
-	public var rotation : Float {
+	var rotation : Float {
 		get {
 			return Float(self.root.zRotation)
 		}
@@ -185,7 +185,7 @@ public extension GameObject {
 	}
 	
 	/// The current layer, relative to parent, of the reciever
-	public var layer : Int {
+	var layer : Int {
 		get {
 			return Int(root.zPosition)
 		}
@@ -195,7 +195,7 @@ public extension GameObject {
 	}
 	
 	/// The GameObject's physics body
-	public var body : PhysicsBody? {
+	var body : PhysicsBody? {
 		get {
 			return self.root.physicsBody
 		}
