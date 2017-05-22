@@ -19,15 +19,15 @@ import SpriteKit
 //	"sheet animation 0"
 //
 
-open class Animation {
+public struct Animation {
 	
-	public var frames : [SKTexture]
+	public let frames : [SKTexture]
 	
 	public init(frames: [SKTexture]) {
 		self.frames = frames
 	}
 	
-	public convenience init?(sheetName: String, animationName: String) {
+	public init?(sheetName: String, animationName: String) {
 		var frameList = [SKTexture]()
 		
 		var frameNumber = 0
