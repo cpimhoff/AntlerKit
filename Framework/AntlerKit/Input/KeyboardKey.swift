@@ -39,3 +39,11 @@ public enum KeyboardKey : String {
 	case six = "6", seven = "7", eight = "8", nine = "9", zero = "0"
 	
 }
+
+public extension KeyboardKey {
+	
+	var numericValue : Int? {
+		return Int(self.rawValue)
+	}
+	
+}
