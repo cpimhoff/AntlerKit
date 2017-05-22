@@ -34,7 +34,7 @@ open class SimpleComponent : Component {
 	
 	open var enabled : Bool = true
 
-	open weak var gameObject : GameObject!
+	public weak var gameObject : GameObject!
 	
 	open func update(deltaTime: TimeInterval) {
 		// override point...
@@ -55,7 +55,7 @@ open class InspectableComponent : GKComponent, Component {
 	
 	open var enabled : Bool = true
 	
-	open weak var gameObject : GameObject!
+	public weak var gameObject : GameObject!
 	
 	open func configure() {
 		// override point...
