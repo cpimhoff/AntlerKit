@@ -28,7 +28,7 @@ internal extension Scene {
 	
 }
 
-public extension GameObject {
+fileprivate extension GameObject {
 	
 	convenience init(unrollingNode node: SKNode) {
 		self.init()
@@ -55,7 +55,6 @@ public extension GameObject {
 				self.add(component)
 			}
 		}
-		
 	}
 	
 }

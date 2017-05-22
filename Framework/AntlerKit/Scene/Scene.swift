@@ -58,7 +58,7 @@ open class Scene {
 	
 	// MARK: - Properties
 	
-	var stateMachine : StateMachine?
+	open var stateMachine : StateMachine?
 	
 	open var camera : Camera? {
 		didSet {
@@ -70,7 +70,7 @@ open class Scene {
 	
 	// MARK: - Adding Content
 	
-	open func add(_ child: GameObject) {
+	public func add(_ child: GameObject) {
 		if child.root.scene != nil {
 			return
 		}
@@ -79,7 +79,7 @@ open class Scene {
 		self.root.addChild(child.root)			// append the base primitive to render
 	}
 	
-	open func remove(_ child: GameObject) {
+	public func remove(_ child: GameObject) {
 		child.removeFromParent()	// will call `removeFromTopLevelList` if appropriate
 	}
 	
@@ -116,11 +116,11 @@ open class Scene {
 // MARK: - Exposing Key Properties
 public extension Scene {
 	
-	public var size : Size {
+	var size : Size {
 		return self.root.size
 	}
 	
-	public var backgroundColor : Color {
+	var backgroundColor : Color {
 		get {
 			return self.root.backgroundColor
 		} set {
@@ -128,7 +128,7 @@ public extension Scene {
 		}
 	}
 	
-	public var ambientColor : Color {
+	var ambientColor : Color {
 		get {
 			return self.ambientLightSource.ambientColor
 		}
@@ -137,7 +137,7 @@ public extension Scene {
 		}
 	}
 	
-	public var physicsWorld : SKPhysicsWorld {
+	var physicsWorld : SKPhysicsWorld {
 		return self.root.physicsWorld
 	}
 	
@@ -146,7 +146,7 @@ public extension Scene {
 // MARK: - Handling Physics
 internal extension Scene {
 	
-	internal func handleContact(_ contact: SKPhysicsContact, phase: PhysicsContactPhase) {
+	func handleContact(_ contact: SKPhysicsContact, phase: PhysicsContactPhase) {
 		let a = (contact.bodyA.node as? RootTransform)?.gameObject
 		let b = (contact.bodyB.node as? RootTransform)?.gameObject
 		

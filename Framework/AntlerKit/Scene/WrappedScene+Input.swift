@@ -19,7 +19,7 @@ import Foundation
 // MARK: - Gesture Recognization
 extension WrappedScene {
 	
-	internal func setupGestureRecognizers() {
+	func setupGestureRecognizers() {
 		#if os(iOS)
 			
 			let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(onSelect))
@@ -40,7 +40,7 @@ extension WrappedScene {
 		#endif
 	}
 	
-	internal func removeGestureRecognizers() {
+	func removeGestureRecognizers() {
 		for gr in self.gestureRecognizers {
 			self.view?.removeGestureRecognizer(gr)
 		}
@@ -53,7 +53,7 @@ extension WrappedScene {
 	
 	/// Called on tap or click event, find the node at the selection point
 	/// and send it the interface event (before dispatching to event system)
-	internal func onSelect(sender: GestureRecognizer) {
+	func onSelect(sender: GestureRecognizer) {
 		guard let view = self.view, sender.state == .ended
 			else { return }
 		
@@ -163,23 +163,23 @@ extension WrappedScene {
 	
 	override func mouseMoved(with event: NSEvent) {
 		let location = event.location(in: self)
-		Input.global.cursor.sceneLocation = location
+		Input.cursor.sceneLocation = location
 	}
 	
 	override func mouseUp(with event: NSEvent) {
-		Input.global.cursor.mainButton = .up
+		Input.cursor.mainButton = .up
 	}
 	
 	override func mouseDown(with event: NSEvent) {
-		Input.global.cursor.mainButton = .heldDown
+		Input.cursor.mainButton = .heldDown
 	}
 	
 	override func rightMouseUp(with event: NSEvent) {
-		Input.global.cursor.secondaryButton = .up
+		Input.cursor.secondaryButton = .up
 	}
 	
 	override func rightMouseDown(with event: NSEvent) {
-		Input.global.cursor.secondaryButton = .heldDown
+		Input.cursor.secondaryButton = .heldDown
 	}
 	
 }
@@ -190,19 +190,19 @@ extension WrappedScene {
 extension WrappedScene {
 	
 	override func keyDown(with event: NSEvent) {
-		self.bridgeKeys(event: event, toInput: Input.global, down: true)
+		self.bridgeKeys(event: event, down: true)
 	}
 	
 	override func keyUp(with event: NSEvent) {
-		self.bridgeKeys(event: event, toInput: Input.global, down: false)
+		self.bridgeKeys(event: event, down: false)
 	}
 	
-	private func bridgeKeys(event: NSEvent, toInput input: Input, down: Bool) {
+	private func bridgeKeys(event: NSEvent, down: Bool) {
 		let updateInputWith : (KeyboardKey) -> ()
 		if down {
-			updateInputWith = { k in input.activeKeys.insert(k) }
+			updateInputWith = { k in Input.activeKeys.insert(k) }
 		} else {
-			updateInputWith = { k in input.activeKeys.remove(k) }
+			updateInputWith = { k in Input.activeKeys.remove(k) }
 		}
 		
 		let characters = event.characters?.components(separatedBy: "") ?? []
@@ -243,20 +243,18 @@ extension WrappedScene {
 	}
 	
 	override func flagsChanged(with event: NSEvent) {
-		let input = Input.global
-		
-		bridgeModifier(event: event, .capsLock, toInput: input, .capsLock)
-		bridgeModifier(event: event, .command, toInput: input, .command)
-		bridgeModifier(event: event, .shift, toInput: input, .shift)
-		bridgeModifier(event: event, .option, toInput: input, .option)
-		bridgeModifier(event: event, .control, toInput: input, .control)
+		bridgeModifier(event: event, .capsLock, .capsLock)
+		bridgeModifier(event: event, .command, .command)
+		bridgeModifier(event: event, .shift, .shift)
+		bridgeModifier(event: event, .option, .option)
+		bridgeModifier(event: event, .control, .control)
 	}
 	
-	private func bridgeModifier(event: NSEvent, _ flag: NSEventModifierFlags, toInput input: Input, _ key: KeyboardKey) {
+	private func bridgeModifier(event: NSEvent, _ flag: NSEventModifierFlags, _ key: KeyboardKey) {
 		if event.modifierFlags.contains(flag) {
-			input.activeKeys.insert(key)
+			Input.activeKeys.insert(key)
 		} else {
-			input.activeKeys.remove(key)
+			Input.activeKeys.remove(key)
 		}
 	}
 	
