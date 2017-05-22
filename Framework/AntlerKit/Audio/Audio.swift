@@ -10,12 +10,12 @@ import Foundation
 import AVFoundation
 import SpriteKit
 
-open class Audio {
+public struct Audio {
 	
 	#if os(iOS)
 	/// Configures the application's audio session for game sounds and music.
 	/// By default, the audio session is non-primary and mixable.
-	open static func configureAudioSession() {
+	public static func configureAudioSession() {
 		let sessionType = AVAudioSessionCategoryAmbient
 		try? AVAudioSession.sharedInstance().setCategory(sessionType)
 		try? AVAudioSession.sharedInstance().setActive(true)
@@ -33,7 +33,7 @@ open class Audio {
 	
 	/// Changes the currently playing music.
 	/// Music plays independently of the scene.
-	open static func changeMusic(toFileNamed fileName: String, volume: Float = 1.0, mixTime: TimeInterval = 0) {
+	public static func changeMusic(toFileNamed fileName: String, volume: Float = 1.0, mixTime: TimeInterval = 0) {
 		guard let musicURL = Bundle.main.url(forResource: fileName, withExtension: nil)
 			else { return }
 		guard let newMix = try? AVAudioPlayer(contentsOf: musicURL)
@@ -61,7 +61,7 @@ open class Audio {
 	}
 	
 	/// Plays a short audio file through the Scene
-	open static func play(soundFileNamed fileName: String, volume: Float = 1.0) {
+	public static func play(soundFileNamed fileName: String, volume: Float = 1.0) {
 		guard let root = Scene.current?.root else { return }
 		
 		let tempNode = SKNode()
