@@ -24,7 +24,7 @@ open class Camera : GameObject {
 
 public extension Camera {
 	
-	public var zoomScale : Float {
+	var zoomScale : Float {
 		get {
 			return Float(self.cameraNode.xScale)
 		}
@@ -38,11 +38,11 @@ public extension Camera {
 
 public extension Camera {
 	
-	public func containsInViewport(_ gameObject: GameObject) -> Bool {
+	func containsInViewport(_ gameObject: GameObject) -> Bool {
 		return self.cameraNode.contains(gameObject.root)
 	}
 	
-	public func allInViewport() -> [GameObject] {
+	func allInViewport() -> [GameObject] {
 		var result = [GameObject]()
 		
 		let nodes = self.cameraNode.containedNodeSet()

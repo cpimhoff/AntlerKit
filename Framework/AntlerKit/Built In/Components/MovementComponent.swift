@@ -9,24 +9,24 @@
 import Foundation
 import SpriteKit
 
-class MovementComponent: InspectableComponent {
+open class MovementComponent: InspectableComponent {
 	
 	// The speed at which to move in a vector with magnitude 1
-	@GKInspectable var baseSpeed : Float = 150
+	@GKInspectable open var baseSpeed : Float = 150
 	
 	/// Whether to move the GameObject via the physics simualtion
 	/// or via setting its location each frame
-	@GKInspectable var usePhysicsBasedMovement : Bool = true
+	@GKInspectable open var usePhysicsBasedMovement : Bool = true
 	
 	/// Whether or not to snap the GameObject to point toward its movement vector
-	@GKInspectable var pointTowardMovement : Bool = false
+	@GKInspectable open var pointTowardMovement : Bool = false
 	
 	/// The current vector that this component is moving along or should move along.
 	/// This vector's magnitude is accounted for in the speed of movement.
-	var vector : CGVector = CGVector(dx: 0, dy: 0)
+	open var vector : CGVector = CGVector(dx: 0, dy: 0)
 	
 	
-	override func update(deltaTime: TimeInterval) {
+	open override func update(deltaTime: TimeInterval) {
 		self.move(deltaTime: deltaTime)
 	}
 	

@@ -29,7 +29,7 @@ open class Label : GameObject {
 
 public extension Label {
 	
-	public var text : String {
+	var text : String {
 		get {
 			return self.textNode.text ?? ""
 		}
@@ -38,7 +38,7 @@ public extension Label {
 		}
 	}
 	
-	public var fontSize : Float {
+	var fontSize : Float {
 		get {
 			return Float(self.textNode.fontSize)
 		}
@@ -47,7 +47,7 @@ public extension Label {
 		}
 	}
 	
-	public var fontName : String {
+	var fontName : String {
 		get {
 			return self.textNode.fontName!
 		}

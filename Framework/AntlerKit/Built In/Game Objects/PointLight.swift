@@ -29,7 +29,7 @@ open class PointLight : GameObject {
 
 public extension PointLight {
 	
-	public var category : LightingCategory {
+	var category : LightingCategory {
 		get {
 			return LightingCategory(rawValue: self.lightNode.categoryBitMask)
 		}
@@ -38,7 +38,7 @@ public extension PointLight {
 		}
 	}
 	
-	public var falloff : Float {
+	var falloff : Float {
 		get {
 			return Float(self.lightNode.falloff)
 		}
@@ -47,7 +47,7 @@ public extension PointLight {
 		}
 	}
 	
-	public var color : Color {
+	var color : Color {
 		get {
 			return self.lightNode.lightColor
 		}
@@ -56,7 +56,7 @@ public extension PointLight {
 		}
 	}
 	
-	public var shadowColor : Color {
+	var shadowColor : Color {
 		get {
 			return self.lightNode.shadowColor
 		}
