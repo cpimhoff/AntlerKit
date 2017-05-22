@@ -18,9 +18,9 @@ public protocol RespondsToContact {
 	
 }
 
-public extension RespondsToContact {
+internal extension RespondsToContact {
 	
-	public func onContact(with other: GameObject?, phase: PhysicsContactPhase) {
+	func onContact(with other: GameObject?, phase: PhysicsContactPhase) {
 		switch phase {
 		case .begin:
 			self.onContactBegan(with: other)
