@@ -30,8 +30,8 @@ public struct LightingCategory : OptionSet, Hashable {
 // MARK: - Built In Categories
 public extension LightingCategory {
 	
-	public static let none	= LightingCategory(rawValue: .allZeros)
-	public static let all 	= LightingCategory(rawValue: ~.allZeros)
+	static let none	= LightingCategory(rawValue: .allZeros)
+	static let all 	= LightingCategory(rawValue: ~.allZeros)
 	
 }
 
@@ -39,7 +39,7 @@ public extension LightingCategory {
 // MARK: - SpriteKit Integration
 public extension GameObject {
 	
-	public var litBy : LightingCategory? {
+	var litBy : LightingCategory? {
 		get {
 			guard let sprite = self.primitive as? SKSpriteNode else { return nil }
 			return LightingCategory(rawValue: sprite.lightingBitMask)
@@ -50,7 +50,7 @@ public extension GameObject {
 		}
 	}
 	
-	public var shadowedBy : LightingCategory? {
+	var shadowedBy : LightingCategory? {
 		get {
 			guard let sprite = self.primitive as? SKSpriteNode else { return nil }
 			return LightingCategory(rawValue: sprite.shadowedBitMask)
@@ -61,7 +61,7 @@ public extension GameObject {
 		}
 	}
 
-	public var castShadowsFrom : LightingCategory? {
+	var castShadowsFrom : LightingCategory? {
 		get {
 			guard let sprite = self.primitive as? SKSpriteNode else { return nil }
 			return LightingCategory(rawValue: sprite.shadowCastBitMask)
