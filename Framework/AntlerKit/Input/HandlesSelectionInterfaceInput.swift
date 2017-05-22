@@ -30,6 +30,7 @@ internal extension GameObject {
 		if !handled {
 			for child in self.children {
 				if child._handleSelected() {
+					handled = true
 					break
 				}
 			}

@@ -17,13 +17,17 @@ public protocol HandlesTextInterfaceInput {
 
 public extension HandlesTextInterfaceInput {
 	
-	public func makeTextResponder() {
+	func makeTextResponder() {
 		_HandlesTextInterfaceInput.currentResponder = self
+	}
+	
+	func resignTextResponder() {
+		_HandlesTextInterfaceInput.currentResponder = nil
 	}
 	
 }
 
-internal struct _HandlesTextInterfaceInput {
+fileprivate struct _HandlesTextInterfaceInput {
 	
 	internal static var currentResponder : HandlesTextInterfaceInput?
 	
@@ -44,6 +48,7 @@ internal extension GameObject {
 		if !handled {
 			for child in self.children {
 				if child._handle(textInput: text) {
+					handled = true
 					break
 				}
 			}
