@@ -58,6 +58,8 @@ open class Scene {
 	
 	// MARK: - Properties
 	
+	var stateMachine : GKStateMachine?
+	
 	open var camera : Camera? {
 		didSet {
 			self.root.camera = self.camera?.cameraNode
@@ -90,9 +92,13 @@ open class Scene {
 	// MARK: - Updating Scene Content
 	
 	internal func _update(deltaTime: TimeInterval) {
+		// update elements
+		self.stateMachine?.update(deltaTime: deltaTime)
 		for gameObject in topLevelGameObjects {
 			gameObject._update(deltaTime: deltaTime)
 		}
+		
+		// user handler
 		self.update(deltaTime: deltaTime)
 		
 		// actors had a chance to update based on input, tick the input
