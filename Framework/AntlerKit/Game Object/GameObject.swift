@@ -48,7 +48,7 @@ open class GameObject {
 	
 	// use this to check if we have an agent (without touching, and thus initializing it)
 	private var isAgentInitialized = false
-	public lazy var agent : GKAgent2D = {
+	public lazy var agent : Agent2D = {
 		self.isAgentInitialized = true
 		return GKAgent2D()
 	}()

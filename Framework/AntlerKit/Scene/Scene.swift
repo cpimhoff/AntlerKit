@@ -58,7 +58,7 @@ open class Scene {
 	
 	// MARK: - Properties
 	
-	var stateMachine : GKStateMachine?
+	var stateMachine : StateMachine?
 	
 	open var camera : Camera? {
 		didSet {
