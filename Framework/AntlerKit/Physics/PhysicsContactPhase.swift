@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum PhysicsContactPhase {
+internal enum PhysicsContactPhase {
 	
 	case begin
 	case end
