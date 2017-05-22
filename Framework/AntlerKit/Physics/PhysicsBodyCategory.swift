@@ -33,15 +33,15 @@ public struct PhysicsBodyCategory : OptionSet, Hashable {
 // MARK: - Built In Categories
 public extension PhysicsBodyCategory {
 	
-	public static let none	= PhysicsBodyCategory(rawValue: UInt32.allZeros)
-	public static let all 	= PhysicsBodyCategory(rawValue: ~UInt32.allZeros)
+	static let none	= PhysicsBodyCategory(rawValue: UInt32.allZeros)
+	static let all 	= PhysicsBodyCategory(rawValue: ~UInt32.allZeros)
 	
 }
 
 // MARK: - Setting Collisions and Contacts
 public extension PhysicsBodyCategory {
 	
-	public static func enableCollision(between a: PhysicsBodyCategory, and b: PhysicsBodyCategory) {
+	static func enableCollision(between a: PhysicsBodyCategory, and b: PhysicsBodyCategory) {
 		combineSeperatedFlags(compositeA: a, compositeB: b) { (x, y) in
 			let previous = PhysicsBodyCategory.collisions[x] ?? Set<PhysicsBodyCategory>()
 			let updated = previous.union([y])
@@ -49,7 +49,7 @@ public extension PhysicsBodyCategory {
 		}
 	}
 	
-	public static func enableContacts(between a: PhysicsBodyCategory, and b: PhysicsBodyCategory) {
+	static func enableContacts(between a: PhysicsBodyCategory, and b: PhysicsBodyCategory) {
 		combineSeperatedFlags(compositeA: a, compositeB: b) { (x, y) in
 			let previous = PhysicsBodyCategory.contacts[x] ?? Set<PhysicsBodyCategory>()
 			let updated = previous.union([y])
@@ -57,7 +57,7 @@ public extension PhysicsBodyCategory {
 		}
 	}
 	
-	private static func combineSeperatedFlags(compositeA: PhysicsBodyCategory, compositeB: PhysicsBodyCategory, action: (PhysicsBodyCategory, PhysicsBodyCategory) -> Void) {
+	static func combineSeperatedFlags(compositeA: PhysicsBodyCategory, compositeB: PhysicsBodyCategory, action: (PhysicsBodyCategory, PhysicsBodyCategory) -> Void) {
 		
 		let aFlags = compositeA.seperatedFlags
 		let bFlags = compositeB.seperatedFlags
@@ -75,7 +75,7 @@ public extension PhysicsBodyCategory {
 // MARK: - SpriteKit Integration
 public extension PhysicsBody {
 	
-	public var category : PhysicsBodyCategory {
+	var category : PhysicsBodyCategory {
 		get {
 			return PhysicsBodyCategory(rawValue: self.categoryBitMask)
 		}
@@ -123,7 +123,7 @@ internal extension PhysicsBodyCategory {
 // MARK: - Decomposing Flags
 fileprivate extension PhysicsBodyCategory {
 	
-	fileprivate var seperatedFlags : Set<PhysicsBodyCategory> {
+	var seperatedFlags : Set<PhysicsBodyCategory> {
 		var flags = Set<PhysicsBodyCategory>()
 		
 		for i : UInt32 in 0..<32 {
