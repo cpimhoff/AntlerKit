@@ -29,10 +29,6 @@ open class Animator {
 		}
 	}
 	
-	open func update(deltaTime: TimeInterval) {
-		// virtual function
-	}
-	
 }
 
 // MARK: - Running animations

@@ -36,6 +36,7 @@ open class GameObject {
 	
 	public var animator : Animator? {
 		didSet {
+			self.animator?.gameObject = self
 			if self.primitive == nil {
 				// animator requires a primitive to be present
 				self.primitive = SKNode()
@@ -122,9 +123,7 @@ open class GameObject {
 		for component in self.enabledComponents {
 			component.update(deltaTime: deltaTime)
 		}
-		
-		self.animator?.update(deltaTime: deltaTime)
-		
+				
 		// call override point of update
 		self.update(deltaTime: deltaTime)
 	}
