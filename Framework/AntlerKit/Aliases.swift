@@ -27,6 +27,9 @@ public typealias State = GKState
 public typealias Agent = GKAgent
 public typealias Agent2D = GKAgent2D
 
+public typealias RuleSystem = GKRuleSystem
+public typealias Rule = GKRule
+
 // Cross Platform
 #if os(iOS)
 	internal typealias View = UIView
