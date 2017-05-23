@@ -58,7 +58,7 @@ internal extension Input {
 			self.touches = updatedTouches
 		#elseif os(macOS)
 			if self.cursor.mainButton == .click {
-				self.cursor.secondaryButton = .up
+				self.cursor.mainButton = .up
 			}
 			if self.cursor.secondaryButton == .click {
 				self.cursor.secondaryButton = .up
