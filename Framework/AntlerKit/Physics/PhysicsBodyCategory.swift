@@ -57,7 +57,7 @@ public extension PhysicsBodyCategory {
 		}
 	}
 	
-	static func combineSeperatedFlags(compositeA: PhysicsBodyCategory, compositeB: PhysicsBodyCategory, action: (PhysicsBodyCategory, PhysicsBodyCategory) -> Void) {
+	private static func combineSeperatedFlags(compositeA: PhysicsBodyCategory, compositeB: PhysicsBodyCategory, action: (PhysicsBodyCategory, PhysicsBodyCategory) -> Void) {
 		
 		let aFlags = compositeA.seperatedFlags
 		let bFlags = compositeB.seperatedFlags

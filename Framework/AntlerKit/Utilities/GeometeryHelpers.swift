@@ -74,7 +74,7 @@ public extension Vector {
 	/// Returns the angle (in radians) this vector represents.
 	/// North is considered the start of the unit circle (zero).
 	var angle : CGFloat {
-		return atan2(dy, dx) - CGFloat(M_PI_2)
+		return atan2(dy, dx) - CGFloat.pi
 	}
 	
 	/// Returns a vector in the oppisite direction as the reciever.
