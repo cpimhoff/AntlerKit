@@ -53,7 +53,7 @@ extension WrappedScene {
 	
 	/// Called on tap or click event, find the node at the selection point
 	/// and send it the interface event (before dispatching to event system)
-	func onSelect(sender: GestureRecognizer) {
+	@objc func onSelect(sender: GestureRecognizer) {
 		guard let view = self.view, sender.state == .ended
 			else { return }
 		
