@@ -66,7 +66,7 @@ open class Scene {
 		}
 	}
 	
-	fileprivate var ambientLightSource = SKLightNode()
+	private var ambientLightSource = SKLightNode()
 	
 	// MARK: - Adding Content
 	

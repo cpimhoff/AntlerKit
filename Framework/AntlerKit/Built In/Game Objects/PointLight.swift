@@ -11,7 +11,7 @@ import SpriteKit
 
 open class PointLight : GameObject {
 	
-	fileprivate var lightNode : SKLightNode! {
+	private var lightNode : SKLightNode! {
 		get {
 			return self.primitive as? SKLightNode
 		}

@@ -12,8 +12,8 @@ import CoreGraphics
 
 public class Motion {
 	
-	fileprivate let motion : CMMotionManager
-	fileprivate var zeroPoint : CMAttitude
+	private let motion : CMMotionManager
+	private var zeroPoint : CMAttitude
 	
 	init?() {
 		self.motion = CMMotionManager()

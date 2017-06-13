@@ -13,7 +13,7 @@ public struct Random {
 	
 	public static var shared = Random()
 	
-	fileprivate var seed : GKRandom
+	private var seed : GKRandom
 	
 	public init(seed: GKRandom) {
 		self.seed = seed

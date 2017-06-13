@@ -15,7 +15,7 @@ open class Animator {
 	public let sheetName : String
 	
 	/// cache for animations
-	fileprivate var animations = [String: Animation]()
+	private var animations = [String: Animation]()
 	
 	public init(sheetName: String) {
 		self.sheetName = sheetName
@@ -34,11 +34,11 @@ open class Animator {
 // MARK: - Running animations
 extension Animator {
 	
-	fileprivate var loopingAnimationKey : String {
+	private var loopingAnimationKey : String {
 		return "AK- Looping Animation"
 	}
 	
-	fileprivate var singleAnimationKey : String {
+	private var singleAnimationKey : String {
 		return "AK- Single Animation"
 	}
 
@@ -124,7 +124,7 @@ extension Animator {
 	}
 	
 	@discardableResult
-	fileprivate func load(animationNamed animationName: String) -> Animation? {
+	private func load(animationNamed animationName: String) -> Animation? {
 		if let fromCache = self.animations[animationName] {
 			return fromCache
 		}

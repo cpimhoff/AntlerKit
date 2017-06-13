@@ -11,7 +11,7 @@ import SpriteKit
 
 open class Label : GameObject {
 	
-	fileprivate var textNode : SKLabelNode! {
+	private var textNode : SKLabelNode! {
 		get {
 			return self.primitive as? SKLabelNode
 		}

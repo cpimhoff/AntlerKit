@@ -121,7 +121,7 @@ internal extension PhysicsBodyCategory {
 }
 
 // MARK: - Decomposing Flags
-fileprivate extension PhysicsBodyCategory {
+private extension PhysicsBodyCategory {
 	
 	var seperatedFlags : Set<PhysicsBodyCategory> {
 		var flags = Set<PhysicsBodyCategory>()

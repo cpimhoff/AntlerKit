@@ -27,7 +27,7 @@ public extension HandlesTextInterfaceInput {
 	
 }
 
-fileprivate struct _HandlesTextInterfaceInput {
+private struct _HandlesTextInterfaceInput {
 	
 	internal static var currentResponder : HandlesTextInterfaceInput?
 	
