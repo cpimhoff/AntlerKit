@@ -26,25 +26,14 @@ open class Scene {
 	
 	private var topLevelGameObjects = [GameObject]()
 	
-	// MARK: - Wrap a SKScene for rendering
+	// MARK: - Initialization
 	
 	internal var root : WrappedScene
 	
-	public init(size: Size) {
-		self.root = WrappedScene(size: size)
-		
+	internal init(root: WrappedScene, preprocessing: ((Scene)->())? = nil) {
+		self.root = root
 		initializeRoot()
-		
-		self.setup()
-	}
-	
-	public init?(fileNamed fileName: String) {
-		guard let scene = WrappedScene(fileNamed: fileName) else { return nil }
-		self.root = scene
-		
-		initializeRoot()
-		self.preprocessLoadedSceneFile()
-		
+		preprocessing?(self)
 		self.setup()
 	}
 	
@@ -54,6 +43,10 @@ open class Scene {
 		
 		self.ambientLightSource.categoryBitMask = ~0	// apply to all categories
 		self.root.addChild(self.ambientLightSource)
+	}
+	
+	convenience public init(size: Size) {
+		self.init(root: WrappedScene(size: size))
 	}
 	
 	// MARK: - Properties
