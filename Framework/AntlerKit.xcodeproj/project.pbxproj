@@ -81,6 +81,8 @@
 		CBE96D6A1E1C7BF2008C0CD1 /* AntlerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB11217C1E1846E20001FB85 /* AntlerKit.framework */; };
 		CBEE855E1ECE34D000C4D56B /* LightingCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEE855D1ECE34D000C4D56B /* LightingCategory.swift */; };
 		CBEE855F1ECE34D000C4D56B /* LightingCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEE855D1ECE34D000C4D56B /* LightingCategory.swift */; };
+		CBEED8A51EF0AB5F000DDCDB /* RotatorComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEED8A41EF0AB5F000DDCDB /* RotatorComponent.swift */; };
+		CBEED8A61EF0AB75000DDCDB /* RotatorComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEED8A41EF0AB5F000DDCDB /* RotatorComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +142,7 @@
 		CBE96D671E1C7BF2008C0CD1 /* AntlerKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntlerKitTests.swift; sourceTree = "<group>"; };
 		CBE96D691E1C7BF2008C0CD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBEE855D1ECE34D000C4D56B /* LightingCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LightingCategory.swift; path = Lighting/LightingCategory.swift; sourceTree = "<group>"; };
+		CBEED8A41EF0AB5F000DDCDB /* RotatorComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatorComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -374,6 +377,7 @@
 			isa = PBXGroup;
 			children = (
 				CB9B27DD1EB3E3F0008F0A84 /* MovementComponent.swift */,
+				CBEED8A41EF0AB5F000DDCDB /* RotatorComponent.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -573,6 +577,7 @@
 				CBEE855E1ECE34D000C4D56B /* LightingCategory.swift in Sources */,
 				CBE54F481E3034580037CD21 /* GeometeryHelpers.swift in Sources */,
 				CB1310E01E35DA5C003E6BD0 /* Animation.swift in Sources */,
+				CBEED8A51EF0AB5F000DDCDB /* RotatorComponent.swift in Sources */,
 				CB63BEFB1EB93B280001997D /* QuickEventResponders.swift in Sources */,
 				CB603A311E3C103600CF1D15 /* TypeConversions.swift in Sources */,
 				CB6A87071E21E9B400451F62 /* Input.swift in Sources */,
@@ -615,6 +620,7 @@
 				CB693E0F1E32EBAA00750C36 /* Random.swift in Sources */,
 				CB9B27E21EB3EA2C008F0A84 /* RespondsToContact.swift in Sources */,
 				CB2A275D1E1AD5C4009FC4C4 /* PhysicsContactPhase.swift in Sources */,
+				CBEED8A61EF0AB75000DDCDB /* RotatorComponent.swift in Sources */,
 				CBE54F491E3034580037CD21 /* GeometeryHelpers.swift in Sources */,
 				CB1121F51E184E7A0001FB85 /* Aliases.swift in Sources */,
 				CBB0F8461EB68796007869DC /* Audio.swift in Sources */,
