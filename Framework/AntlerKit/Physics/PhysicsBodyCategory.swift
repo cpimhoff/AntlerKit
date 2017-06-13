@@ -33,8 +33,8 @@ public struct PhysicsBodyCategory : OptionSet, Hashable {
 // MARK: - Built In Categories
 public extension PhysicsBodyCategory {
 	
-	static let none	= PhysicsBodyCategory(rawValue: UInt32.allZeros)
-	static let all 	= PhysicsBodyCategory(rawValue: ~UInt32.allZeros)
+	static let none	= PhysicsBodyCategory(rawValue: 0)
+	static let all 	= PhysicsBodyCategory(rawValue: ~0)
 	
 }
 

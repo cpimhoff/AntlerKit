@@ -30,8 +30,8 @@ public struct LightingCategory : OptionSet, Hashable {
 // MARK: - Built In Categories
 public extension LightingCategory {
 	
-	static let none	= LightingCategory(rawValue: .allZeros)
-	static let all 	= LightingCategory(rawValue: ~.allZeros)
+	static let none	= LightingCategory(rawValue: 0)
+	static let all 	= LightingCategory(rawValue: ~0)
 	
 }
 
