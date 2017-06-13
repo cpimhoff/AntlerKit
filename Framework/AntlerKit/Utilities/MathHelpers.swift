@@ -28,7 +28,7 @@ public struct Convert {
 public struct Interpolate {
 	
 	///Linear interpolation between two numbers based on alpha
-	public static func linear<T: FloatingPoint>(from a:T, to b:T, alpha:T) -> T {
+	public static func linear<T: Numeric>(from a:T, to b:T, alpha:T) -> T {
 		return a + (b - a) * alpha
 	}
 	
