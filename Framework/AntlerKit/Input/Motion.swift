@@ -21,7 +21,6 @@ public class Motion {
 			return nil		// fail out if this isn't going to work properly...
 		}
 		self.zeroPoint = CMAttitude()
-		self.recalibrateInstantly()
 	}
 	
 	public func beginUpdates() {
@@ -33,7 +32,10 @@ public class Motion {
 	}
 	
 	public func recalibrateInstantly() {
-		self.zeroPoint = self.motion.deviceMotion!.attitude
+		guard motion.isDeviceMotionActive
+			else { fatalError("Device motion must be started before calebrated") }
+		
+		self.zeroPoint = self.motion.deviceMotion?.attitude ?? CMAttitude()
 	}
 	
 	public func recalibrate(overTime time: TimeInterval, completion: (() -> Void)?) {
@@ -41,10 +43,11 @@ public class Motion {
 		self.recalibrateInstantly()
 	}
 	
-	public var reading : MotionReading {
-		let attitude = self.motion.deviceMotion!.attitude
-		attitude.multiply(byInverseOf: self.zeroPoint)
+	public var reading : MotionReading? {
+		guard let attitude = self.motion.deviceMotion?.attitude
+			else { return nil }
 		
+		attitude.multiply(byInverseOf: self.zeroPoint)
 		return MotionReading(pitch: attitude.pitch, roll: attitude.roll, yaw: attitude.yaw)
 	}
 	

@@ -200,7 +200,7 @@ public extension GameObject {
 			return self.root.physicsBody
 		}
 		set {
-			self.root.physicsBody = body
+			self.root.physicsBody = newValue
 			self.root.physicsBody?.isDynamic = self.isStatic
 		}
 	}

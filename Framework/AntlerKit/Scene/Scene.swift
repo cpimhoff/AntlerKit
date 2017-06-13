@@ -109,6 +109,7 @@ open class Scene {
 	
 	open func setup() {}
 	open func onEnter() {}
+	open func willExit() {}
 	open func update(deltaTime: TimeInterval) {}
 	
 }
