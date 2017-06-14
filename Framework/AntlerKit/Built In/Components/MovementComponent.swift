@@ -16,14 +16,14 @@ open class MovementComponent: InspectableComponent {
 	
 	/// Whether to move the GameObject via the physics simualtion
 	/// or via setting its location each frame
-	@GKInspectable open var usePhysicsBasedMovement : Bool = true
+	@GKInspectable open var usePhysicsBasedMovement = true
 	
 	/// Whether or not to snap the GameObject to point toward its movement vector
-	@GKInspectable open var pointTowardMovement : Bool = false
+	@GKInspectable open var pointTowardMovement = false
 	
 	/// The current vector that this component is moving along or should move along.
 	/// This vector's magnitude is accounted for in the speed of movement.
-	open var vector : CGVector = CGVector(dx: 0, dy: 0)
+	open var vector = Vector.zero
 	
 	open override func update(deltaTime: TimeInterval) {
 		self.move(deltaTime: deltaTime)
@@ -31,7 +31,7 @@ open class MovementComponent: InspectableComponent {
 	
 	private func move(deltaTime: TimeInterval) {
 		if self.usePhysicsBasedMovement {
-			self.physicsMove(self.vector, deltaTime: deltaTime)
+			self.physicsMove(self.vector)
 		} else {
 			self.directMove(self.vector, deltaTime: deltaTime)
 		}
@@ -41,7 +41,7 @@ open class MovementComponent: InspectableComponent {
 		}
 	}
 	
-	private func physicsMove(_ movement: Vector, deltaTime: TimeInterval) {
+	private func physicsMove(_ movement: Vector) {
 		guard let body = self.gameObject.body else { return }
 		
 		let cgSpeed = CGFloat(baseSpeed)
@@ -49,6 +49,25 @@ open class MovementComponent: InspectableComponent {
 		                   dy: movement.dy * cgSpeed)
 		
 		body.applyForce(force)
+		
+		/*  DEBUG
+		let lineStart = SKShapeNode(circleOfRadius: 1)
+		lineStart.fillColor = .green
+		lineStart.strokeColor = .clear
+		let lineEnd = SKShapeNode(circleOfRadius: 1)
+		lineEnd.fillColor = .green
+		lineEnd.strokeColor = .clear
+		
+		lineStart.position = .zero
+		lineEnd.position = Point(x: movement.scaled(3).dx, y: movement.scaled(3).dy)
+		
+		self.gameObject.root.addChild(lineStart)
+		self.gameObject.root.addChild(lineEnd)
+		
+		let decay = SKAction.sequence([.wait(forDuration: 0.1), .removeFromParent()])
+		lineStart.run(decay)
+		lineEnd.run(decay)
+		*/
 	}
 	
 	private func directMove(_ movement: Vector, deltaTime: TimeInterval) {

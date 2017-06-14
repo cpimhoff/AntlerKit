@@ -77,9 +77,9 @@ open class GameObject {
 		component.configure()
 	}
 	
-	public func component(type: Component.Type) -> Component? {
+	public func component<T: Component>(type: T.Type) -> T? {
 		let typeName = String(describing: type)
-		return self.components[typeName] ?? nil
+		return self.components[typeName] as? T
 	}
 	
 	// MARK: - Children
@@ -145,7 +145,7 @@ open class GameObject {
 	/// Used to generate object graphs
 	public var isStatic = false {
 		didSet {
-			self.body?.isDynamic = self.isStatic
+			self.body?.isDynamic = !self.isStatic
 		}
 	}
 	
@@ -172,6 +172,11 @@ public extension GameObject {
 			}
 			return wrappedScene.convert(self.position, from: self.root)
 		}
+	}
+	
+	/// The position of the reciver in the coordinate system of the other object
+	func relativePosition(in other: GameObject) -> Point {
+		return self.root.convert(self.position, to: other.root)
 	}
 	
 	/// The current rotation, relative to parent, of the reciever
@@ -201,7 +206,7 @@ public extension GameObject {
 		}
 		set {
 			self.root.physicsBody = newValue
-			self.root.physicsBody?.isDynamic = self.isStatic
+			self.root.physicsBody?.isDynamic = !self.isStatic
 		}
 	}
 	
