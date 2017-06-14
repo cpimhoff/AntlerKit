@@ -25,7 +25,6 @@ open class MovementComponent: InspectableComponent {
 	/// This vector's magnitude is accounted for in the speed of movement.
 	open var vector : CGVector = CGVector(dx: 0, dy: 0)
 	
-	
 	open override func update(deltaTime: TimeInterval) {
 		self.move(deltaTime: deltaTime)
 	}
