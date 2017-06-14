@@ -45,7 +45,7 @@ open class Scene {
 		self.root.addChild(self.ambientLightSource)
 	}
 	
-	convenience public init(size: Size) {
+	public convenience init(size: Size) {
 		self.init(root: WrappedScene(size: size))
 	}
 	

@@ -250,7 +250,7 @@ extension WrappedScene {
 		bridgeModifier(event: event, .control, .control)
 	}
 	
-	private func bridgeModifier(event: NSEvent, _ flag: NSEventModifierFlags, _ key: KeyboardKey) {
+	private func bridgeModifier(event: NSEvent, _ flag: NSEvent.ModifierFlags, _ key: KeyboardKey) {
 		if event.modifierFlags.contains(flag) {
 			Input.activeKeys.insert(key)
 		} else {

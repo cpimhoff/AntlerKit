@@ -34,7 +34,11 @@ public struct Animation {
 		while true {
 			let frameName = "\(sheetName) \(animationName) \(frameNumber)"
 			
-			guard let image = Image(named: frameName) else { break }
+			#if os(iOS)
+				guard let image = Image(named: frameName) else { break }
+			#elseif os(macOS)
+				guard let image = Image(named: Image.Name(rawValue: frameName)) else { break }
+			#endif
 			let frame = SKTexture(image: image)
 			
 			frameList.append(frame)
