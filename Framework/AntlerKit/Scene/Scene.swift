@@ -28,12 +28,19 @@ open class Scene {
 	
 	// MARK: - Initialization
 	
-	internal var root : WrappedScene
+	internal let root : WrappedScene
 	
-	internal init(root: WrappedScene, preprocessing: ((Scene)->())? = nil) {
-		self.root = root
+	public init(size: Size) {
+		self.root = WrappedScene(size: size)
 		initializeRoot()
-		preprocessing?(self)
+		self.setup()
+	}
+	
+	public init?(fileNamed fileName: String) {
+		guard let root = WrappedScene(fileNamed: fileName) else { return nil }
+		self.root = root
+		self.initializeRoot()
+		self.preprocessLoadedSceneFile()
 		self.setup()
 	}
 	
@@ -43,10 +50,6 @@ open class Scene {
 		
 		self.ambientLightSource.categoryBitMask = ~0	// apply to all categories
 		self.root.addChild(self.ambientLightSource)
-	}
-	
-	public convenience init(size: Size) {
-		self.init(root: WrappedScene(size: size))
 	}
 	
 	// MARK: - Properties

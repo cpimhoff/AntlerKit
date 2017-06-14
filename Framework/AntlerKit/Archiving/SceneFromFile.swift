@@ -9,18 +9,7 @@
 import Foundation
 import SpriteKit
 
-public extension Scene {
-	
-	public convenience init?(fileNamed fileName: String) {
-		guard let root = WrappedScene(fileNamed: fileName) else { return nil }
-		self.init(root: root) { (`self`) in
-			`self`.preprocessLoadedSceneFile()
-		}
-	}
-	
-}
-
-private extension Scene {
+internal extension Scene {
 	
 	func preprocessLoadedSceneFile() {
 		self.preprocessGameObjects()
