@@ -11,7 +11,7 @@ import SpriteKit
 
 internal class RootTransform : SKNode {
 	
-	weak var gameObject : GameObject!
+	var gameObject : GameObject!
 	
 }
 
