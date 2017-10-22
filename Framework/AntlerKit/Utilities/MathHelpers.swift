@@ -34,7 +34,8 @@ public struct Interpolate {
 	
 	///Linear interpolation between two Floats based on a delta time and speed
 	///DeltaTime is in seconds, and speed is in units per second.
-	public static func linear<T: BinaryFloatingPoint>(from current:T, toward target:T, deltaTime:TimeInterval, speed:T) -> T {
+	public static func linear<T: BinaryFloatingPoint>(from current:T, toward target:T,
+	                                                  deltaTime:TimeInterval, speed:T) -> T {
 		if current < target {
 			return min(current + (speed * T(deltaTime)), target)
 		} else {
@@ -44,7 +45,8 @@ public struct Interpolate {
 	
 	///Linear interpolation between two CGPoints based on a delta time and speed
 	///DeltaTime is in seconds, and speed is in units per second.
-	public static func linear(from current:Point, toward target:Point, deltaTime:TimeInterval, rate:CGFloat) -> Point {
+	public static func linear(from current:Point, toward target:Point,
+	                          deltaTime:TimeInterval, rate:CGFloat) -> Point {
 		let difX = current.x - target.x
 		let difY = current.y - target.y
 		

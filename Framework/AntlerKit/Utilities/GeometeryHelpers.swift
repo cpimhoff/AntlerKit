@@ -20,8 +20,8 @@ public extension Point {
 	}
 	
 	/// Returns a point between this and the other given point
-	func midPoint(to other:Point) -> Point {
-		let vect = self.vector(toward: other)
+	func midpoint(to other:Point) -> Point {
+		let vect = self.vector(to: other)
 		let offset = vect.scaled(0.5)
 		return self.translated(by: offset)
 	}
@@ -37,14 +37,14 @@ public extension Point {
 	}
 	
 	/// Returns a new vector, computed from the distance of two points in the same space
-	func vector(toward point:Point) -> Vector {
+	func vector(to point:Point) -> Vector {
 		return Vector(dx: point.x - self.x, dy: point.y - self.y)
 	}
 	
 	/// Returns the angle (in radians) the given point rests at in terms of this point.
 	/// North is considered the start of the unit circle (zero).
-	func angle(toward point:Point) -> CGFloat {
-		return self.vector(toward: point).angle
+	func angle(to point:Point) -> CGFloat {
+		return self.vector(to: point).angle
 	}
 	
 }
