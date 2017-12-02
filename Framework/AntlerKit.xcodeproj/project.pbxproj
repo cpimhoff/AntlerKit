@@ -110,7 +110,7 @@
 		CB1310DB1E35D988003E6BD0 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Animator.swift; path = Animation/Animator.swift; sourceTree = "<group>"; };
 		CB1310DF1E35DA5C003E6BD0 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Animation.swift; path = Animation/Animation.swift; sourceTree = "<group>"; };
 		CB13BCEB1EF06B4900C88C0E /* GameObjectFromFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameObjectFromFile.swift; sourceTree = "<group>"; };
-		CB20E60B1ECD487700086B06 /* AudioClip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioClip.swift; path = Audio/AudioClip.swift; sourceTree = "<group>"; };
+		CB20E60B1ECD487700086B06 /* AudioClip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioClip.swift; sourceTree = "<group>"; };
 		CB2A27561E1ACDC5009FC4C4 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		CB2A275B1E1AD5C4009FC4C4 /* PhysicsContactPhase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhysicsContactPhase.swift; path = ../Physics/PhysicsContactPhase.swift; sourceTree = "<group>"; };
 		CB4283441E28A5A2007D97C0 /* WrappedScene+Input.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WrappedScene+Input.swift"; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 		CB495CAA1E196E4300284473 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		CB495CB51E19759400284473 /* WrappedScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrappedScene.swift; sourceTree = "<group>"; };
 		CB495CB81E197FE500284473 /* AntlerKitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntlerKitView.swift; sourceTree = "<group>"; };
-		CB603A2D1E3C0F7900CF1D15 /* GameObject+UpdateAgent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "GameObject+UpdateAgent.swift"; path = "Agent/GameObject+UpdateAgent.swift"; sourceTree = "<group>"; };
+		CB603A2D1E3C0F7900CF1D15 /* GameObject+UpdateAgent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GameObject+UpdateAgent.swift"; sourceTree = "<group>"; };
 		CB603A301E3C103600CF1D15 /* TypeConversions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeConversions.swift; sourceTree = "<group>"; };
 		CB63BEFA1EB93B280001997D /* QuickEventResponders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickEventResponders.swift; sourceTree = "<group>"; };
 		CB67DF6C1EB96814001DF5C3 /* Motion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Motion.swift; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 		CB9B27DA1EB3E189008F0A84 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		CB9B27DD1EB3E3F0008F0A84 /* MovementComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovementComponent.swift; sourceTree = "<group>"; };
 		CB9B27E01EB3EA2C008F0A84 /* RespondsToContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RespondsToContact.swift; path = ../Component/RespondsToContact.swift; sourceTree = "<group>"; };
-		CBB0F8441EB68796007869DC /* Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Audio.swift; path = Audio/Audio.swift; sourceTree = "<group>"; };
+		CBB0F8441EB68796007869DC /* Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
 		CBC537621E1C6B1600A8C145 /* PhysicsBodyCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicsBodyCategory.swift; sourceTree = "<group>"; };
 		CBD54AC51E2F674A0042D318 /* SceneStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneStack.swift; sourceTree = "<group>"; };
 		CBE54F471E3034580037CD21 /* GeometeryHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeometeryHelpers.swift; sourceTree = "<group>"; };
@@ -348,7 +348,7 @@
 			children = (
 				CB603A2D1E3C0F7900CF1D15 /* GameObject+UpdateAgent.swift */,
 			);
-			name = Agent;
+			path = Agent;
 			sourceTree = "<group>";
 		};
 		CB63BEF91EB93AF70001997D /* Convenience */ = {
@@ -388,7 +388,7 @@
 				CBB0F8441EB68796007869DC /* Audio.swift */,
 				CB20E60B1ECD487700086B06 /* AudioClip.swift */,
 			);
-			name = Audio;
+			path = Audio;
 			sourceTree = "<group>";
 		};
 		CBE96D661E1C7BF2008C0CD1 /* AntlerKitTests */ = {
