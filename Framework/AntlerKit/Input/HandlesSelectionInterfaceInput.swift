@@ -40,3 +40,14 @@ internal extension GameObject {
 	}
 	
 }
+
+extension StateMachineComponent : HandlesSelectionInterfaceInput {
+	
+	public func handleSelected() -> Bool {
+		if let respondingState = self.activeState as? HandlesSelectionInterfaceInput {
+			return respondingState.handleSelected()
+		}
+		return false
+	}
+	
+}

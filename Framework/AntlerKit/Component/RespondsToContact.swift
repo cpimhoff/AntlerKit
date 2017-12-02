@@ -52,3 +52,19 @@ internal extension GameObject {
 	}
 	
 }
+
+extension StateMachineComponent : RespondsToContact {
+	
+	public func onContactBegan(with other: GameObject?) {
+		if let respondingState = self.activeState as? RespondsToContact {
+			respondingState.onContactBegan(with: other)
+		}
+	}
+	
+	public func onContactEnded(with other: GameObject?) {
+		if let respondingState = self.activeState as? RespondsToContact {
+			respondingState.onContactEnded(with: other)
+		}
+	}
+	
+}
