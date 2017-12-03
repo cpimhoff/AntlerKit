@@ -226,7 +226,7 @@ extension WrappedScene {
 					updateInputWith(.down)
 				
 				case 13:
-					updateInputWith(.return)
+					updateInputWith(.enter)
 				case 9:
 					updateInputWith(.tab)
 				case 127:

@@ -17,9 +17,16 @@ public protocol Component : AnyObject {
 	/// If false, this component is not updated, nor does it respond to events
 	var enabled : Bool { get }
 	
+	/// The GameObject associated with this Component
 	var gameObject : GameObject! { get set }
 	
+	/// Called when the Component is first bound to a GameObject.
+	/// Override to do one-time setup between the Component and GameObject.
 	func configure()
+	
+	/// Called every frame. Override to provide behavior.
+	///
+	/// - Parameter deltaTime: The time, in seconds, between the last frame and this current one.
 	func update(deltaTime: TimeInterval)
 	
 }

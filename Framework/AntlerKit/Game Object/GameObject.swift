@@ -10,6 +10,7 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
+/// An game entity in the AntlerKit game scene.
 open class GameObject {
 	
 	internal let root : RootTransform
@@ -22,6 +23,7 @@ open class GameObject {
 	
 	// MARK: - Primitive
 	
+	/// The visual representation of the GameObject
 	public var primitive : Primitive? {
 		didSet {
 			if oldValue != nil {
@@ -48,6 +50,8 @@ open class GameObject {
 	
 	// use this to check if we have an agent (without touching, and thus initializing it)
 	private var isAgentInitialized = false
+	
+	/// An Agent for this GameObject to use for AI behavior
 	public lazy var agent : Agent2D = {
 		self.isAgentInitialized = true
 		return GKAgent2D()
@@ -55,39 +59,50 @@ open class GameObject {
 	
 	// MARK: - Component
 	
-	private var components = [String: Component]()
+	private var componentMap = [String: Component]()
 	
-	public var allComponents : [Component] {
-		return Array(self.components.values)
+	/// All the components currently associated with this GameObject
+	public var components : [Component] {
+		return Array(self.componentMap.values)
 	}
 	internal var enabledComponents : [Component] {
-		return self.components.values.filter { $0.enabled }
+		return self.componentMap.values.filter { $0.enabled }
 	}
 	
+	/// Add a component to this GameObject
 	public func add(_ component: Component) {
 		if component is AnonymousComponent {
-			let anonymousName = UUID().uuidString
-			self.components[anonymousName] = component
+			self.add(component, key: UUID().uuidString)
 		} else {
 			let typeName = String(describing: type(of: component))
-			self.components[typeName] = component
+			if self.componentMap[typeName] != nil {
+				self.add(component, key: typeName)
+			} else {
+				self.add(component, key: UUID().uuidString)
+			}
 		}
+	}
 	
+	private func add(_ component: Component, key: String) {
+		self.componentMap[key] = component
 		component.gameObject = self
 		component.configure()
 	}
 	
+	/// Get a Component attached to this GameObject of the specified class
 	public func component<T: Component>(type: T.Type) -> T? {
 		let typeName = String(describing: type)
-		return self.components[typeName] as? T
+		return self.componentMap[typeName] as? T
 	}
 	
 	// MARK: - Children
 	
+	/// Add a GameObject as a child of this one
 	open func add(_ child: GameObject) {
 		self.root.addChild(child.root)
 	}
 	
+	/// All the immediate child GameObjects of this GameObject
 	public var children : [GameObject] {
 		var gameObjects = [GameObject]()
 		for node in self.root.children {
@@ -100,6 +115,7 @@ open class GameObject {
 	
 	// MARK: - Destruction
 	
+	/// Remove this GameObject from its parent, orphaning it from the scene
 	open func removeFromParent() {
 		if self.root.parent == self.root.scene {
 			let scene = (self.root.scene as? WrappedScene)?.delegateScene

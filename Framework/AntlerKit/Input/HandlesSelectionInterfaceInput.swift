@@ -8,8 +8,14 @@
 
 import Foundation
 
+/// Adopt this protocol on a GameObject, Component, or StateMachineState
+/// to subscribe to relevent selection interface input events
 public protocol HandlesSelectionInterfaceInput {
 	
+	/// Respond to a selection input sent to the reciever
+	///
+	/// - Returns: Whether or not this event was handled.
+	/// 	If false, the event is propogated to the next relevant subscriber, until it is handled.
 	@discardableResult
 	func handleSelected() -> Bool
 	

@@ -14,6 +14,7 @@ import Foundation
 	import AppKit
 #endif
 
+/// Structure containing current global Input data
 public struct Input {
 	
 	#if os(iOS)

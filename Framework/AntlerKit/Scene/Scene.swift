@@ -30,12 +30,14 @@ open class Scene {
 	
 	internal let root : WrappedScene
 	
+	/// Create a new scene of the specified size
 	public init(size: Size) {
 		self.root = WrappedScene(size: size)
 		initializeRoot()
 		self.setup()
 	}
 	
+	/// Create a new scene by loading the contents of a file in the main bundle
 	public init?(fileNamed fileName: String) {
 		guard let root = WrappedScene(fileNamed: fileName) else { return nil }
 		self.root = root
@@ -54,8 +56,7 @@ open class Scene {
 	
 	// MARK: - Properties
 	
-	open var stateMachine : StateMachine?
-	
+	/// The Camera object used to frame this scene's contents
 	open var camera : Camera? {
 		didSet {
 			self.root.camera = self.camera?.cameraNode
@@ -66,15 +67,16 @@ open class Scene {
 	
 	// MARK: - Adding Content
 	
+	/// Add the specified GameObject to the root of this scene
 	public func add(_ child: GameObject) {
-		if child.root.scene != nil {
-			return
-		}
+		guard child.root.scene == nil else { return }
 		
 		self.topLevelGameObjects.append(child)	// append GameObject to root set for update
 		self.root.addChild(child.root)			// append the base primitive to render
 	}
 	
+	/// Remove the specified GameObject from the scene.
+	/// The same as calling `GameObject.removeFromParent`.
 	public func remove(_ child: GameObject) {
 		child.removeFromParent()	// will call `removeFromTopLevelList` if appropriate
 	}
@@ -88,8 +90,7 @@ open class Scene {
 	// MARK: - Updating Scene Content
 	
 	internal func _update(deltaTime: TimeInterval) {
-		// update elements
-		self.stateMachine?.update(deltaTime: deltaTime)
+		// update entities
 		for gameObject in topLevelGameObjects {
 			gameObject._update(deltaTime: deltaTime)
 		}
@@ -103,9 +104,19 @@ open class Scene {
 	
 	// MARK: - Override Points
 	
+	/// Called at the end of Scene initialization.
+	/// Override this method to populate/finalize the scene's contents.
 	open func setup() {}
+	
+	/// Called when the Scene is made active
 	open func onEnter() {}
+	
+	/// Called when the Scene will resign being active
 	open func willExit() {}
+	
+	/// Called every frame. Override to do per frame updates on the scene.
+	///
+	/// - Parameter deltaTime: Time in seconds between the last frame and this one.
 	open func update(deltaTime: TimeInterval) {}
 	
 }
@@ -113,10 +124,12 @@ open class Scene {
 // MARK: - Exposing Key Properties
 public extension Scene {
 	
+	/// The size of the Scene
 	var size : Size {
 		return self.root.size
 	}
 	
+	/// The color to render at the back of all other contents
 	var backgroundColor : Color {
 		get {
 			return self.root.backgroundColor
@@ -125,6 +138,7 @@ public extension Scene {
 		}
 	}
 	
+	/// The ambient light color for the Scene
 	var ambientColor : Color {
 		get {
 			return self.ambientLightSource.ambientColor
@@ -134,6 +148,8 @@ public extension Scene {
 		}
 	}
 	
+	/// The physiccal world this Scene uses.
+	/// Allows configuration of gravity, among other things.
 	var physicsWorld : SKPhysicsWorld {
 		return self.root.physicsWorld
 	}

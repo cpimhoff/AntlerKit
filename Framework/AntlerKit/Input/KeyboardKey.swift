@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Standard hardware keyboard keys
 public enum KeyboardKey : String {
 	
 	// alphabet
@@ -32,7 +33,7 @@ public enum KeyboardKey : String {
 	// text actions
 	case tab
 	case backspace
-	case `return`
+	case enter
 	
 	// numbers
 	case one = "1", two = "2", three = "3", four = "4", five = "5"
@@ -42,6 +43,8 @@ public enum KeyboardKey : String {
 
 public extension KeyboardKey {
 	
+	/// Returns the integer associated with the given key (.one --> 1)
+	/// or `nil` if the key doesn't represent a numeral (.q --> nil)
 	var numericValue : Int? {
 		return Int(self.rawValue)
 	}

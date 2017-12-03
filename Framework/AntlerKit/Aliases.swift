@@ -21,9 +21,6 @@ public typealias PhysicsBody = SKPhysicsBody
 public typealias Color = SKColor
 
 // GameplayKit
-public typealias StateMachine = GKStateMachine
-public typealias State = GKState
-
 public typealias Agent = GKAgent
 public typealias Agent2D = GKAgent2D
 

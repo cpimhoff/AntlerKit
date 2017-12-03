@@ -8,20 +8,30 @@
 
 import Foundation
 
+/// Information about the state of the Cursor
 public struct Cursor {
 	
-	public var sceneLocation : Point? 				= nil
+	/// The location in the scene the cursor is located
+	/// or `nil` if the cursor is outside of the view bounds
+	public var sceneLocation : Point? = nil
 	
-	public var mainButton : MouseButtonState 		= .up
-	public var secondaryButton : MouseButtonState? 	= nil
+	/// The state of the primary mouse button
+	public var mainButton : MouseButtonState = .up
+	/// The state of the secondary mouse button
+	public var secondaryButton : MouseButtonState? = nil
 	
 }
 
+/// State of a mouse button
 public enum MouseButtonState {
 	
+	/// The button is not pressed
 	case up
+	/// The button has been help down for multiple frames
 	case heldDown
 	
+	/// The mouse button has undergone a "click" event
+	/// A click is only active for a single frame
 	case click
 	
 }

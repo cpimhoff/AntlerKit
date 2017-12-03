@@ -8,8 +8,14 @@
 
 import Foundation
 
+/// Adopt this protocol on a GameObject, Component, or StateMachineState
+/// to subscribe to relevent text interface input events
 public protocol HandlesTextInterfaceInput {
 	
+	/// Respond to a text input sent to the reciever
+	///
+	/// - Returns: Whether or not this event was handled.
+	/// 	If false, the event is propogated to the next relevant subscriber, until it is handled.
 	@discardableResult
 	func handle(textInput text: String) -> Bool
 	
@@ -17,10 +23,13 @@ public protocol HandlesTextInterfaceInput {
 
 public extension HandlesTextInterfaceInput {
 	
+	/// Cause all text input to be sent to the reciver as interface input
+	/// instead of being delivered to global input (or another text input subscriber)
 	func makeTextResponder() {
 		_HandlesTextInterfaceInput.currentResponder = self
 	}
 	
+	/// Cause all text input to be sent to global input again
 	func resignTextResponder() {
 		_HandlesTextInterfaceInput.currentResponder = nil
 	}
