@@ -10,17 +10,17 @@ import Foundation
 import SpriteKit
 
 /// Rotates a GameObject over time
-class RotatorComponent : InspectableComponent {
+open class RotatorComponent : InspectableComponent {
 	
 	/// Rotation speed expressed in degrees clockwise per second
-	var rotationSpeedDegrees : Float {
+	open var rotationSpeedDegrees : Float {
 		get { return Convert.toDegrees(fromRadians: self.rotationSpeedRadians) }
 		set { self.rotationSpeedRadians = Convert.toRadians(fromDegrees: newValue) }
 	}
 	/// Rotation speed expressed in radians clockwise per second
-	var rotationSpeedRadians : Float = 0
+	open var rotationSpeedRadians : Float = 0
 	
-	override func update(deltaTime: TimeInterval) {
+	open override func update(deltaTime: TimeInterval) {
 		self.gameObject.rotation -= rotationSpeedRadians * Float(deltaTime)
 	}
 	

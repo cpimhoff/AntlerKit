@@ -260,7 +260,7 @@ extension WrappedScene {
 	
 }
 	
-public extension AntlerKitView {
+internal extension AntlerKitView {
 	
 	override func flagsChanged(with event: NSEvent) {
 		Scene.stack.head?.root.flagsChanged(with: event)

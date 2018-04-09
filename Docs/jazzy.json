@@ -1,0 +1,112 @@
+{
+  "source_directory": "../Framework/",
+  "xcodebuild_arguments": [
+    "-project",
+    "AntlerKit.xcodeproj",
+    "-scheme",
+    "AntlerKit-iOS"
+  ],
+  "author": "Charlie Imhoff",
+  "author_url": "https://www.cpimhoff.com",
+  "module": "AntlerKit",
+  "readme": "README.md",
+  "theme": "fullwidth",
+  "documentation": "guides/*.md",
+  "abstract": "sections/*.md",
+  "undocumented_text": "",
+  "custom_categories": [
+    {
+      "name": "Documentation",
+      "children": [
+        "About AntlerKit",
+        "Getting Started",
+        "Installation",
+        "Demo",
+        "Extensions",
+        "Contributing",
+        "Contact",
+        "Changelog",
+        "AntlerKit X"
+      ]
+    },
+    {
+      "name": "Core",
+      "children": [
+        "GameObject",
+        "Component",
+        "Scene",
+        "AntlerKitView"
+      ]
+    },
+    {
+      "name": "Components",
+      "children": [
+        "SimpleComponent",
+        "InspectableComponent",
+        "AnonymousComponent"
+      ]
+    },
+    {
+      "name": "Input",
+      "children": [
+        "Input",
+        "Touch",
+        "Motion",
+        "MotionReading",
+        "HandlesSelectionInterfaceInput",
+        "HandlesTextInterfaceInput"
+      ]
+    },
+    {
+      "name": "Physics",
+      "children": [
+        "PhysicsBody",
+        "PhysicsBodyCategory",
+        "PhysicsContactPhase",
+        "RespondsToContact",
+        "LightingCategory"
+      ]
+    },
+    {
+      "name": "Built In",
+      "children": [
+        "Camera",
+        "Label",
+        "PointLight",
+        "MovementComponent",
+        "RotatorComponent"
+      ]
+    },
+    {
+      "name": "Frame Based Animation",
+      "children": [
+        "Animator",
+        "Animation"
+      ]
+    },
+    {
+      "name": "Audio",
+      "children": [
+        "Audio",
+        "AudioClip"
+      ]
+    },
+    {
+      "name": "State Machines",
+      "children": [
+        "StateMachineComponent",
+        "StateMachineState"
+      ]
+    },
+    {
+      "name": "Utilities",
+      "children": [
+        "Random",
+        "Convert",
+        "Interpolate",
+        "Point",
+        "Vector"
+      ]
+    }
+  ]
+}

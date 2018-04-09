@@ -1,0 +1,1 @@
+jazzy --config jazzy.json --clean --output build
