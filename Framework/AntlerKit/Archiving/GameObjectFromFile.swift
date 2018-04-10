@@ -44,7 +44,7 @@ public extension GameObject {
 		node.removeAllChildren()
 		// unroll each child and add it back to this gameObject
 		children
-			.flatMap(GameObject.init(unrollingNode:))
+			.compactMap(GameObject.init(unrollingNode:))
 			.forEach(self.add)
 		
 		// pull in additional settings
@@ -57,7 +57,7 @@ public extension GameObject {
 		
 		// AntlerKit components
 		if let entity = node.entity {
-			for component in entity.components.flatMap({$0 as? Component}) {
+			for component in entity.components.compactMap({$0 as? Component}) {
 				self.add(component)
 			}
 		}

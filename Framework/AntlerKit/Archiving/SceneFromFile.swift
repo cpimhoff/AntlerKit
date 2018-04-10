@@ -18,7 +18,7 @@ internal extension Scene {
 	
 	private func preprocessGameObjects() {
 		self.root.children
-			.flatMap(GameObject.init(unrollingNode:))
+			.compactMap(GameObject.init(unrollingNode:))
 			.forEach(self.add)
 	}
 	

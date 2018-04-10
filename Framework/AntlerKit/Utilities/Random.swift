@@ -23,7 +23,8 @@ public struct Random {
 		self.init(seed: quality.randomSource)
 	}
 	
-	public init(distribution type: RandomDistributionType, quality: RandomnessQuality = .default,
+	public init(distribution type: RandomDistributionType,
+				quality: RandomnessQuality = .default,
 	            lowest: Int, highest: Int) {
 		let seed = type.distributionSource(with: quality.randomSource,
 		                                   lowestValue: lowest, highestValue: highest)
@@ -81,7 +82,7 @@ public enum RandomnessQuality {
 	/// Very random, but slower
 	case highQuality
 	
-	fileprivate var randomSource : GKRandomSource {
+	internal var randomSource : GKRandomSource {
 		switch self {
 		case .default:
 			return GKARC4RandomSource()
@@ -101,7 +102,7 @@ public enum RandomDistributionType {
 	/// Values that have yet to be "drawn" have greater chance
 	case shuffled
 	
-	fileprivate func distributionSource(with seed: GKRandomSource, lowestValue: Int, highestValue: Int) -> GKRandomDistribution {
+	internal func distributionSource(with seed: GKRandomSource, lowestValue: Int, highestValue: Int) -> GKRandomDistribution {
 		switch self {
 		case .equalOdds:
 			return GKRandomDistribution(randomSource: seed, lowestValue: lowestValue, highestValue: highestValue)

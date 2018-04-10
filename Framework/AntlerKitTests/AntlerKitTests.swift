@@ -12,44 +12,31 @@ import XCTest
 class AntlerKitTests: XCTestCase {
     
     func testPhysicsBodyCategories() {
-		let a = PhysicsBodyCategory.enviroment
-		let b : PhysicsBodyCategory = [.static, .effect]
+		let a = PhysicsBodyCategory(uniqueInt1Through32: 1)
+		let b = PhysicsBodyCategory(uniqueInt1Through32: 2)
+		let c = PhysicsBodyCategory(uniqueInt1Through32: 3)
+		let ac : PhysicsBodyCategory = [a, c]
 		
-		PhysicsBodyCategory.enableCollision(between: a, and: b)
-		PhysicsBodyCategory.enableContact(between: .static, and: .enviroment)
+		PhysicsBodyCategory.enableCollision(between: a, and: ac)
+		PhysicsBodyCategory.enableContacts(between: b, and: ac)
 		
-		//// === COLLISION ===
-		// enviroment:	- static
-		//				- effect
-		// static:	- enviroment
-		// effect:	- enviroment
+		// Collision and contact maps are correctly constructed
+		XCTAssertEqual(PhysicsBodyCategory.collisions[a], [a, c])
+		XCTAssertNil(PhysicsBodyCategory.collisions[b])
+		XCTAssertEqual(PhysicsBodyCategory.collisions[c], [a])
 		
-		//// === CONTACT ===
-		// enviroment:	- static
-		// static:	- enviroment
-		// effect:	none
+		XCTAssertEqual(PhysicsBodyCategory.contacts[a], [b])
+		XCTAssertEqual(PhysicsBodyCategory.contacts[b], [a, c])
+		XCTAssertEqual(PhysicsBodyCategory.contacts[c], [b])
 		
-		XCTAssertEqual(PhysicsBodyCategory.collisions[.enviroment], [.static, .effect])
-		XCTAssertEqual(PhysicsBodyCategory.collisions[.static], [.enviroment])
-		XCTAssertEqual(PhysicsBodyCategory.collisions[.effect], [.enviroment])
+		// Bit masks are synthesized correctly from the collision and contact maps
+		XCTAssertEqual(a.collisionBitMask, PhysicsBodyCategory([a, c]).rawValue)
+		XCTAssertEqual(b.collisionBitMask, PhysicsBodyCategory.none.rawValue)
+		XCTAssertEqual(c.collisionBitMask, PhysicsBodyCategory([a]).rawValue)
 		
-		XCTAssertEqual(PhysicsBodyCategory.contacts[.enviroment], [.static])
-		XCTAssertEqual(PhysicsBodyCategory.contacts[.static], [.enviroment])
-		XCTAssertNil(PhysicsBodyCategory.contacts[.effect])
-		
-		XCTAssertEqual(PhysicsBodyCategory.enviroment.collisionBitMask,
-		               PhysicsBodyCategory(.static, .effect).rawValue)
-		XCTAssertEqual(PhysicsBodyCategory.static.collisionBitMask,
-		                PhysicsBodyCategory(.enviroment).rawValue)
-		XCTAssertEqual(PhysicsBodyCategory.effect.collisionBitMask,
-		               PhysicsBodyCategory(.enviroment).rawValue)
-		
-		XCTAssertEqual(PhysicsBodyCategory.enviroment.contactTestBitMask,
-		               PhysicsBodyCategory(.static).rawValue)
-		XCTAssertEqual(PhysicsBodyCategory.static.contactTestBitMask,
-		               PhysicsBodyCategory(.enviroment).rawValue)
-		XCTAssertEqual(PhysicsBodyCategory.effect.contactTestBitMask,
-		               PhysicsBodyCategory(.none).rawValue)
+		XCTAssertEqual(a.contactTestBitMask, PhysicsBodyCategory([b]).rawValue)
+		XCTAssertEqual(b.contactTestBitMask, PhysicsBodyCategory([a, c]).rawValue)
+		XCTAssertEqual(c.contactTestBitMask, PhysicsBodyCategory([b]).rawValue)
 	}
     
 }

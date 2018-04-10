@@ -43,7 +43,7 @@ internal extension Input {
 	/// Called each frame
 	static func updateStaleInput() {
 		#if os(iOS)
-			let updatedTouches = self.touches.flatMap
+		let updatedTouches = self.touches.compactMap
 				{ touch -> Touch? in
 					var nextType : TouchType
 					

@@ -39,7 +39,7 @@ internal extension GameObject {
 		(self as? RespondsToContact)?.onContact(with: other, phase: phase)
 		
 		// send to subscribed components
-		for component in self.enabledComponents.flatMap({$0 as? RespondsToContact}) {
+		for component in self.enabledComponents.compactMap({$0 as? RespondsToContact}) {
 			component.onContact(with: other, phase: phase)
 		}
 		

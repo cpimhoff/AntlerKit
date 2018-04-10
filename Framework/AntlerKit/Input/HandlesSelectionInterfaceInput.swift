@@ -29,7 +29,7 @@ internal extension GameObject {
 		var handled = (self as? HandlesSelectionInterfaceInput)?.handleSelected() ?? false
 		
 		// send to subscribed components
-		for component in self.enabledComponents.flatMap({$0 as? HandlesSelectionInterfaceInput}) {
+		for component in self.enabledComponents.compactMap({$0 as? HandlesSelectionInterfaceInput}) {
 			handled = component.handleSelected() || handled
 		}
 		
