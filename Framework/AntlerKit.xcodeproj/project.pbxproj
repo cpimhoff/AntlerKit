@@ -87,6 +87,8 @@
 		CBEE855F1ECE34D000C4D56B /* LightingCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEE855D1ECE34D000C4D56B /* LightingCategory.swift */; };
 		CBEED8A51EF0AB5F000DDCDB /* RotatorComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEED8A41EF0AB5F000DDCDB /* RotatorComponent.swift */; };
 		CBEED8A61EF0AB75000DDCDB /* RotatorComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEED8A41EF0AB5F000DDCDB /* RotatorComponent.swift */; };
+		CBFCAED5207C75A90004924F /* AnimatedProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFCAED4207C75A90004924F /* AnimatedProperty.swift */; };
+		CBFCAED7207C75C80004924F /* LinearTransitionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFCAED6207C75C80004924F /* LinearTransitionable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +151,8 @@
 		CBE96D691E1C7BF2008C0CD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBEE855D1ECE34D000C4D56B /* LightingCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LightingCategory.swift; path = Lighting/LightingCategory.swift; sourceTree = "<group>"; };
 		CBEED8A41EF0AB5F000DDCDB /* RotatorComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatorComponent.swift; sourceTree = "<group>"; };
+		CBFCAED4207C75A90004924F /* AnimatedProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedProperty.swift; sourceTree = "<group>"; };
+		CBFCAED6207C75C80004924F /* LinearTransitionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearTransitionable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +214,7 @@
 				CB2A275E1E1AD5C7009FC4C4 /* Physics */,
 				CB1310DE1E35D98C003E6BD0 /* Rendering */,
 				CBB0F8431EB68778007869DC /* Audio */,
+				CBFCAED3207C75920004924F /* Animated Property */,
 				CB9D58A31FD335EA007F7C33 /* State Machines */,
 				CB495CD71E198AC200284473 /* Utilities */,
 				CB13BCEA1EF06B0800C88C0E /* Archiving */,
@@ -416,6 +421,15 @@
 			path = AntlerKitTests;
 			sourceTree = "<group>";
 		};
+		CBFCAED3207C75920004924F /* Animated Property */ = {
+			isa = PBXGroup;
+			children = (
+				CBFCAED4207C75A90004924F /* AnimatedProperty.swift */,
+				CBFCAED6207C75C80004924F /* LinearTransitionable.swift */,
+			);
+			path = "Animated Property";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -582,6 +596,7 @@
 				CB1310D91E35D691003E6BD0 /* Label.swift in Sources */,
 				CB9B27DE1EB3E3F0008F0A84 /* MovementComponent.swift in Sources */,
 				CB4283451E28A5A2007D97C0 /* WrappedScene+Input.swift in Sources */,
+				CBFCAED7207C75C80004924F /* LinearTransitionable.swift in Sources */,
 				CB1121EE1E184BD30001FB85 /* GameObject.swift in Sources */,
 				CB2A27571E1ACDC5009FC4C4 /* Camera.swift in Sources */,
 				CB6DFAB51E8C6D6C00B636F6 /* PointLight.swift in Sources */,
@@ -599,6 +614,7 @@
 				CBEED8A51EF0AB5F000DDCDB /* RotatorComponent.swift in Sources */,
 				CB63BEFB1EB93B280001997D /* QuickEventResponders.swift in Sources */,
 				CB603A311E3C103600CF1D15 /* TypeConversions.swift in Sources */,
+				CBFCAED5207C75A90004924F /* AnimatedProperty.swift in Sources */,
 				CB6A87071E21E9B400451F62 /* Input.swift in Sources */,
 				CB6A870A1E21EBA400451F62 /* HandlesSelectionInterfaceInput.swift in Sources */,
 				CB693E0E1E32EBAA00750C36 /* Random.swift in Sources */,

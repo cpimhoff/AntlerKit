@@ -43,6 +43,13 @@ public struct Interpolate {
 		}
 	}
 	
+	///Linear interpolation between two points based on alpha
+	public static func linear(from a: Point, to b: Point, alpha: CGFloat) -> Point {
+		let vect = a.vector(to: b)
+		let offset = vect.scaled(alpha)
+		return a.translated(by: offset)
+	}
+	
 	///Linear interpolation between two CGPoints based on a delta time and speed
 	///DeltaTime is in seconds, and speed is in units per second.
 	public static func linear(from current:Point, toward target:Point,
