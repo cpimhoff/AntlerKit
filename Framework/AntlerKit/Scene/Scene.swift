@@ -24,7 +24,9 @@ open class Scene {
 	
 	// MARK: - Top Level Objects
 	
-	private var topLevelGameObjects = [GameObject]()
+	/// The root set of objects that need per frame updates.
+	/// Many objects (such as components, or nested game objects) are updated indirectly.
+	private var directlyUpdatedObjects = [UpdatesEachFrame]()
 	
 	// MARK: - Initialization
 	
@@ -67,23 +69,23 @@ open class Scene {
 	
 	// MARK: - Adding Content
 	
-	/// Add the specified GameObject to the root of this scene
+	/// Add the specified GameObject to the root of this scene.
 	public func add(_ child: GameObject) {
 		guard child.root.scene == nil else { return }
 		
-		self.topLevelGameObjects.append(child)	// append GameObject to root set for update
-		self.root.addChild(child.root)			// append the base primitive to render
+		self.startDirectUpdates(child)
+		self.root.addChild(child.root)  // append the base primitive to render
 	}
 	
-	/// Remove the specified GameObject from the scene.
-	/// The same as calling `GameObject.removeFromParent`.
-	public func remove(_ child: GameObject) {
-		child.removeFromParent()	// will call `removeFromTopLevelList` if appropriate
+	/// Adds the specified updating object to the root set for per frame updates.
+	internal func startDirectUpdates(_ object: UpdatesEachFrame) {
+		self.directlyUpdatedObjects.append(object)
 	}
 	
-	internal func removeFromTopLevelList(_ child: GameObject) {
-		if let i = self.topLevelGameObjects.index(where: { $0 === child }) {
-			self.topLevelGameObjects.remove(at: i)
+	/// Removes the specified updating object from the root set if needed.
+	internal func stopDirectUpdates(_ object: UpdatesEachFrame) {
+		if let i = self.directlyUpdatedObjects.index(where: { $0 === object }) {
+			self.directlyUpdatedObjects.remove(at: i)
 		}
 	}
 	
@@ -91,8 +93,8 @@ open class Scene {
 	
 	internal func internalUpdate(deltaTime: TimeInterval) {
 		// update entities
-		for gameObject in topLevelGameObjects {
-			gameObject.internalUpdate(deltaTime: deltaTime)
+		for updatingObject in directlyUpdatedObjects {
+			updatingObject.internalUpdate(deltaTime: deltaTime)
 		}
 		
 		// user handler

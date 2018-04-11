@@ -119,7 +119,7 @@ open class GameObject : UpdatesEachFrame {
 	open func removeFromParent() {
 		if self.root.parent == self.root.scene {
 			let scene = (self.root.scene as? WrappedScene)?.delegateScene
-			scene?.removeFromTopLevelList(self)
+			scene?.stopDirectUpdates(self)
 		}
 		
 		self.root.removeFromParent()	// unhook primitive from everything

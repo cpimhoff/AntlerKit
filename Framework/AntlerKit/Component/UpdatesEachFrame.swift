@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol UpdatesEachFrame {
+public protocol UpdatesEachFrame : AnyObject {
 	
 	/// Called every frame. Override to provide behavior.
 	///

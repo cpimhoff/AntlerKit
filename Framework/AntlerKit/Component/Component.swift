@@ -12,7 +12,7 @@ import GameplayKit
 /// An `AnonymousComponent` can be added to a `GameObject`, but not later accessed.
 public protocol AnonymousComponent : Component {}
 
-public protocol Component : AnyObject, UpdatesEachFrame {
+public protocol Component : UpdatesEachFrame {
 	
 	/// If false, this component is not updated, nor does it respond to events
 	var enabled : Bool { get }
