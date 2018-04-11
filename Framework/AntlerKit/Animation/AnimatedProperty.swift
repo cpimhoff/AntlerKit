@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class AnimatedProperty<T: LinearTransitionable> {
+public class AnimatedProperty<T: LinearTransitionable> : UpdatesEachFrame {
 	
 	internal var getter : () -> T
 	internal var setter : (T) -> Void
@@ -39,7 +39,7 @@ public class AnimatedProperty<T: LinearTransitionable> {
 		self.animationState = AnimatedPropertyState(start: getter(), end: newValue, duration: duration)
 	}
 	
-	internal func update(deltaTime: TimeInterval) {
+	internal func internalUpdate(deltaTime: TimeInterval) {
 		guard var state = self.animationState else {
 			return
 		}
@@ -65,7 +65,7 @@ public class AnimatedProperty<T: LinearTransitionable> {
 			self.animationState = state
 		}
 	}
-	
+
 }
 
 private struct AnimatedPropertyState<T> {

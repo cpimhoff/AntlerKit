@@ -89,10 +89,10 @@ open class Scene {
 	
 	// MARK: - Updating Scene Content
 	
-	internal func _update(deltaTime: TimeInterval) {
+	internal func internalUpdate(deltaTime: TimeInterval) {
 		// update entities
 		for gameObject in topLevelGameObjects {
-			gameObject._update(deltaTime: deltaTime)
+			gameObject.internalUpdate(deltaTime: deltaTime)
 		}
 		
 		// user handler

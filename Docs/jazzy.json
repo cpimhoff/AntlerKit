@@ -35,6 +35,7 @@
         "GameObject",
         "Component",
         "Scene",
+        "UpdatesEachFrame",
         "AntlerKitView"
       ]
     },

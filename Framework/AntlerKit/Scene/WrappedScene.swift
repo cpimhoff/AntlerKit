@@ -20,7 +20,7 @@ internal class WrappedScene : SKScene {
 	override func update(_ currentTime: TimeInterval) {
 		if lastUpdate != nil {
 			let delta = currentTime - lastUpdate!
-			delegateScene._update(deltaTime: delta)
+			delegateScene.internalUpdate(deltaTime: delta)
 		}
 		lastUpdate = currentTime
 	}

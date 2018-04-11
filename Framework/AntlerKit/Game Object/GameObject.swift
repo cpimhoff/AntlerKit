@@ -11,7 +11,7 @@ import SpriteKit
 import GameplayKit
 
 /// An game entity in the AntlerKit game scene.
-open class GameObject {
+open class GameObject : UpdatesEachFrame {
 	
 	internal let root : RootTransform
 	
@@ -127,27 +127,22 @@ open class GameObject {
 	
 	// MARK: - Update
 	
-	internal func _update(deltaTime: TimeInterval) {
+	internal func internalUpdate(deltaTime: TimeInterval) {
 		if self.isAgentInitialized {
 			self.updateAgent(deltaTime: deltaTime)
 		}
 		
 		for child in self.children {
-			child.update(deltaTime: deltaTime)
+			child.internalUpdate(deltaTime: deltaTime)
 		}
 		
 		for component in self.enabledComponents {
-			component.update(deltaTime: deltaTime)
+			component.internalUpdate(deltaTime: deltaTime)
 		}
 				
-		// call override point of update
+		// call user provided update
 		self.update(deltaTime: deltaTime)
 	}
-	
-	/// Called every frame.
-	///
-	/// - Parameter deltaTime: The amount of time, in seconds, since the last call to `update`
-	open func update(deltaTime: TimeInterval) {}
 	
 	// MARK: - Configuration
 	
