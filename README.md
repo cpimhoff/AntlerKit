@@ -1,3 +1,5 @@
+<img src="antlerkit-icon.png" width="150" height="150"/>
+
 # AntlerKit
 The missing set of utilities, primitives, and bridging to allow for fast and expressive use of *SpriteKit* and *GameplayKit*.
 
