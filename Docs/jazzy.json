@@ -4,7 +4,7 @@
     "-project",
     "AntlerKit.xcodeproj",
     "-scheme",
-    "AntlerKit-iOS"
+    "AntlerKit_macOS"
   ],
   "author": "Charlie Imhoff",
   "author_url": "https://www.cpimhoff.com",
