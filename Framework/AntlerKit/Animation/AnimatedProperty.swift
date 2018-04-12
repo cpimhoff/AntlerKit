@@ -75,10 +75,19 @@ public class AnimatedProperty<T: Interpolatable> : UpdatesEachFrame {
 		}
 		
 		self.animationState = AnimatedPropertyState(start: getter(), end: destinationValue, duration: duration)
-		Scene.current.startDirectUpdates(self)
+		if let hostScene = Scene.current {
+			hostScene.startDirectUpdates(self)
+		} else {
+			if !Enviroment.isTesting { fatalError("Could not attach AnimatedProperty to the current Scene, so it can't be updated.") }
+		}
 	}
 	
-	internal func internalUpdate(deltaTime: TimeInterval) {
+	public func update(deltaTime: TimeInterval) {
+		// this is already exposed as part of `UpdatesEachFrame`, so we might as well have it call out to the real implementation
+		self.internalUpdate(deltaTime: deltaTime)
+	}
+	
+	public func internalUpdate(deltaTime: TimeInterval) {
 		guard var state = self.animationState else {
 			return
 		}
@@ -107,7 +116,7 @@ public class AnimatedProperty<T: Interpolatable> : UpdatesEachFrame {
 	private func endAnimation() {
 		self.animationState = nil
 		self.lastGeneratedValue = nil
-		Scene.current.stopDirectUpdates(self)
+		Scene.current?.stopDirectUpdates(self)
 	}
 
 }

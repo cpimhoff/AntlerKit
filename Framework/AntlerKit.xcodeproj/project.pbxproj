@@ -36,6 +36,9 @@
 		CB495CB71E19759400284473 /* WrappedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CB51E19759400284473 /* WrappedScene.swift */; };
 		CB495CB91E197FE500284473 /* AntlerKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CB81E197FE500284473 /* AntlerKitView.swift */; };
 		CB495CBA1E197FE500284473 /* AntlerKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB495CB81E197FE500284473 /* AntlerKitView.swift */; };
+		CB54E03D207F0B0500F12095 /* AnimatedPropertyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB54E03C207F0B0400F12095 /* AnimatedPropertyTests.swift */; };
+		CB54E040207F15F500F12095 /* Enviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB54E03E207F15A000F12095 /* Enviroment.swift */; };
+		CB54E041207F15F600F12095 /* Enviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB54E03E207F15A000F12095 /* Enviroment.swift */; };
 		CB603A2E1E3C0F7900CF1D15 /* GameObject+UpdateAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB603A2D1E3C0F7900CF1D15 /* GameObject+UpdateAgent.swift */; };
 		CB603A2F1E3C0F7900CF1D15 /* GameObject+UpdateAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB603A2D1E3C0F7900CF1D15 /* GameObject+UpdateAgent.swift */; };
 		CB603A311E3C103600CF1D15 /* TypeConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB603A301E3C103600CF1D15 /* TypeConversions.swift */; };
@@ -123,6 +126,8 @@
 		CB495CAA1E196E4300284473 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		CB495CB51E19759400284473 /* WrappedScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrappedScene.swift; sourceTree = "<group>"; };
 		CB495CB81E197FE500284473 /* AntlerKitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntlerKitView.swift; sourceTree = "<group>"; };
+		CB54E03C207F0B0400F12095 /* AnimatedPropertyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedPropertyTests.swift; sourceTree = "<group>"; };
+		CB54E03E207F15A000F12095 /* Enviroment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enviroment.swift; sourceTree = "<group>"; };
 		CB603A2D1E3C0F7900CF1D15 /* GameObject+UpdateAgent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GameObject+UpdateAgent.swift"; sourceTree = "<group>"; };
 		CB603A301E3C103600CF1D15 /* TypeConversions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeConversions.swift; sourceTree = "<group>"; };
 		CB63BEFA1EB93B280001997D /* QuickEventResponders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickEventResponders.swift; sourceTree = "<group>"; };
@@ -217,6 +222,7 @@
 				CB13BCEA1EF06B0800C88C0E /* Archiving */,
 				CB495CBB1E197FEB00284473 /* View */,
 				CB1121F31E184E7A0001FB85 /* Aliases.swift */,
+				CB54E03E207F15A000F12095 /* Enviroment.swift */,
 				CB1121721E1846D10001FB85 /* Info.plist */,
 			);
 			path = AntlerKit;
@@ -372,6 +378,7 @@
 			isa = PBXGroup;
 			children = (
 				CBE96D671E1C7BF2008C0CD1 /* AntlerKitTests.swift */,
+				CB54E03C207F0B0400F12095 /* AnimatedPropertyTests.swift */,
 				CBE96D691E1C7BF2008C0CD1 /* Info.plist */,
 			);
 			path = AntlerKitTests;
@@ -569,6 +576,7 @@
 				CBE54F481E3034580037CD21 /* GeometeryHelpers.swift in Sources */,
 				CB1310E01E35DA5C003E6BD0 /* Animation.swift in Sources */,
 				CBEED8A51EF0AB5F000DDCDB /* RotatorComponent.swift in Sources */,
+				CB54E041207F15F600F12095 /* Enviroment.swift in Sources */,
 				CB63BEFB1EB93B280001997D /* QuickEventResponders.swift in Sources */,
 				CB603A311E3C103600CF1D15 /* TypeConversions.swift in Sources */,
 				CBFCAED5207C75A90004924F /* AnimatedProperty.swift in Sources */,
@@ -617,6 +625,7 @@
 				CB9B27E21EB3EA2C008F0A84 /* RespondsToContact.swift in Sources */,
 				CB2A275D1E1AD5C4009FC4C4 /* PhysicsContactPhase.swift in Sources */,
 				CBEED8A61EF0AB75000DDCDB /* RotatorComponent.swift in Sources */,
+				CB54E040207F15F500F12095 /* Enviroment.swift in Sources */,
 				CBE54F491E3034580037CD21 /* GeometeryHelpers.swift in Sources */,
 				CB1121F51E184E7A0001FB85 /* Aliases.swift in Sources */,
 				CBFCAEDB207C827F0004924F /* AnimatedProperty.swift in Sources */,
@@ -634,6 +643,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBE96D681E1C7BF2008C0CD1 /* AntlerKitTests.swift in Sources */,
+				CB54E03D207F0B0500F12095 /* AnimatedPropertyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
