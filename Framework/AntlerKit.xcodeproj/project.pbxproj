@@ -86,10 +86,10 @@
 		CBEED8A51EF0AB5F000DDCDB /* RotatorComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEED8A41EF0AB5F000DDCDB /* RotatorComponent.swift */; };
 		CBEED8A61EF0AB75000DDCDB /* RotatorComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEED8A41EF0AB5F000DDCDB /* RotatorComponent.swift */; };
 		CBFCAED5207C75A90004924F /* AnimatedProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFCAED4207C75A90004924F /* AnimatedProperty.swift */; };
-		CBFCAED7207C75C80004924F /* LinearTransitionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFCAED6207C75C80004924F /* LinearTransitionable.swift */; };
+		CBFCAED7207C75C80004924F /* Interpolatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFCAED6207C75C80004924F /* Interpolatable.swift */; };
 		CBFCAED8207C82770004924F /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1310DB1E35D988003E6BD0 /* Animator.swift */; };
 		CBFCAED9207C827A0004924F /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1310DF1E35DA5C003E6BD0 /* Animation.swift */; };
-		CBFCAEDA207C827D0004924F /* LinearTransitionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFCAED6207C75C80004924F /* LinearTransitionable.swift */; };
+		CBFCAEDA207C827D0004924F /* Interpolatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFCAED6207C75C80004924F /* Interpolatable.swift */; };
 		CBFCAEDB207C827F0004924F /* AnimatedProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFCAED4207C75A90004924F /* AnimatedProperty.swift */; };
 /* End PBXBuildFile section */
 
@@ -152,7 +152,7 @@
 		CBEE855D1ECE34D000C4D56B /* LightingCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightingCategory.swift; sourceTree = "<group>"; };
 		CBEED8A41EF0AB5F000DDCDB /* RotatorComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatorComponent.swift; sourceTree = "<group>"; };
 		CBFCAED4207C75A90004924F /* AnimatedProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedProperty.swift; sourceTree = "<group>"; };
-		CBFCAED6207C75C80004924F /* LinearTransitionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearTransitionable.swift; sourceTree = "<group>"; };
+		CBFCAED6207C75C80004924F /* Interpolatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interpolatable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -383,7 +383,7 @@
 				CB1310DB1E35D988003E6BD0 /* Animator.swift */,
 				CB1310DF1E35DA5C003E6BD0 /* Animation.swift */,
 				CBFCAED4207C75A90004924F /* AnimatedProperty.swift */,
-				CBFCAED6207C75C80004924F /* LinearTransitionable.swift */,
+				CBFCAED6207C75C80004924F /* Interpolatable.swift */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -552,7 +552,7 @@
 				CB1310D91E35D691003E6BD0 /* Label.swift in Sources */,
 				CB9B27DE1EB3E3F0008F0A84 /* MovementComponent.swift in Sources */,
 				CB4283451E28A5A2007D97C0 /* WrappedScene+Input.swift in Sources */,
-				CBFCAED7207C75C80004924F /* LinearTransitionable.swift in Sources */,
+				CBFCAED7207C75C80004924F /* Interpolatable.swift in Sources */,
 				CB1121EE1E184BD30001FB85 /* GameObject.swift in Sources */,
 				CB2A27571E1ACDC5009FC4C4 /* Camera.swift in Sources */,
 				CB876E71207EA4D400311E28 /* UpdatesEachFrame.swift in Sources */,
@@ -594,7 +594,7 @@
 				CB1121F81E1850890001FB85 /* Component.swift in Sources */,
 				CB495CAC1E196E4300284473 /* Scene.swift in Sources */,
 				CB20E60D1ECD487700086B06 /* AudioClip.swift in Sources */,
-				CBFCAEDA207C827D0004924F /* LinearTransitionable.swift in Sources */,
+				CBFCAEDA207C827D0004924F /* Interpolatable.swift in Sources */,
 				CB6A87101E21F67D00451F62 /* Cursor.swift in Sources */,
 				CB4283461E28A5A4007D97C0 /* WrappedScene+Input.swift in Sources */,
 				CB9D58A91FD336B6007F7C33 /* StateMachineState.swift in Sources */,
@@ -703,7 +703,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cpimhoff.AntlerKit;
 				PRODUCT_NAME = AntlerKit;
-				SDKROOT = macosx;
+				SDKROOT = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -760,7 +760,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cpimhoff.AntlerKit;
 				PRODUCT_NAME = AntlerKit;
-				SDKROOT = macosx;
+				SDKROOT = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -824,6 +824,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -844,6 +845,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 			};

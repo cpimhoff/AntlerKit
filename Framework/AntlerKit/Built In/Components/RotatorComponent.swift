@@ -14,8 +14,8 @@ open class RotatorComponent : InspectableComponent {
 	
 	/// Rotation speed expressed in degrees clockwise per second
 	open var rotationSpeedDegrees : Float {
-		get { return Convert.toDegrees(fromRadians: self.rotationSpeedRadians) }
-		set { self.rotationSpeedRadians = Convert.toRadians(fromDegrees: newValue) }
+		get { return self.rotationSpeedRadians.toDegrees }
+		set { self.rotationSpeedRadians = newValue.toRadians }
 	}
 	/// Rotation speed expressed in radians clockwise per second
 	open var rotationSpeedRadians : Float = 0
