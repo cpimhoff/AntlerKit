@@ -16,11 +16,8 @@ open class Scene {
 	
 	/// The currently rendered scene
 	public static var current : Scene! {
-		return Scene.stack.head
+		return SceneStack.shared.head
 	}
-	
-	/// This application's scene stack
-	internal static var stack = SceneStack()
 	
 	// MARK: - Top Level Objects
 	

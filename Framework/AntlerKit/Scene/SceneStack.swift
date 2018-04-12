@@ -18,7 +18,7 @@ public extension Scene {
 	///   - transition: The transition to use between the scenes
 	public func push(_ nextScene: Scene, using transition: SKTransition? = nil) {
 		guard let renderer = self.root.view else { return }
-		Scene.stack.push(nextScene, on: renderer, with: transition)
+		SceneStack.shared.push(nextScene, on: renderer, with: transition)
 	}
 	
 	/// Removes this scene from the scene stack and transitions to the scene below
@@ -27,7 +27,7 @@ public extension Scene {
 	/// - Parameter transition: The transition to use between the scenes
 	public func pop(using transition: SKTransition? = nil) {
 		guard let renderer = self.root.view else { return }
-		Scene.stack.pop(from: renderer, with: transition)
+		SceneStack.shared.pop(from: renderer, with: transition)
 	}
 	
 	/// Swaps this scene with another and transitions to it. Doesn't affect the scene stack below.
@@ -37,12 +37,14 @@ public extension Scene {
 	///   - transition: The transition to use between the scenes
 	public func swap(to scene: Scene, using transition: SKTransition? = nil) {
 		guard let renderer = self.root.view else { return }
-		Scene.stack.swap(to: scene, on: renderer, with: transition)
+		SceneStack.shared.swap(to: scene, on: renderer, with: transition)
 	}
 	
 }
 
 internal class SceneStack {
+	
+	static var shared = SceneStack()
 	
 	private var scenes = [Scene]()
 	
