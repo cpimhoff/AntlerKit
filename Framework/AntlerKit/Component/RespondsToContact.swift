@@ -53,7 +53,7 @@ internal extension GameObject {
 	
 }
 
-extension StateMachineComponent : RespondsToContact {
+extension StateMachine : RespondsToContact {
 	
 	public func onContactBegan(with other: GameObject?) {
 		if let respondingState = self.activeState as? RespondsToContact {

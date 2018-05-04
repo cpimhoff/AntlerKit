@@ -68,7 +68,7 @@ internal extension GameObject {
 	
 }
 
-extension StateMachineComponent : HandlesTextInterfaceInput {
+extension StateMachine : HandlesTextInterfaceInput {
 	
 	public func handle(textInput text: String) -> Bool {
 		if let respondingState = self.activeState as? HandlesTextInterfaceInput {

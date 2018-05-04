@@ -16,7 +16,6 @@ public protocol HandlesSelectionInterfaceInput {
 	///
 	/// - Returns: Whether or not this event was handled.
 	/// 	If false, the event is propogated to the next relevant subscriber, until it is handled.
-	@discardableResult
 	func handleSelected() -> Bool
 	
 }
@@ -47,7 +46,7 @@ internal extension GameObject {
 	
 }
 
-extension StateMachineComponent : HandlesSelectionInterfaceInput {
+extension StateMachine : HandlesSelectionInterfaceInput {
 	
 	public func handleSelected() -> Bool {
 		if let respondingState = self.activeState as? HandlesSelectionInterfaceInput {

@@ -25,7 +25,7 @@ A `StateMachine` takes a set of `State` instances as arguments. A `StateMachine`
 
 `StateMachines` always begin with the first state provided in the call to the initializer.
 
-A `State` can adopt all the **event response protocols** a `Component` can, as well as perform per-frame updates.
+A `State` can adopt all the **event response protocols** a `Component` can, as well as perform per-frame updates. In fact, each state is a `Component`, and can be attached directly to a `GameObject` if it doesn't need to be hooked into a larger behavior.
 
 A `State` can override `.isNextStateAllowed(nextState)` to define what states are allowed to follow this one. If the function is undefined, all possible next states are approved.
 
@@ -46,6 +46,6 @@ The attack states `ThrowSpearState` and `CastFireballState` are symmetric to one
 
 However, in `PatrolState` what do we call in order to validly transition to both of these distinct other states? Instead of referencing these states by their concrete subclass, we can instead reference them by a shared superclass.
 
-We subclass `ThrowSpearState` and `CastFireballState` from a new `AttackState` superclass (or protocol). We can then call `stateMachine.signalTransition(to: AttackState)` in `PatrolState`. When the state machine is configured with a `ThrowSpearState`, this call will transition to `ThrowSpearState`. If it is configured with `CastFireballState`, this call will transition to `CastFireballState` instead. If the state machine is configured with _both_ classes, then the machine will transition to the first one specified at initialization.
+We subclass `ThrowSpearState` and `CastFireballState` from a new `AttackState` superclass (`AttackState` can also be defined as a protocol which implements `StateMachineAbstractState`). We can then call `stateMachine.signalTransition(to: AttackState.self)` in `PatrolState`. When the state machine is configured with a `ThrowSpearState`, this call will transition to `ThrowSpearState`. If it is configured with `CastFireballState`, this call will transition to `CastFireballState` instead. If the state machine is configured with _both_ classes, then the machine will transition to the first one specified at initialization.
 
 By utilizing state inheritance, you can create truly compossible states and state machines, allowing you to rapidly develop and experiment with complex behaviors.
