@@ -10,6 +10,7 @@ import Foundation
 import AVFoundation
 import SpriteKit
 
+/// Namespace housing utilities for music and SFX playback.
 public struct Audio {
 	
 	#if os(iOS)
@@ -55,23 +56,17 @@ public struct Audio {
 		currentMix?.setVolume(volume, fadeDuration: mixTime)
 	}
 	
-	/// Plays an short Sound through the Scene
+	/// Plays an short Sound through the Scene.
+	/// If the scene is swapped during playback, the audio will pause.
 	public static func play(_ sound: AudioClip, volume: Float = 1.0) {
 		self.play(soundFileNamed: sound.fileName, volume: volume)
 	}
 	
-	/// Plays a short audio file through the Scene
+	/// Plays a short audio file through the Scene.
+	/// If the scene is swapped during playback, the audio will pause.
 	public static func play(soundFileNamed fileName: String, volume: Float = 1.0) {
 		guard let root = Scene.current?.root else { return }
-		
-		let tempNode = SKNode()
-		root.addChild(tempNode)
-		
-		let soundAction = SKAction.playSoundFileNamed(fileName, waitForCompletion: true)
-		let removeAction = SKAction.removeFromParent()
-		let sequence = SKAction.sequence([soundAction, removeAction])
-		
-		tempNode.run(sequence)
+		root.run(SKAction.playSoundFileNamed(fileName, waitForCompletion: false))
 	}
 	
 }

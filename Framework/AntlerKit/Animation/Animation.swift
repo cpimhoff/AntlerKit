@@ -14,11 +14,7 @@ import SpriteKit
 	private typealias Image = NSImage
 #endif
 
-//
-//	Animation Naming Format
-//	"sheet animation 0"
-//
-
+/// Structure to hold information about a complete animation. An animation is a sequence of images (frames).
 public struct Animation {
 	
 	public let frames : [SKTexture]
@@ -27,12 +23,18 @@ public struct Animation {
 		self.frames = frames
 	}
 	
+	/// Load a sheet of animations from the assets bundle. Sheets must be named in the following manner:
+	///
+	/// ```sheetName-animationName-#```
+	///
+	/// The first frame of the animation is expected to be 0. The loader will continue fetching sequentially
+	/// named frames until it can not find the next one.
 	public init?(sheetName: String, animationName: String) {
 		var frameList = [SKTexture]()
 		
 		var frameNumber = 0
 		while true {
-			let frameName = "\(sheetName) \(animationName) \(frameNumber)"
+			let frameName = "\(sheetName)-\(animationName)-\(frameNumber)"
 			
 			#if os(iOS)
 				guard let image = Image(named: frameName) else { break }

@@ -8,6 +8,8 @@
 import Foundation
 import SpriteKit
 
+/// An `Animator` is a special object which can be attached to a `GameObject.animator`
+/// property to enable frame based animation.
 open class Animator {
 	
 	internal weak var gameObject : GameObject?
@@ -47,8 +49,8 @@ extension Animator {
 	///
 	/// - Parameters:
 	///   - animationName: Animation to run
-	///   - frameTime: Seconds between animation frames
-	open func runOnce(animation: Animation, frameTime: TimeInterval) {
+	///   - fps: The amount of frames to play each second
+	open func runOnce(animation: Animation, fps: Double) {
 		guard let primitive = self.gameObject?.primitive else { return }
 		
 		// save (and then stop) current looping animation
@@ -56,6 +58,7 @@ extension Animator {
 		primitive.removeAction(forKey: loopingAnimationKey)
 		
 		// construct one-off action
+		let frameTime : TimeInterval = 1.0 / fps
 		let singleAnimation = SKAction.animate(with: animation.frames, timePerFrame: frameTime)
 		let returnToPreviousAnimation = SKAction.run {
 			if previousAnimation != nil {
@@ -72,25 +75,25 @@ extension Animator {
 	///
 	/// - Parameters:
 	///   - animationName: Name of the animation on the reciever's sheet to run
-	///   - frameTime: Seconds between animation frames
-	open func runOnce(animationNamed animationName: String, frameTime: TimeInterval = 0.2) {
+	///   - fps: The amount of frames to play each second
+	open func runOnce(animationNamed animationName: String, fps: Double) {
 		guard let animation = self.load(animationNamed: animationName) else { return }
-		
-		self.runOnce(animation: animation, frameTime: frameTime)
+		self.runOnce(animation: animation, fps: fps)
 	}
 	
 	/// Loops the animation at the specified rate.
 	///
 	/// - Parameters:
 	///   - animation: Animation to run
-	///   - frameTime: Seconds between animation frames
-	open func transition(to animation: Animation, frameTime: TimeInterval) {
+	///   - fps: The amount of frames to play each second
+	open func transition(to animation: Animation, fps: Double) {
 		guard let primitive = self.gameObject?.primitive else { return }
 		
 		// cancel a midflight one-off immediately (its `previousAnimation` would be out of date)
 		primitive.removeAction(forKey: singleAnimationKey)
 		
 		// construct a looping action
+		let frameTime : TimeInterval = 1.0 / fps
 		let singleAnimation = SKAction.animate(with: animation.frames, timePerFrame: frameTime)
 		let loopingAnimation = SKAction.repeatForever(singleAnimation)
 		
@@ -101,11 +104,10 @@ extension Animator {
 	///
 	/// - Parameters:
 	///   - animationName: Name of the animation on the reciever's sheet to run
-	///   - frameTime: Seconds between animation frames
-	open func transition(toAnimationNamed animationName: String, frameTime: TimeInterval = 0.2) {
+	///   - fps: The amount of frames to play each second
+	open func transition(toAnimationNamed animationName: String, fps: Double) {
 		guard let animation = self.load(animationNamed: animationName) else { return }
-		
-		self.transition(to: animation, frameTime: frameTime)
+		self.transition(to: animation, fps: fps)
 	}
 	
 }

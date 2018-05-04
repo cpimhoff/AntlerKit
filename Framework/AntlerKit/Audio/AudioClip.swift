@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Struct representing an Audio file stored as part of this bundle.
 public struct AudioClip {
 	
 	public let fileName : String
