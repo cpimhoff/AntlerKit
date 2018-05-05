@@ -58,17 +58,13 @@ public extension Vector {
 	
 	/// The computed length of the vector. Same as the magnitude
 	var length : CGFloat {
-		get {
-			return sqrt(dx * dx + dy * dy)
-		}
+		return sqrt(dx * dx + dy * dy)
 	}
 	
 	/// The relative magnitude of the vector, comparable to other sqrMagnitudes
 	/// Easier to compute than length
 	var sqrMagnitude : CGFloat {
-		get {
-			return dx * dx + dy * dy
-		}
+		return dx * dx + dy * dy
 	}
 	
 	/// Returns the angle (in radians) this vector represents.
@@ -89,14 +85,12 @@ public extension Vector {
 	
 	/// Normalized version of the vector
 	var normalized : Vector {
-		get {
-			let length = self.length
-			if length != 0 {
-				let scale = 1.0/length
-				return Vector(dx: dx * scale, dy: dy * scale)
-			} else {
-				return Vector.zero
-			}
+		let length = self.length
+		if length != 0 {
+			let scale = 1.0/length
+			return Vector(dx: dx * scale, dy: dy * scale)
+		} else {
+			return self
 		}
 	}
 	

@@ -119,24 +119,21 @@ extension WrappedScene {
 	///
 	
 	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-		updateTouchesBatch(allTouches: event?.allTouches)
+		addTouchEvents(allTouches: event?.allTouches)
 	}
 	override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-		updateTouchesBatch(allTouches: event?.allTouches)
+		addTouchEvents(allTouches: event?.allTouches)
 	}
 	override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-		updateTouchesBatch(allTouches: event?.allTouches)
+		addTouchEvents(allTouches: event?.allTouches)
 	}
 	override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-		updateTouchesBatch(allTouches: event?.allTouches)
+		addTouchEvents(allTouches: event?.allTouches)
 	}
 	
-	func updateTouchesBatch(allTouches: Set<UITouch>?) {
+	func addTouchEvents(allTouches: Set<UITouch>?) {
 		guard let touches = allTouches
 			else { return }
-		
-		// update to new batch
-		Input.removePreviousInputBatch()
 		
 		// filter and save this batch
 		for rawTouch in touches {
