@@ -21,22 +21,16 @@ extension WrappedScene {
 	
 	func setupGestureRecognizers() {
 		#if os(iOS)
-			
 			let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(onSelect))
-			tapRecognizer.delaysTouchesBegan = true
-			tapRecognizer.cancelsTouchesInView = false
 			
 			self.gestureRecognizers.append(tapRecognizer)
 			self.view?.addGestureRecognizer(tapRecognizer)
-			
 		#elseif os(macOS)
-			
 			let clickRecognizer = NSClickGestureRecognizer(target: self, action: #selector(onSelect))
 			clickRecognizer.buttonMask = 1	// primary button only
 			
 			self.gestureRecognizers.append(clickRecognizer)
 			self.view?.addGestureRecognizer(clickRecognizer)
-			
 		#endif
 	}
 	
