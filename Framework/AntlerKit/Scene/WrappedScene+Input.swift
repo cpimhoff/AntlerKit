@@ -89,8 +89,8 @@ extension WrappedScene {
 			
 			// If unhandled, dispatch to global input
 			#if os(iOS)
-				let tap = Touch(sceneLocation: selection, type: .tap)
-				Input.touches.append(tap)
+				let tap = TouchTap(sceneLocation: selection)
+				Input.taps.append(tap)
 			#elseif os(macOS)
 				Input.cursor.sceneLocation = selection
 				Input.cursor.mainButton = .click
@@ -119,30 +119,14 @@ extension WrappedScene {
 	///
 	
 	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-		addTouchEvents(allTouches: event?.allTouches)
-	}
-	override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-		addTouchEvents(allTouches: event?.allTouches)
-	}
-	override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-		addTouchEvents(allTouches: event?.allTouches)
-	}
-	override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-		addTouchEvents(allTouches: event?.allTouches)
+		guard let touches = event?.allTouches else { return }
+		self.add(touches: touches)
 	}
 	
-	func addTouchEvents(allTouches: Set<UITouch>?) {
-		guard let touches = allTouches
-			else { return }
-		
-		// filter and save this batch
+	func add(touches: Set<UITouch>) {
 		for rawTouch in touches {
 			if rawTouch.view != self.view { continue }
-			
-			let sceneLocation = rawTouch.location(in: self)
-			let touch = Touch(sceneLocation: sceneLocation, type: TouchType(phase: rawTouch.phase))
-			
-			Input.touches.append(touch)
+			Input.touches.append(rawTouch)
 		}
 	}
 	

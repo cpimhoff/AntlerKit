@@ -18,7 +18,8 @@ import Foundation
 public struct Input {
 	
 	#if os(iOS)
-	public static var touches = [Touch]()
+	public static var touches = [UITouch]()
+	public static var taps = [TouchTap]()
 	public static let motion = Motion()
 	#endif
 	
@@ -35,7 +36,12 @@ internal extension Input {
 	/// Called each frame
 	static func updateStaleInput() {
 		#if os(iOS)
-		self.touches.removeAll()
+		// Note the "touch loop" happens on the same thread as the SpriteKit update loop.
+		self.touches = self.touches.filter {
+			return ![.ended, .cancelled].contains($0.phase)
+		}
+		// Taps should be removed as they only persist for a single frame.
+		self.taps.removeAll()
 		#elseif os(macOS)
 			if self.cursor.mainButton == .click {
 				self.cursor.mainButton = .up
