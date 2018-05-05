@@ -92,7 +92,8 @@ public extension Vector {
 		get {
 			let length = self.length
 			if length != 0 {
-				return Vector(dx: dx/length, dy: dy/length)
+				let scale = 1.0/length
+				return Vector(dx: dx * scale, dy: dy * scale)
 			} else {
 				return Vector.zero
 			}
