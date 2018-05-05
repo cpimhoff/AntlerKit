@@ -16,7 +16,7 @@ open class MovementComponent: InspectableComponent {
 	
 	/// Whether to move the GameObject via the physics simualtion
 	/// or via setting its location each frame
-	@GKInspectable open var usePhysicsBasedMovement = true
+	@GKInspectable open var usePhysicsBasedMovement = false
 	
 	/// Whether or not to snap the GameObject to point toward its movement vector
 	@GKInspectable open var pointTowardMovement = false
