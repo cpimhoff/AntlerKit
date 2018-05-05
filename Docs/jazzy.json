@@ -19,10 +19,9 @@
       "name": "Documentation",
       "children": [
         "About AntlerKit",
-        "Getting Started",
+        "Quick Start",
         "Installation",
         "Demo",
-        "Extensions",
         "Contributing",
         "Contact",
         "Changelog",
@@ -35,7 +34,6 @@
         "GameObject",
         "Component",
         "Scene",
-        "UpdatesEachFrame",
         "AntlerKitView"
       ]
     },
@@ -52,6 +50,7 @@
       "children": [
         "Input",
         "Touch",
+        "TouchTap",
         "Motion",
         "MotionReading",
         "HandlesSelectionInterfaceInput",
