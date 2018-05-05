@@ -27,7 +27,7 @@ animation will be automatically canceled.
 You can bind an `AnimatedProperty` object to _any_ variable, so long as the type conforms
 to `LinearTransitionable`.
 */
-public class AnimatedProperty<T: Interpolatable> : UpdatesEachFrame {
+public class AnimatedProperty<T: Interpolatable> : InternalUpdatesEachFrame {
 	
 	internal var getter : () -> T
 	internal var setter : (T) -> Void

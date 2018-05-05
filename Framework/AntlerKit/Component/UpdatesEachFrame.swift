@@ -17,15 +17,7 @@ public protocol UpdatesEachFrame : AnyObject {
 	
 }
 
-public extension UpdatesEachFrame {
-	
-	func update(deltaTime: TimeInterval) {
-		// default implementation is a no-op
-	}
-	
-}
-
-internal extension UpdatesEachFrame {
+internal protocol InternalUpdatesEachFrame : UpdatesEachFrame {
 	
 	/// Internally, per frame updates sometimes need to do more than just call the user's update code,
 	/// such as share update information with related objects like children.
@@ -33,8 +25,6 @@ internal extension UpdatesEachFrame {
 	/// Since Swift has no current method to enforce that subclasses call the super version of overridden
 	/// methods, we use `update` to mean "user supplied updates", and this `internalUpdate` as the main place
 	/// any AntlerKit system should call out to an object to udate.
-	func internalUpdate(deltaTime: TimeInterval) {
-		self.update(deltaTime: deltaTime)
-	}
+	func internalUpdate(deltaTime: TimeInterval)
 	
 }

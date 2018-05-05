@@ -23,7 +23,7 @@ open class Scene {
 	
 	/// The root set of objects that need per frame updates.
 	/// Many objects (such as components, or nested game objects) are updated indirectly.
-	private var directlyUpdatedObjects = [UpdatesEachFrame]()
+	private var directlyUpdatedObjects = [InternalUpdatesEachFrame]()
 	
 	// MARK: - Initialization
 	
@@ -75,12 +75,12 @@ open class Scene {
 	}
 	
 	/// Adds the specified updating object to the root set for per frame updates.
-	internal func startDirectUpdates(_ object: UpdatesEachFrame) {
+	internal func startDirectUpdates(_ object: InternalUpdatesEachFrame) {
 		self.directlyUpdatedObjects.append(object)
 	}
 	
 	/// Removes the specified updating object from the root set if needed.
-	internal func stopDirectUpdates(_ object: UpdatesEachFrame) {
+	internal func stopDirectUpdates(_ object: InternalUpdatesEachFrame) {
 		if let i = self.directlyUpdatedObjects.index(where: { $0 === object }) {
 			self.directlyUpdatedObjects.remove(at: i)
 		}

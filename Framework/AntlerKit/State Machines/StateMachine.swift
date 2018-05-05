@@ -42,8 +42,8 @@ public class StateMachine : SimpleComponent {
 		}
 	}
 	
-	public func internalUpdate(deltaTime: TimeInterval) {
-		self.activeState.internalUpdate(deltaTime: deltaTime)
+	public override func update(deltaTime: TimeInterval) {
+		self.activeState.update(deltaTime: deltaTime)
 	}
 	
 	/// Transition this state machine to a new state.

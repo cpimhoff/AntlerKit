@@ -46,6 +46,8 @@ open class SimpleComponent : Component {
 		// override point...
 	}
 	
+	public func update(deltaTime: TimeInterval) {}
+	
 }
 
 // GKComponent Type
@@ -59,5 +61,7 @@ open class InspectableComponent : GKComponent, Component {
 	open func configure() {
 		// override point...
 	}
+	
+	override open func update(deltaTime: TimeInterval) {}
 	
 }
