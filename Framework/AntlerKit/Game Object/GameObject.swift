@@ -144,7 +144,7 @@ open class GameObject : InternalUpdatesEachFrame {
 		self.update(deltaTime: deltaTime)
 	}
 	
-	public func update(deltaTime: TimeInterval) {}
+	open func update(deltaTime: TimeInterval) {}
 	
 	// MARK: - Configuration
 	

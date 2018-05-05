@@ -83,7 +83,8 @@ public class AnimatedProperty<T: Interpolatable> : InternalUpdatesEachFrame {
 	}
 	
 	public func update(deltaTime: TimeInterval) {
-		// this is already exposed as part of `UpdatesEachFrame`, so we might as well have it call out to the real implementation
+		// this is already exposed as part of `InternalUpdatesEachFrame`,
+		// so we might as well have it call out to the real implementation
 		self.internalUpdate(deltaTime: deltaTime)
 	}
 	
