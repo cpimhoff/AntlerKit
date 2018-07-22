@@ -11,10 +11,10 @@ You should subclass `GameObject` to provide convenient initialization of commonl
 This pattern effectively functions as a factory system (as nothing beside a initializer is modified), but has the added benefit of associating a type to the instances you create. This way, you can still make natural queries about the kinds of things in the game: `if hitObject is Astroid { ... }`.
 
 For example:
+
 	class PlayerSpaceship : GameObject {
 	    override init() {
 	        super.init()  // required
-	
 	        // define components
 	        let movement = MovementComponent()
 	        movement.speed = 10
